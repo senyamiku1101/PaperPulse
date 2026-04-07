@@ -1968,6 +1968,29 @@ function filterByHeatmap(period, subtopic) {
   renderPaperList();
 }
 
+function filterByGroup(groupId) {
+  const group = (STATE.groups?.groups || []).find(g => g.id === groupId);
+  if (!group) return;
+
+  const paperIds = new Set(group.paper_ids || []);
+  switchTab('papers');
+
+  STATE.filteredPapers = STATE.papers.filter(p => paperIds.has(p.id));
+  STATE.displayedCount = 0;
+
+  // 清空搜索框和筛选器
+  document.getElementById('paperSearch').value = '';
+  document.getElementById('yearFilter').value = '';
+  document.getElementById('relevanceFilter').value = '';
+  document.getElementById('sortFilter').value = 'year';
+
+  document.getElementById('paperResultsInfo').textContent =
+    `${group.name}: 共 ${STATE.filteredPapers.length} 篇论文`;
+  document.getElementById('paperList').innerHTML = '';
+  document.getElementById('loadMoreContainer').style.display = 'none';
+  renderPaperList();
+}
+
 function renderTrendPeriods(intervals) {
   if (!intervals.length) return;
 
@@ -2020,7 +2043,7 @@ function renderGroups() {
     ).join('');
 
     return `
-      <div class="group-card">
+      <div class="group-card" onclick="filterByGroup('${g.id}')" style="cursor:pointer">
         <div class="group-card-header">
           <div class="group-card-icon">🏛️</div>
           <div>

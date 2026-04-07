@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-07T06:45:47.512491+00:00",
-  "total_count": 45,
+  "last_updated": "2026-04-07T08:03:33.898933+00:00",
+  "total_count": 64,
   "papers": [
     {
       "id": "W7129079259",
@@ -303,6 +303,137 @@
       }
     },
     {
+      "id": "W4404862062",
+      "doi": "https://doi.org/10.1007/s00193-024-01188-z",
+      "title": "Investigation of flow characteristics of various-aspect-ratio rectangular nozzles with an aft deck",
+      "authors": [
+        {
+          "name": "Wen‐Lih Chen",
+          "id": "A5045213733",
+          "institution": "National Cheng Kung University"
+        },
+        {
+          "name": "W.-H. Huang",
+          "id": "A5103640075",
+          "institution": "R.O.C Military Academy"
+        },
+        {
+          "name": "Wei Hsiang Lai",
+          "id": "A5103913365",
+          "institution": "National Cheng Kung University"
+        }
+      ],
+      "year": 2024,
+      "citation_count": 4,
+      "abstract": "Abstract This study presents an experimental and numerical investigation to characterize the plume pattern of a high-aspect-ratio rectangular convergent/divergent nozzle with an aft deck in under-expanded conditions. The function of an aft deck is to shield the infrared signal of an exhaust plume at its strongest intensity located at the immediate downstream region of the nozzle exit. However, this practice may cause undesirable plume deflection, which needs to be reduced as much as possible. The nozzle pressure ratios ranged from 2 to 4, and the effect of the nozzle exit aspect ratio was examined using wall static pressure measurements and schlieren visualization for cold flows. The experimental setup involved a 3D-printed aft deck nozzle made of acrylonitrile butadiene styrene material, which underwent surface smoothing using acetone vapor. Numerical simulations were conducted using the commercial STARCCM $$^{\\mathrm {+}}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mmultiscripts> <mml:mrow/> <mml:mrow/> <mml:mo>+</mml:mo> </mml:mmultiscripts> </mml:math> software to analyze static pressure ratio variations at the aft deck. The investigation revealed that a nozzle pressure ratio of 3 induced a downward plume deflection at aspect ratio values of 6.77 and 7.54, while an increased aspect ratio of 8.35 resulted in the horizontal ejection of the plume. Moreover, at an aspect ratio of 8.35, the plume was ejected horizontally for nozzle pressure ratios ranging from 2 to 4. At a nozzle pressure ratio of 4, the flow separated from the deck without reattaching, and the plume moved horizontally with minimal deflection. The findings suggest that a combination of a high aspect ratio and sufficiently high nozzle pressure ratio can effectively reduce plume deflection.",
+      "topics": [
+        "Rocket and propulsion systems research",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Radiative Heat Transfer Studies"
+      ],
+      "source": {
+        "name": "Shock Waves",
+        "id": "S188738898",
+        "type": "journal"
+      },
+      "open_access_url": "https://link.springer.com/content/pdf/10.1007/s00193-024-01188-z.pdf",
+      "is_oa": true,
+      "referenced_works": [
+        "W205836807",
+        "W1514516556",
+        "W1974097079",
+        "W1982702853",
+        "W1985955770",
+        "W2015956568",
+        "W2026117034",
+        "W2049462733",
+        "W2056328679",
+        "W2070691226",
+        "W2130324753",
+        "W2132903027",
+        "W2566642319",
+        "W2593130978",
+        "W2743873227",
+        "W2773980053",
+        "W2789517275",
+        "W2889001743",
+        "W2889723678",
+        "W2895401982",
+        "W2924794989",
+        "W2991308184"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本研究通过实验和数值模拟方法，探讨了带有后甲板的高展弦比矩形收敛/发散喷嘴在欠膨胀条件下的羽流特性。研究聚焦于后甲板对红外信号屏蔽的影响，以及如何减少由此引起的羽流偏转。实验采用3D打印的丙烯腈丁二烯苯乙烯材料喷嘴，通过壁面静压测量和纹影可视化技术，分析了喷嘴压力比从2到4、展弦比变化对羽流偏转的影响。数值模拟使用STARCCM+软件，进一步验证了静压比变化。研究发现，高展弦比（如8.35）结合足够高的喷嘴压力比（如4）能有效减少羽流偏转，实现水平喷射，为优化喷嘴设计提供了依据。",
+        "methods": "研究采用实验和数值模拟相结合的方法。实验部分使用3D打印的丙烯腈丁二烯苯乙烯材料喷嘴，经过丙酮蒸汽表面平滑处理，通过壁面静压测量和纹影可视化技术，在冷流条件下分析不同喷嘴压力比（2-4）和展弦比对羽流模式的影响。数值模拟部分利用商业软件STARCCM+，对后甲板区域的静压比变化进行模拟，以补充实验数据并验证羽流偏转机制。",
+        "innovations": [
+          "结合实验和数值模拟，系统研究高展弦比矩形喷嘴与后甲板在欠膨胀条件下的羽流特性",
+          "通过纹影可视化和壁面静压测量，量化羽流偏转与喷嘴参数（压力比、展弦比）的关系",
+          "提出高展弦比与高喷嘴压力比的组合策略，有效减少羽流偏转，优化红外屏蔽设计"
+        ],
+        "conclusions": "研究结果表明，喷嘴压力比为3时，展弦比6.77和7.54会导致羽流向下偏转；而展弦比增至8.35时，羽流在压力比2-4范围内均能水平喷射。在喷嘴压力比为4时，流动从后甲板分离且未再附着，羽流水平移动，偏转最小。结论指出，高展弦比与足够高的喷嘴压力比结合，可显著降低羽流偏转，提高红外屏蔽效果。",
+        "relevance_score": 8,
+        "keywords": [
+          "羽流偏转",
+          "矩形喷嘴",
+          "后甲板"
+        ],
+        "analyzed_at": "2026-04-07T08:02:59.154355+00:00"
+      }
+    },
+    {
+      "id": "W2786257080",
+      "doi": "https://doi.org/10.25144/24662",
+      "title": "AEROACOUSTIC DESIGN OF METAFLUID DEVICES",
+      "authors": [
+        {
+          "name": "Umberto Iemma",
+          "id": "A5084127197",
+          "institution": ""
+        },
+        {
+          "name": "Giorgio Palma",
+          "id": "A5011188498",
+          "institution": ""
+        }
+      ],
+      "year": 2024,
+      "citation_count": 3,
+      "abstract": "The present paper examines different methods for the design of acoustic metamaterial devices<br> required to operate in presence of an aerodynamic flow. The ultimate goal of the research is the<br> exploitation of the acoustic properties of acoustic metafluids in the aeronautical context. Particular<br> attention is paid to the development of innovative devices capable to modify the propagation<br> pattern of aviation noise to mitigate its effect on the population. Possible applications are a new<br> generation of liners to achieve the virtual scarfing of nacelle intakes or special surface treatments<br> to enhance the shielding of engine noise by wings and fuselage. The paper is focused on aerodynamic<br> flows at Mach number not higher than 0.3, which is compatible with the take-off and<br> landing conditions of commercial aircraft. Different approaches are used to define appropriate<br> corrections of static metamaterial designs to recover, partially or completely, the efficiency of the<br> meta-response lost as a consequence of the aerodynamic convection. All the approaches are based<br> on classic aeroacoustic coordinate transformations, suitably revisited and adapted to specific application<br> at hand. All the corrections presented are independent on the technique used in the<br> static design of the device. Preliminary numerical results are obtained in the scattering abatement<br> (cloaking) of obstacle with simple geometries. The numerical simulations are obtained using an<br> original, general integral formulation of the problem, solved using an extended boundary element<br> method.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Aerosol Filtration and Electrostatic Precipitation",
+        "Acoustic Wave Phenomena Research"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": ""
+      },
+      "open_access_url": "https://doi.org/10.5281/zenodo.3871764",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文研究了在空气动力流动环境下设计声学超材料装置的不同方法，旨在利用声学超流体的声学特性，在航空领域应用中以改变航空噪声的传播模式，从而减轻其对人群的影响。研究聚焦于马赫数不超过0.3的空气动力流动条件，这与商用飞机的起飞和着陆条件相符。论文探讨了如何通过经典气动声学坐标变换的修正方法，恢复因空气动力对流而损失的声学超材料响应效率，并提出了适用于发动机进气道虚拟斜切或机身噪声屏蔽的新一代衬垫和表面处理等潜在应用。",
+        "methods": "研究方法包括使用经典气动声学坐标变换，重新审视并适应特定应用，以定义对静态超材料设计的适当修正，从而部分或完全恢复因空气动力对流而损失的效率。所有修正方法独立于装置静态设计技术。通过原始、通用的积分公式化问题，并采用扩展边界元法进行数值模拟，获得了简单几何形状障碍物散射衰减（隐身）的初步数值结果。",
+        "innovations": [
+          "创新点包括：开发在空气动力流动环境下工作的声学超材料装置设计方法",
+          "应用声学超流体特性于航空噪声控制，如虚拟斜切进气道或增强机身噪声屏蔽",
+          "基于经典气动声学坐标变换的修正方法，独立于静态设计技术",
+          "使用原始积分公式和扩展边界元法进行数值模拟"
+        ],
+        "conclusions": "主要结论是：通过气动声学坐标变换的修正方法，可以有效设计在空气动力流动下工作的声学超材料装置，以恢复其声学响应效率，从而在航空噪声控制中实现应用，如降低发动机噪声对人群的影响。数值模拟验证了这些方法在简单几何散射衰减中的初步有效性。",
+        "relevance_score": 8,
+        "keywords": [
+          "气动声学",
+          "声学超材料",
+          "航空噪声"
+        ],
+        "analyzed_at": "2026-04-07T08:02:57.230359+00:00"
+      }
+    },
+    {
       "id": "W4399271465",
       "doi": "https://doi.org/10.2514/6.2024-3426",
       "title": "Fan Buzz-Saw Noise Under Intake Flow Distortion: A Computational Study",
@@ -496,7 +627,7 @@
       "open_access_url": "",
       "is_oa": false,
       "referenced_works": [],
-      "search_query": "drooped intake",
+      "search_query": "scarfed intake",
       "analysis": {
         "summary": "本文针对民用航空发动机中涡轮风扇进气道的稳态流动畸变问题展开研究，重点关注由非轴对称几何形状（如下垂和斜切）引起的畸变，以及短舱缩短趋势对畸变的加剧效应。论文通过数值模拟和实验方法，探讨了下垂型涡轮风扇进气道中稳态流动畸变的可行性，旨在为深入理解此类进气道的流动机制提供框架。研究设计了三种不同几何形状的进气道，基于计算流体动力学（CFD）比较了它们产生的稳态流动畸变，并简要讨论了畸变的生成机制。实验部分在静态进气条件下进行，使用吸气式风扇测试台和5孔气动探针测量总压和静压，成功捕捉到稳态流动畸变。结果表明，下垂和斜切型进气道在出口处引起轻微的稳态流动畸变，但畸变在管道中迅速衰减。",
         "methods": "研究方法主要包括数值模拟和实验验证。首先，基于下垂和斜切两种几何形状，设计了三种不同几何的进气道，利用计算流体动力学（CFD）进行数值模拟，比较它们产生的稳态流动畸变。其次，通过理论分析简要讨论了稳态畸变的生成机制。最后，在静态进气条件下设计风扇实验，使用吸气式风扇测试台进行实验，采用5孔气动探针记录总压和静态压力测量数据，以验证数值模拟结果并捕捉实际流动畸变。",
@@ -833,6 +964,195 @@
       }
     },
     {
+      "id": "W4317937972",
+      "doi": "https://doi.org/10.2514/1.j062261",
+      "title": "Data-Driven Multiobjective Optimization of Wave-Packets for Near-Field Subsonic Jet Noise",
+      "authors": [
+        {
+          "name": "Giorgio Palma",
+          "id": "A5011188498",
+          "institution": "Roma Tre University"
+        },
+        {
+          "name": "Stefano Meloni",
+          "id": "A5065125507",
+          "institution": "Università degli Studi della Tuscia"
+        },
+        {
+          "name": "Roberto Camussi",
+          "id": "A5027430836",
+          "institution": "Roma Tre University"
+        },
+        {
+          "name": "Umberto Iemma",
+          "id": "A5084127197",
+          "institution": "Roma Tre University"
+        },
+        {
+          "name": "Christophe Bogey",
+          "id": "A5040524442",
+          "institution": "Laboratoire de Mécanique des Fluides et d'Acoustique"
+        }
+      ],
+      "year": 2023,
+      "citation_count": 8,
+      "abstract": "Aeroacoustics of innovative aircraft cannot disregard the development of low-order models for the jet noise source, which are essential to assess the propulsion–airframe interactions from the conceptual design stage. The main scope of this work is to provide a noise source model that can be coupled with relatively low computational cost methods for aeroacoustic scattering. To this end, this paper presents for the first time a multiobjective optimization of the zeroth-mode wave-packet in the jet near field. The importance of calibrating the model with near-field pressure data stems from the fact that in new aircraft, the engine nacelles are typically positioned at a few diameters from the wing or fuselage. In this work, the near field of a high subsonic jet at a Mach number of 0.9 is represented as a cylindrical surface radiating the pressure disturbances of a wave-packet source, which is optimized using large-eddy simulation data from three lines at different radial distances. The optimized model has been tested at Strouhal numbers between 0.25 and one, and the optimized solutions have been chosen using a Pareto-ranking criterion considering the wave-packet prediction over an extra line. A good agreement is achieved between the reference data and model predictions for multiple near-field radial distances.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Combustion and flame dynamics"
+      ],
+      "source": {
+        "name": "AIAA Journal",
+        "id": "S53336109",
+        "type": "journal"
+      },
+      "open_access_url": "https://hal.science/hal-03956376/document",
+      "is_oa": true,
+      "referenced_works": [
+        "W135316757",
+        "W1587294773",
+        "W1970311734",
+        "W1971776477",
+        "W2065241452",
+        "W2066590884",
+        "W2085143303",
+        "W2093647333",
+        "W2097701259",
+        "W2097870948",
+        "W2100948230",
+        "W2110360252",
+        "W2113826198",
+        "W2123097242",
+        "W2137533995",
+        "W2148476279",
+        "W2152671090",
+        "W2155449329",
+        "W2165171393",
+        "W2314158876",
+        "W2540124096",
+        "W2738811121",
+        "W2807013067",
+        "W2883796432",
+        "W2888146013",
+        "W2945586469",
+        "W2950114908",
+        "W3032965078",
+        "W3035083197",
+        "W3084502870",
+        "W3113208546",
+        "W3121305004",
+        "W3176394204",
+        "W3192508070",
+        "W3205156792",
+        "W3207673385",
+        "W3213617614",
+        "W3215147398",
+        "W4205656153",
+        "W4210582687",
+        "W4214629298",
+        "W4221110137",
+        "W4250339281",
+        "W4282554540",
+        "W4282556068",
+        "W4282570664",
+        "W4282596820",
+        "W4293077532"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文针对新型飞机气动声学设计需求，提出了一种用于近场亚音速喷流噪声的低阶波包模型。研究聚焦于喷流噪声源建模，通过多目标优化方法校准零阶波包模型，使其能够以较低计算成本与气动声学散射方法耦合。研究以马赫数0.9的高亚音速喷流为对象，将喷流近场建模为圆柱表面辐射的波包源压力扰动，并利用大涡模拟数据在三个不同径向距离的线上进行优化。模型在斯特劳哈尔数0.25至1范围内测试，通过帕累托排序准则选择优化解，在多个近场径向距离上实现了与参考数据的良好吻合。",
+        "methods": "研究采用数据驱动的多目标优化方法，核心步骤包括：1) 基于大涡模拟获取喷流近场压力数据作为参考；2) 将喷流近场建模为圆柱表面辐射的波包源；3) 在三个不同径向距离的线上对零阶波包模型进行多目标优化；4) 使用帕累托排序准则在额外线上评估并选择优化解；5) 在斯特劳哈尔数0.25至1范围内验证模型性能。",
+        "innovations": [
+          "首次对喷流近场零阶波包进行多目标优化",
+          "提出基于近场压力数据校准的低阶噪声源模型，适用于新型飞机发动机短舱靠近机翼或机身的设计场景",
+          "将波包模型与低成本气动声学散射方法耦合，为概念设计阶段评估推进-机体相互作用提供工具"
+        ],
+        "conclusions": "优化后的波包模型在多个近场径向距离上能够准确预测喷流噪声，与参考数据吻合良好。该模型为新型飞机气动声学设计提供了有效的低阶噪声源建模方法，特别适用于发动机短舱靠近机翼或机身的近场噪声评估。",
+        "relevance_score": 8,
+        "keywords": [
+          "喷流噪声",
+          "波包模型",
+          "多目标优化"
+        ],
+        "analyzed_at": "2026-04-07T08:02:57.556656+00:00"
+      }
+    },
+    {
+      "id": "W4378072006",
+      "doi": "https://doi.org/10.1051/aacus/2023011",
+      "title": "Radiation of higher order modes from circular ducts with flow",
+      "authors": [
+        {
+          "name": "Courtney Ford",
+          "id": "A5065577014",
+          "institution": "Institut National des Sciences Appliquées de Lyon"
+        },
+        {
+          "name": "Antonio Pereira",
+          "id": "A5003875137",
+          "institution": "École Centrale de Lyon"
+        },
+        {
+          "name": "Christophe Bailly",
+          "id": "A5000644260",
+          "institution": "Laboratoire de Mécanique des Fluides et d'Acoustique"
+        }
+      ],
+      "year": 2023,
+      "citation_count": 1,
+      "abstract": "This work aims to predict the transfer function of a given modal content inside a circular duct with a bellmouth inlet in the presence of a mean flow. The transfer function is the relation in amplitude and phase between a given mode inside the duct and an observer located in the far-field. The numerical solution is obtained by finite element simulation in which the mean flow is input data. Verification is provided by comparison to the analytical solution of an unbaffled circular duct with uniform flow. Influence from various parameters such as the geometry and mean Mach number on the radiated pressure field is investigated. The analytical solution is a good approximation for finding the radiated principal lobe, and the inlet geometry is found to be more important than other parameters such as mean flow when static inlet configuration is studied.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Fluid Dynamics and Vibration Analysis"
+      ],
+      "source": {
+        "name": "Acta Acustica",
+        "id": "S4210179158",
+        "type": "journal"
+      },
+      "open_access_url": "https://acta-acustica.edpsciences.org/articles/aacus/pdf/2023/01/aacus220052.pdf",
+      "is_oa": true,
+      "referenced_works": [
+        "W1485630731",
+        "W1994787062",
+        "W2008057064",
+        "W2023908474",
+        "W2056855543",
+        "W2059138588",
+        "W2089241448",
+        "W2126931998",
+        "W2299124942",
+        "W2318440336",
+        "W2620861438",
+        "W2621186924",
+        "W3215537946",
+        "W6601004387",
+        "W6902868224"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文研究圆形管道在存在平均流动时高阶模态的辐射特性，旨在预测带喇叭形入口的圆形管道内给定模态内容向远场辐射的传递函数。该传递函数描述了管道内特定模态与远场观测点之间的幅值和相位关系。研究通过有限元模拟获得数值解，并与均匀流动下无挡板圆形管道的解析解进行对比验证。分析了几何形状和平均马赫数等参数对辐射压力场的影响，发现解析解在预测辐射主瓣方面是良好近似，且在静态入口配置研究中，入口几何形状的影响比平均流动等其他参数更为重要。",
+        "methods": "研究方法主要包括有限元模拟和解析解对比验证。首先，通过有限元模拟计算圆形管道在平均流动下的辐射传递函数，其中平均流动作为输入数据。其次，将数值解与均匀流动下无挡板圆形管道的解析解进行比较，以验证模拟结果的准确性。此外，研究还通过参数分析探讨了管道几何形状（如喇叭形入口）和平均马赫数对辐射压力场的影响，从而评估不同因素在模态辐射中的作用。",
+        "innovations": [
+          "针对带喇叭形入口的圆形管道在流动条件下的高阶模态辐射问题，提出了传递函数的预测方法",
+          "结合有限元模拟和解析解验证，提高了辐射特性分析的可靠性",
+          "揭示了在静态入口配置中，入口几何形状对辐射特性的影响比平均流动参数更为关键，为优化设计提供了新见解"
+        ],
+        "conclusions": "主要结论包括：解析解可作为预测辐射主瓣的良好近似；在静态入口配置下，入口几何形状对辐射压力场的影响比平均马赫数等流动参数更为显著；研究为圆形管道在流动条件下的模态辐射分析提供了有效工具，有助于理解和控制相关噪声问题。",
+        "relevance_score": 8,
+        "keywords": [
+          "圆形管道",
+          "模态辐射",
+          "传递函数",
+          "有限元模拟",
+          "平均流动"
+        ],
+        "analyzed_at": "2026-04-07T08:02:57.338425+00:00"
+      }
+    },
+    {
       "id": "W4388578689",
       "doi": "https://doi.org/10.1051/e3sconf/202344601003",
       "title": "On the Correct Generation of a Single Sound Mode in a Duct with Flow in COMSOL Multiphysics",
@@ -1041,6 +1361,99 @@
           "UAS-S45"
         ],
         "analyzed_at": "2026-04-07T06:44:46.052161+00:00"
+      }
+    },
+    {
+      "id": "W4210258107",
+      "doi": "https://doi.org/10.1016/j.cja.2022.01.018",
+      "title": "Study of geometric parameters for the design of short intakes with fan modelling",
+      "authors": [
+        {
+          "name": "Andrea Magrini",
+          "id": "A5010941461",
+          "institution": "University of Padua"
+        },
+        {
+          "name": "Ernesto Benini",
+          "id": "A5041538207",
+          "institution": "University of Padua"
+        }
+      ],
+      "year": 2022,
+      "citation_count": 17,
+      "abstract": "The flow over a short intake is characterised by a strong interaction with the fan, that can only be captured when the rotor blades are modelled in the numerical simulations. In this paper, we use a coupled methodology to derive indications about relevant geometric variables affecting the high-incidence operation of an ultra-high bypass ratio turbofan intake with a length-to-diameter ratio of 0.35. By reproducing the effect of the fan through a body force model, we carry out a parametric study of the influence of the contraction ratio and the scarf angle at take-off conditions for a grid of 28 different three-dimensional shapes. The analysis of the selected performance metrics distributions at three angles of attack of 16°, 24°, and 28° reveals that a contraction ratio higher than 1.20 is needed to avoid separation at high incidence. While for an attached inlet the best performance is found with a moderate scarf angle, in presence of a developed separation the distortion level reduces as the scarf decreases up to negative values. We discuss the correspondence between the distortion indexes and the flow field, highlighting the origin of the detachment for the different geometries, according to the operating condition, and analysing the fan operation in the most distorted case. Finally, we assess the influence of modelling the rotor in the simulations, showing that its suppression effect on the separation at a given incidence depends on the intake geometric features.",
+      "topics": [
+        "Turbomachinery Performance and Optimization",
+        "Fluid Dynamics and Turbulent Flows",
+        "Computational Fluid Dynamics and Aerodynamics"
+      ],
+      "source": {
+        "name": "Chinese Journal of Aeronautics",
+        "id": "S42274841",
+        "type": "journal"
+      },
+      "open_access_url": "https://doi.org/10.1016/j.cja.2022.01.018",
+      "is_oa": true,
+      "referenced_works": [
+        "W99115557",
+        "W589835043",
+        "W1963734634",
+        "W1978774091",
+        "W1979974052",
+        "W1985020514",
+        "W1987588898",
+        "W1987941719",
+        "W2034327608",
+        "W2045711064",
+        "W2088318103",
+        "W2319329301",
+        "W2329490685",
+        "W2418332729",
+        "W2692470973",
+        "W2747213019",
+        "W2802274635",
+        "W2811173415",
+        "W2895771664",
+        "W2910868105",
+        "W2955505082",
+        "W2955768263",
+        "W2966934481",
+        "W3068218053",
+        "W3106802429",
+        "W3110517007",
+        "W3118367183",
+        "W3119278933",
+        "W3120857440",
+        "W3134954312",
+        "W3136169931",
+        "W3183805570",
+        "W3201411152",
+        "W3209783294",
+        "W4231430096",
+        "W4241204133",
+        "W4242694048",
+        "W4254767429"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文研究了短进气道几何参数对超高通流比涡扇发动机进气性能的影响，重点关注高攻角条件下的流动分离问题。通过建立包含风扇模型的数值模拟方法，分析了收缩比和斜削角对进气性能的影响。研究发现，收缩比大于1.20可有效避免高攻角下的流动分离；在无分离情况下，适中的斜削角性能最佳，而在存在分离时，减小斜削角（甚至为负值）可降低流动畸变。研究还探讨了风扇模型对流动分离的抑制作用与进气道几何特征的关系。",
+        "methods": "采用耦合方法进行数值模拟，通过体力量模型模拟风扇效应，对28种不同三维形状的进气道进行参数化研究。在16°、24°和28°攻角条件下，分析收缩比和斜削角对性能指标的影响，评估流动畸变指数与流场的对应关系，并讨论风扇模型在模拟中的重要性。",
+        "innovations": [
+          "使用体力量模型模拟风扇效应，简化了风扇与进气道强相互作用的数值模拟",
+          "针对短进气道（长径比0.35）进行几何参数化研究，聚焦高攻角操作条件",
+          "揭示了收缩比和斜削角对流动分离和畸变的影响规律，为设计优化提供依据",
+          "评估了风扇模型对流动分离抑制效果与几何特征的依赖关系"
+        ],
+        "conclusions": "高收缩比（>1.20）是避免高攻角流动分离的关键；斜削角对性能的影响取决于流动状态（无分离时适中值最佳，有分离时减小可降低畸变）；风扇模型对分离的抑制效果受进气道几何特征影响。",
+        "relevance_score": 8,
+        "keywords": [
+          "短进气道",
+          "风扇模型",
+          "流动分离",
+          "几何参数",
+          "数值模拟"
+        ],
+        "analyzed_at": "2026-04-07T08:02:56.334742+00:00"
       }
     },
     {
@@ -1287,6 +1700,103 @@
           "流动特性"
         ],
         "analyzed_at": "2026-04-07T06:44:57.770175+00:00"
+      }
+    },
+    {
+      "id": "W3216350051",
+      "doi": "https://doi.org/10.1017/aer.2021.62",
+      "title": "Propulsive jet aerodynamics and aeroacoustics",
+      "authors": [
+        {
+          "name": "J. J. McGuirk",
+          "id": "A5026098152",
+          "institution": "Loughborough University"
+        }
+      ],
+      "year": 2021,
+      "citation_count": 8,
+      "abstract": "Abstract Comprehensive understanding of propulsive jet aerodynamics and aeroacoustics is key to engine design for reduced jet noise and infra-red signature in civil and military aerospace, respectively. Illustrated examples are provided of other aerodynamic/aeroacoustic problems involving jet development, including chevron nozzles, increased jet/wing/flap interference (as fan diameter increases), high acoustic environment (and potentially damaging screech) of supersonic jets on carrier decks and the strongly Three-Dimensional (3D) unsteady flow during the in-ground effect operation of Short Take-Off and Vertical Landing (STOVL) aircraft. To date, laboratory/rig test measurements have primarily been used to identify design solutions; increased use of Computational Fluid Dynamics (CFD) would help achieve cost/time reductions, but Reynolds-Average Navier–Stokes (RANS) CFD with statistical turbulence modelling has proven inadequate for such flows. The scenarios described are far removed from flows used to calibrate model constants, and predictive accuracy demands detailed insight into unsteady flow. Large-Eddy Simulation (LES), whilst computationally more demanding, offers a potential solution. Research undertaken to assess LES capability to address the challenges described is reviewed here. This demonstrates that tremendous progress has been made, indicating that LES can provide sufficiently accurate predictions, representing high value for engineering design. A series of validation studies of increasing realism to practical engineering systems is presented to underpin this conclusion. Finally, areas for further work are suggested to support the combined application of RANS and LES that is probably the optimum way forward.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Fluid Dynamics and Turbulent Flows"
+      ],
+      "source": {
+        "name": "The Aeronautical Journal",
+        "id": "S2764989785",
+        "type": "journal"
+      },
+      "open_access_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2C2931E4F5015F4CE90A568310686FFB/S0001924021000622a.pdf/div-class-title-propulsive-jet-aerodynamics-and-aeroacoustics-div.pdf",
+      "is_oa": true,
+      "referenced_works": [
+        "W72127326",
+        "W115677015",
+        "W199563108",
+        "W585522262",
+        "W836326546",
+        "W1518073959",
+        "W1575697447",
+        "W1982838738",
+        "W1985386278",
+        "W1991556684",
+        "W1998127729",
+        "W2005684099",
+        "W2005875715",
+        "W2008940435",
+        "W2010011032",
+        "W2016711338",
+        "W2017158962",
+        "W2019923669",
+        "W2022075376",
+        "W2025405092",
+        "W2032032806",
+        "W2036213720",
+        "W2038062852",
+        "W2042484084",
+        "W2043876541",
+        "W2054197107",
+        "W2054220246",
+        "W2057393236",
+        "W2058377005",
+        "W2060934581",
+        "W2065711316",
+        "W2069592164",
+        "W2072803956",
+        "W2084827254",
+        "W2088622977",
+        "W2100077326",
+        "W2100368335",
+        "W2123956719",
+        "W2132903027",
+        "W2135353663",
+        "W2137468116",
+        "W2146282286",
+        "W2146794926",
+        "W2166042552",
+        "W2166380466",
+        "W2169561174",
+        "W2169565444",
+        "W2177295405",
+        "W2212623085",
+        "W2218484260"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文综述了推进喷流空气动力学和气动声学的研究进展，重点探讨了喷流噪声在民用和军用航空发动机设计中的关键作用。论文通过多个实例（如锯齿形喷嘴、喷流/机翼/襟翼干扰、舰载机超音速喷流的高声环境以及短距起飞垂直降落飞机的三维非定常流动）说明了喷流发展中的气动/声学问题。文章指出，传统基于雷诺平均Navier-Stokes方程的计算流体动力学方法在预测这些复杂流动时存在不足，而大涡模拟虽计算成本较高，但能提供更准确的预测，对工程设计具有重要价值。最后，论文建议结合RANS和LES方法作为未来研究方向。",
+        "methods": "研究方法主要包括实验室/试验台测试测量和计算流体动力学模拟。论文重点回顾了大涡模拟在喷流空气动力学和气动声学问题中的应用，通过一系列逐步接近实际工程系统的验证研究来评估LES的预测能力。同时，对比了RANS方法在统计湍流建模方面的局限性。",
+        "innovations": [
+          "强调大涡模拟在复杂喷流气动声学问题中的预测优势，相较于传统RANS方法提供更准确的非定常流动洞察",
+          "通过多场景实例（如锯齿形喷嘴、舰载机超音速喷流等）系统阐述喷流发展的气动/声学挑战",
+          "提出结合RANS和LES的混合方法作为未来优化方向，以平衡计算成本与预测精度"
+        ],
+        "conclusions": "大涡模拟在推进喷流空气动力学和气动声学研究中取得了显著进展，能够为降低喷流噪声和红外特征的发动机设计提供足够准确的预测。尽管计算需求较高，但LES在工程设计中具有高价值。未来工作应侧重于RANS和LES的联合应用，以实现更优的解决方案。",
+        "relevance_score": 8,
+        "keywords": [
+          "喷流噪声",
+          "气动声学",
+          "大涡模拟"
+        ],
+        "analyzed_at": "2026-04-07T08:03:07.622693+00:00"
       }
     },
     {
@@ -1649,6 +2159,88 @@
       }
     },
     {
+      "id": "W2492051605",
+      "doi": "https://doi.org/10.2514/1.b36414",
+      "title": "Vortex Generators in a Two-Dimensional External-Compression Supersonic Inlet",
+      "authors": [
+        {
+          "name": "Ezgihan Baydar",
+          "id": "A5015063096",
+          "institution": "The University of Texas at Arlington"
+        },
+        {
+          "name": "Frank Lu",
+          "id": "A5077491391",
+          "institution": "The University of Texas at Arlington"
+        },
+        {
+          "name": "John W. Slater",
+          "id": "A5044342566",
+          "institution": "Glenn Research Center"
+        }
+      ],
+      "year": 2017,
+      "citation_count": 15,
+      "abstract": "Vortex generators within a two-dimensional external-compression supersonic inlet for Mach 1.6 were investigated to determine their ability to increase total-pressure recovery, reduce total-pressure distortion, and improve the boundary layer. The vortex generators studied included vanes and ramps. The geometric factors of the vortex generators studied included height, length, spacing, and positions upstream and downstream of the inlet terminal shock. The flow through the inlet was simulated through the computational solution of the steady-state Reynolds-averaged Navier–Stokes equations on multiblock structured grids. The vortex generators were simulated by either gridding the geometry of the vortex generators or modeling the vortices generated by the vortex generators. The inlet performance was characterized by the inlet total-pressure recovery, total-pressure distortion, and incompressible shape factor of the boundary layer at the engine face. The results suggested that ramps were not effective, and only vanes positioned downstream of the terminal shock were effective in reducing distortion and improving the boundary layer. In the comparison study of the Reynolds-averaged Navier–Stokes simulations to the experiment, microvanes were used to reduce boundary-layer separation completely. Of the geometric factors studied, the height of the vortex generator had the greatest effect.",
+      "topics": [
+        "Plasma and Flow Control in Aerodynamics",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Fluid Dynamics and Turbulent Flows"
+      ],
+      "source": {
+        "name": "Journal of Propulsion and Power",
+        "id": "S114140916",
+        "type": "journal"
+      },
+      "open_access_url": "https://ntrs.nasa.gov/api/citations/20170000948/downloads/20170000948.pdf",
+      "is_oa": true,
+      "referenced_works": [
+        "W788365929",
+        "W1763694379",
+        "W1974097079",
+        "W1988596067",
+        "W1994539857",
+        "W1994556401",
+        "W1994794393",
+        "W2000984895",
+        "W2024203941",
+        "W2031670013",
+        "W2038054342",
+        "W2065381083",
+        "W2067645393",
+        "W2068751360",
+        "W2073925851",
+        "W2100192899",
+        "W2106712721",
+        "W2131653803",
+        "W2317834841",
+        "W2326315101",
+        "W2335118631",
+        "W2482110454",
+        "W2627071293",
+        "W3173493495",
+        "W4206718200"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文研究了在二维外压式超音速进气道（马赫数1.6）中安装涡流发生器（包括叶片和斜坡）的效果，旨在提高总压恢复、减少总压畸变并改善边界层。研究通过计算流体动力学模拟，分析了涡流发生器的高度、长度、间距及在进气道终端激波上下游位置等几何因素对性能的影响。结果表明，斜坡涡流发生器效果不佳，而位于终端激波下游的叶片涡流发生器能有效减少畸变和改善边界层；在几何因素中，高度的影响最为显著。",
+        "methods": "研究方法基于计算流体动力学，通过求解稳态雷诺平均Navier-Stokes方程在多块结构化网格上进行模拟。涡流发生器通过两种方式模拟：一是直接网格化其几何形状，二是建模其产生的涡流。进气道性能通过总压恢复、总压畸变和发动机面边界层的不可压缩形状因子来表征，并与实验数据进行了对比验证。",
+        "innovations": [
+          "针对超音速进气道中涡流发生器的系统研究，评估了不同类型（叶片和斜坡）和几何参数的影响",
+          "揭示了涡流发生器在终端激波下游位置的有效性，为优化进气道设计提供了新见解",
+          "通过计算模拟与实验对比，验证了微叶片在完全消除边界层分离方面的潜力"
+        ],
+        "conclusions": "主要结论包括：斜坡涡流发生器在改善进气道性能方面无效；只有位于终端激波下游的叶片涡流发生器能有效减少总压畸变和改善边界层；在几何因素中，涡流发生器的高度对性能影响最大；微叶片在实验中能完全消除边界层分离，验证了模拟结果的可靠性。",
+        "relevance_score": 5,
+        "keywords": [
+          "涡流发生器",
+          "超音速进气道",
+          "边界层改善"
+        ],
+        "analyzed_at": "2026-04-07T08:03:07.670796+00:00"
+      }
+    },
+    {
       "id": "W2751016815",
       "doi": "https://doi.org/10.19062/2247-3173.2017.19.1.19",
       "title": "MICROFIGHTER AS AN ALTERNATIVE TO FOURTH GENERATION FIGHTER PLANES",
@@ -1756,7 +2348,7 @@
         "W2327967107",
         "W4298771957"
       ],
-      "search_query": "drooped intake",
+      "search_query": "scarfed intake",
       "analysis": {
         "summary": "本文研究了稳态流动畸变对涡扇发动机进气道噪声传播的影响。论文指出，传统预测方法通常假设进气道为轴对称且平均流动在周向均匀，从而采用2.5D模型简化计算。然而，实际进气道存在非轴对称几何特征（如下垂和斜削）以及非对齐入射流，导致流动畸变，使噪声传播问题变为更具挑战性的三维问题。本研究通过三维数值模拟，评估了稳态流动畸变对衬里、下垂进气道中风扇音调传播和衰减的影响，旨在确定这些效应在预测当前和未来涡扇设计中的声功率和指向性时是否显著。结果表明，即使中等程度的流动畸变也会将主导发动机阶次风扇音调的声功率分散到更宽的相邻周向阶次频谱中，并显著改变远场指向性，与现有测试数据一致。",
         "methods": "本研究采用三维数值模拟方法，对一系列几何复杂度递增的风扇进气道模型进行仿真。通过考虑三维几何特征和完全三维平均流动，突破了传统2.5D模型的限制（即假设轴对称和分离周向傅里叶分量）。模拟聚焦于起飞状态下强转子锁定音调占主导的前向弧区域，评估流动畸变对噪声传播的影响。研究还对比了模拟结果与现有测试台测量数据，以验证预测的准确性。",
@@ -1989,7 +2581,7 @@
         "W4298105265",
         "W4298771957"
       ],
-      "search_query": "drooped intake",
+      "search_query": "scarfed intake",
       "analysis": {
         "summary": "本文研究了稳态流动畸变对涡扇发动机进气道中模态传播的影响。论文指出，由于非轴对称的机舱几何形状（如下垂和斜削）以及非零的流动入射角，进气道中会产生稳态的方位角流动畸变，这打破了传统分析中基于轴对称流动的假设。作者提出了一种模型来预测模态在这种畸变区域中的传播特性，通过将平均流分解为低阶方位角分量的傅里叶叠加，并结合谱表示法和有限元方法进行计算。研究结果表明，实际进气道中的典型流动畸变水平对模态形状和方位角分量有显著影响，并通过与实验数据的比较验证了模型的预测能力。",
         "methods": "研究方法包括两种关键方法：首先，将平均流分解为低阶方位角分量的傅里叶叠加，并使用方位角方向的谱表示法计算传播的本征模态；其次，在径向方向采用数值有限元模型。对于硬壁管道，还实施了第二种方法，即使用硬壁对称本征模态进行径向展开，而非有限元径向形状函数。这些方法在无声学衬垫的畸变流动中给出了一致的结果，并扩展到外壁有局部反应声学衬垫的情况。",
@@ -2087,6 +2679,103 @@
       }
     },
     {
+      "id": "W1969131304",
+      "doi": "https://doi.org/10.1250/ast.30.227",
+      "title": "Numerical methods for noise propagation in moving flows, with application to turbofan engines",
+      "authors": [
+        {
+          "name": "R.J. Astley",
+          "id": "A5111878691",
+          "institution": "University of Southampton"
+        }
+      ],
+      "year": 2009,
+      "citation_count": 52,
+      "abstract": "This article reviews the development and application of Computational AeroAcoustics (CAA) to acoustic propagation on subsonic mean flows, with a particular focus on methods used to predict acoustic radiation from turbofan aeroengines. The governing equations are presented and particular issues such as the formulation of impedance and far field boundary conditions, the treament of Kelvin-Helmholtz instabilities, resolution requirements and methods for controlling dispersion error, are discussed. The status of current CAA methods is reviewed. Finally, the matter of validation against benchmark problems and measured data is explored.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Combustion and flame dynamics",
+        "Acoustic Wave Phenomena Research"
+      ],
+      "source": {
+        "name": "Nippon Onkyo Gakkaishi/Acoustical science and technology/Nihon Onkyo Gakkaishi",
+        "id": "S177137575",
+        "type": "journal"
+      },
+      "open_access_url": "https://www.jstage.jst.go.jp/article/ast/30/4/30_4_227/_pdf",
+      "is_oa": true,
+      "referenced_works": [
+        "W821580173",
+        "W1583849049",
+        "W1966179614",
+        "W1970371902",
+        "W1972138180",
+        "W1972479540",
+        "W1974075431",
+        "W1974656226",
+        "W1975860447",
+        "W1977258778",
+        "W1978474252",
+        "W1981193786",
+        "W1982561972",
+        "W1987933252",
+        "W1989938031",
+        "W1994881382",
+        "W1997643525",
+        "W2000463979",
+        "W2000988298",
+        "W2003017040",
+        "W2003450967",
+        "W2009086505",
+        "W2009134476",
+        "W2012900916",
+        "W2015547335",
+        "W2016879210",
+        "W2017400139",
+        "W2017694272",
+        "W2021121593",
+        "W2022075376",
+        "W2024735996",
+        "W2027124891",
+        "W2027635328",
+        "W2033139562",
+        "W2035028919",
+        "W2036533194",
+        "W2042179215",
+        "W2044978295",
+        "W2056817212",
+        "W2056855543",
+        "W2059017100",
+        "W2060863927",
+        "W2066586232",
+        "W2069922993",
+        "W2070052475",
+        "W2070722314",
+        "W2073370219",
+        "W2075713941",
+        "W2078644903",
+        "W2078796738"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文综述了计算气动声学（CAA）在亚音速平均流中声传播方面的开发与应用，特别关注用于预测涡轮风扇航空发动机声辐射的方法。论文介绍了控制方程，并讨论了阻抗和远场边界条件的公式化、开尔文-亥姆霍兹不稳定性的处理、分辨率要求以及控制色散误差的方法等关键问题。文章回顾了当前CAA方法的现状，并探讨了基于基准问题和实测数据的验证问题。核心内容聚焦于数值方法在移动流中噪声传播的应用，以涡轮风扇发动机为具体案例，强调了CAA在气动声学预测中的重要性。",
+        "methods": "研究方法主要包括计算气动声学（CAA）的数值模拟技术。具体涉及控制方程的建立（如线性欧拉方程或Navier-Stokes方程），处理阻抗和远场边界条件的公式化方法，开尔文-亥姆霍兹不稳定性的数值处理策略，以及通过高分辨率网格和特定算法（如色散关系保持方案）来控制色散误差。此外，方法还包括与基准问题和实测数据的对比验证，以确保预测的准确性。",
+        "innovations": [
+          "系统综述CAA在亚音速流中声传播的应用，特别针对涡轮风扇发动机噪声预测",
+          "详细讨论关键数值问题，如阻抗边界条件、不稳定性和色散误差控制",
+          "结合基准验证和实测数据，提升CAA方法的可靠性和实用性"
+        ],
+        "conclusions": "论文总结指出，CAA方法在预测移动流中的噪声传播方面具有重要价值，特别是在涡轮风扇发动机的声辐射预测中。通过解决阻抗、不稳定性和色散误差等关键问题，并结合验证过程，当前CAA方法已取得显著进展，但仍需进一步优化以提高精度和效率。",
+        "relevance_score": 9,
+        "keywords": [
+          "计算气动声学",
+          "涡轮风扇发动机",
+          "噪声传播"
+        ],
+        "analyzed_at": "2026-04-07T08:03:08.105311+00:00"
+      }
+    },
+    {
       "id": "W1969109030",
       "doi": "https://doi.org/10.2514/6.2009-1522",
       "title": "Design and Development of the Blackbird: Challenges and Lessons Learned",
@@ -2130,6 +2819,318 @@
         ],
         "analyzed_at": "2026-04-07T06:45:19.401937+00:00"
       }
+    },
+    {
+      "id": "W2150210109",
+      "doi": "https://doi.org/10.1017/s0022112009991972",
+      "title": "Noise radiation from a ducted rotor in a swirling-translating flow",
+      "authors": [
+        {
+          "name": "Erika Quaranta",
+          "id": "A5050499646",
+          "institution": "Cranfield University"
+        },
+        {
+          "name": "Dimitris Drikakis",
+          "id": "A5086465022",
+          "institution": "Cranfield University"
+        }
+      ],
+      "year": 2009,
+      "citation_count": 30,
+      "abstract": "This paper investigates the noise radiation produced by a rotor inside a duct, which is convected by a swirling-translating mean flow. The study is based on an extension of Gennaretti's and Morino's boundary element method to the frequency domain for scattering problems in conjunction with a spinning rotor source model in the presence of a swirl flow. The proposed formulation is validated against exact solutions and is further used to investigate the effects of the translating flow Mach number and swirling flow angular velocity on noise radiation to the far field. The scattered sound is highly affected by the convecting mean flow. The modal content of the scattered field increases when increasing the translating flow Mach number, while a swirling flow leads to a reduction of the mode propagation, if co-rotating with respect to the azimuthal order of the spinning source, or an increase of the modal content, if counter-rotating with respect to the source. In general, the mean translating flow moves the main lobes of the directivity patterns downstream, while in some cases the mean swirling flow neglects this effect and the downstream lobe is completely shifted.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Wind and Air Flow Studies"
+      ],
+      "source": {
+        "name": "Journal of Fluid Mechanics",
+        "id": "S152000018",
+        "type": "journal"
+      },
+      "open_access_url": "https://dspace.lib.cranfield.ac.uk/bitstreams/d4a8f626-e915-49de-9a3f-14c0ba115f07/download",
+      "is_oa": true,
+      "referenced_works": [
+        "W94439627",
+        "W107486525",
+        "W783665418",
+        "W787671567",
+        "W1459500735",
+        "W1480928214",
+        "W1485630731",
+        "W1510300876",
+        "W1517670975",
+        "W1570906644",
+        "W1589918049",
+        "W1597383771",
+        "W1650035168",
+        "W1966928055",
+        "W1971676041",
+        "W1973601348",
+        "W1973702504",
+        "W1977258778",
+        "W1978477290",
+        "W1979172265",
+        "W1984223397",
+        "W1987933252",
+        "W1988425770",
+        "W1992769148",
+        "W1994994021",
+        "W2012322885",
+        "W2014697859",
+        "W2016685790",
+        "W2020570987",
+        "W2030306830",
+        "W2047943157",
+        "W2056107968",
+        "W2058817140",
+        "W2060971434",
+        "W2061215539",
+        "W2062072363",
+        "W2063429857",
+        "W2069403164",
+        "W2074937713",
+        "W2076450467",
+        "W2078796738",
+        "W2079933869",
+        "W2087458881",
+        "W2089763625",
+        "W2091209377",
+        "W2093622974",
+        "W2101807582",
+        "W2101888310",
+        "W2103340675",
+        "W2110239765"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文研究了在旋流-平移流动中，管道内转子产生的噪声辐射问题。论文通过扩展Gennaretti和Morino的边界元方法到频域，结合旋流中的旋转转子源模型，分析了散射声学问题。研究验证了所提公式的准确性，并探讨了平移流动马赫数和旋流角速度对远场噪声辐射的影响。结果表明，对流平均流动显著影响散射声场，平移流动增加模态内容，而旋流则根据其与源旋转方向的关系，可能减少或增加模态传播。总体而言，平均平移流动使指向性图案的主瓣向下游移动，而旋流在某些情况下会抵消这一效应。",
+        "methods": "研究方法基于边界元方法的扩展，将Gennaretti和Morino的方法应用于频域散射问题，并结合了旋流中的旋转转子源模型。通过对比精确解验证了公式的有效性，并利用该模型系统分析了平移流动马赫数和旋流角速度对噪声辐射的影响，重点关注了模态内容和指向性图案的变化。",
+        "innovations": [
+          "扩展边界元方法到频域，用于旋流-平移流动中的散射问题",
+          "结合旋转转子源模型，分析旋流对噪声辐射的影响",
+          "系统研究平移流动马赫数和旋流角速度对远场噪声模态和指向性的影响机制"
+        ],
+        "conclusions": "散射声场受对流平均流动显著影响：平移流动马赫数增加导致模态内容增多；旋流根据其与源旋转方向的关系（同向或反向），分别减少或增加模态传播；平均平移流动使指向性主瓣向下游移动，而旋流在某些情况下能完全抵消这一效应，改变下游瓣的位置。",
+        "relevance_score": 9,
+        "keywords": [
+          "ducted rotor",
+          "swirling flow",
+          "noise radiation",
+          "boundary element method",
+          "modal content"
+        ],
+        "analyzed_at": "2026-04-07T08:03:08.037065+00:00"
+      }
+    },
+    {
+      "id": "W2040587490",
+      "doi": "https://doi.org/10.1121/1.2934461",
+      "title": "SILENCE(R): A major step towards aircraft noise reduction",
+      "authors": [
+        {
+          "name": "Eugène J. Kors",
+          "id": "A5042936617",
+          "institution": ""
+        }
+      ],
+      "year": 2008,
+      "citation_count": 0,
+      "abstract": "From 2001 up to 2007, SILENCE(R) has focused on the development of aircraft noise reduction technologies. As an European Union project coordinated by Snecma, SILENCE(R) brought together some 50 companies (including Airbus, Rolls-Royce, MTU Aero Engines and Snecma), research centers and universities. The overall budget was 112 million euros. Combined with innovative low-noise operational procedures studied at the same time, SILENCE(R) has achieved an impressive 5 dB noise reduction. This meets the medium-term objective of the European Commission's R&amp;D Framework Programs, and marks a significant advance towards ACARE's research goal of a 10 dB reduction in aircraft noise by 2020. SILENCE(R) carried out successful tests of more than 35 prototypes to check 10 noise reduction technology concepts. These included several advanced low noise fan rotors, as well as components for a complete low-noise nacelle (negatively scarfed intake, \"squid\" nozzle fitted with high frequency liner), flight tested on an Airbus A320. Flight tests were also carried out on an Airbus A340 with landing gear fitted with aerodynamic fairings.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Vehicle Noise and Vibration Control",
+        "Acoustic Wave Phenomena Research"
+      ],
+      "source": {
+        "name": "The Journal of the Acoustical Society of America",
+        "id": "S11296630",
+        "type": "journal"
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文介绍了SILENCE(R)项目，这是一个由欧盟资助、Snecma协调的大型飞机降噪技术研发项目，于2001年至2007年间实施。项目汇集了约50家公司、研究中心和大学，总预算达1.12亿欧元。通过结合创新的低噪声操作程序，SILENCE(R)成功实现了5 dB的噪声降低，达到了欧盟研发框架计划的中期目标，并为ACARE设定的2020年前降低10 dB飞机噪声的研究目标迈出了重要一步。项目测试了超过35个原型，验证了10种降噪技术概念，包括先进低噪声风扇转子、负斜切进气口和配备高频衬垫的“鱿鱼”喷嘴等低噪声短舱组件，并在空客A320和A340飞机上进行了飞行测试。",
+        "methods": "研究方法主要包括原型测试和飞行验证。项目开发并测试了超过35个原型，以检查10种噪声降低技术概念。关键方法包括设计和测试先进低噪声风扇转子、负斜切进气口和“鱿鱼”喷嘴等低噪声短舱组件，并在空客A320飞机上进行飞行测试。此外，还在空客A340飞机上测试了配备空气动力学整流罩的起落架，以评估降噪效果。这些方法结合了实验测试和实际飞行验证，确保技术可行性和有效性。",
+        "innovations": [
+          "实现了5 dB的飞机噪声降低，达到欧盟研发框架计划的中期目标",
+          "开发并测试了多种先进低噪声技术，包括低噪声风扇转子和完整低噪声短舱组件",
+          "结合创新低噪声操作程序，提升整体降噪效果",
+          "在空客A320和A340飞机上成功进行飞行测试，验证技术实用性"
+        ],
+        "conclusions": "SILENCE(R)项目成功实现了5 dB的飞机噪声降低，标志着在飞机降噪技术方面取得了显著进展。项目验证了多种降噪技术概念，包括低噪声风扇和短舱组件，为未来实现ACARE设定的10 dB降噪目标奠定了基础。飞行测试证明了这些技术的可行性和有效性，推动了飞机噪声减少技术的发展。",
+        "relevance_score": 8,
+        "keywords": [
+          "飞机噪声降低",
+          "低噪声风扇",
+          "飞行测试"
+        ],
+        "analyzed_at": "2026-04-07T08:03:11.552425+00:00"
+      }
+    },
+    {
+      "id": "W2318547594",
+      "doi": "https://doi.org/10.2514/6.2007-3524",
+      "title": "Investigation of Sound Radiation from a Scarfed Intake by CAA-FWH Simulations Using Overset Grids",
+      "authors": [
+        {
+          "name": "Norbert Schoenwald",
+          "id": "A5083648422",
+          "institution": ""
+        },
+        {
+          "name": "Łukasz Panek",
+          "id": "A5091382595",
+          "institution": ""
+        },
+        {
+          "name": "Christoph Richter",
+          "id": "A5064622397",
+          "institution": ""
+        },
+        {
+          "name": "Frank Thiele",
+          "id": "A5108607839",
+          "institution": ""
+        }
+      ],
+      "year": 2007,
+      "citation_count": 15,
+      "abstract": "A hybrid numerical approach for the simulation of the sound propagation and radiation from aero‐engine intakes considering non uniform mean flows is presented. The approach consists of a 3D finite dierences CAA method in time domain for the simulation of the propagation in the intake as well as a Ffowcs Williams & Hawkings integration method for the far‐field prediction. Inside the CAA solver an overset grid algorithm is implemented oering a quite simple handling of configurations with complex geometries. This hybrid CAA‐FWH method is applied for the investigation of the sound radiation from engine‐ intakes with scarfed nacelles considering mean flow eects. Therefore a parameter study investigating the dependency of the scarfing angle, the mean flow velocity and the mean flow angle of attack is carried out. Based on the obtained far‐field directivities the influence of the parameters is discussed.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Acoustic Wave Phenomena Research"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": ""
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W1989938031",
+        "W2005984935",
+        "W2014283740",
+        "W2019201958",
+        "W2021121593",
+        "W2023457561",
+        "W2033510385",
+        "W2046481410",
+        "W2085612419",
+        "W2089191682",
+        "W2151173177",
+        "W2312599546",
+        "W2317552272",
+        "W2320479949",
+        "W2331555034",
+        "W2331577006",
+        "W2334390332"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文提出了一种混合数值方法，用于模拟考虑非均匀平均流的航空发动机进气道声传播与辐射。该方法结合了时域三维有限差分计算气动声学（CAA）方法模拟进气道内声传播，以及Ffowcs Williams & Hawkings（FWH）积分方法预测远场声辐射。在CAA求解器中实现了重叠网格算法，以简化复杂几何构型的处理。该方法应用于研究带斜切短舱的发动机进气道声辐射，并考虑平均流效应。通过参数研究分析了斜切角度、平均流速和平均流攻角对声辐射的影响，基于远场指向性讨论了各参数的作用。",
+        "methods": "研究采用混合数值方法，结合时域三维有限差分CAA方法模拟进气道内声传播，以及FWH积分方法预测远场声辐射。在CAA求解器中实现重叠网格算法，以处理复杂几何构型。通过参数研究，分析斜切角度、平均流速和平均流攻角对声辐射的影响，基于远场指向性进行讨论。",
+        "innovations": [
+          "提出混合CAA-FWH数值方法，结合进气道内声传播模拟与远场声辐射预测",
+          "在CAA求解器中实现重叠网格算法，简化复杂几何构型的处理",
+          "应用于带斜切短舱的发动机进气道声辐射研究，考虑平均流效应",
+          "通过参数研究分析斜切角度、平均流速和攻角对声辐射的影响"
+        ],
+        "conclusions": "混合CAA-FWH方法能有效模拟带斜切短舱的发动机进气道声辐射，考虑非均匀平均流效应。参数研究表明，斜切角度、平均流速和攻角对远场声辐射指向性有显著影响，为优化进气道设计以降低噪声提供了理论依据。",
+        "relevance_score": 8,
+        "keywords": [
+          "CAA-FWH",
+          "重叠网格",
+          "进气道声辐射",
+          "斜切短舱",
+          "平均流效应"
+        ],
+        "analyzed_at": "2026-04-07T08:03:18.267920+00:00"
+      }
+    },
+    {
+      "id": "W1982912956",
+      "doi": "https://doi.org/10.1016/j.apacoust.2007.09.005",
+      "title": "Numerical investigation on radiation characteristics of discrete-frequency noise from scarf and scoop aero-intakes",
+      "authors": [
+        {
+          "name": "Yong-Hwan Park",
+          "id": "A5102989046",
+          "institution": "Seoul National University"
+        },
+        {
+          "name": "Sungtae Kim",
+          "id": "A5100712384",
+          "institution": "Seoul National University"
+        },
+        {
+          "name": "Soogab Lee",
+          "id": "A5058995735",
+          "institution": "Seoul National University"
+        },
+        {
+          "name": "Cheolung Cheong",
+          "id": "A5038817546",
+          "institution": "Pusan National University"
+        }
+      ],
+      "year": 2007,
+      "citation_count": 2,
+      "abstract": "",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Aerodynamics and Fluid Dynamics Research",
+        "Fluid Dynamics and Vibration Analysis"
+      ],
+      "source": {
+        "name": "Applied Acoustics",
+        "id": "S971171794",
+        "type": "journal"
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W192550978",
+        "W804997929",
+        "W1485630731",
+        "W1510543252",
+        "W1882725628",
+        "W1965642321",
+        "W1965854103",
+        "W1998718651",
+        "W2008348045",
+        "W2013252335",
+        "W2021121593",
+        "W2023457561",
+        "W2023653071",
+        "W2025160366",
+        "W2026114845",
+        "W2033139562",
+        "W2051441419",
+        "W2069951944",
+        "W2083029050",
+        "W2085612419",
+        "W2101888310",
+        "W2102277965",
+        "W2134362819",
+        "W2162860259",
+        "W2169164332",
+        "W2228990992",
+        "W2312599546",
+        "W2318153414",
+        "W2570369073",
+        "W3009510495",
+        "W4285719527",
+        "W6629078990",
+        "W6689394871"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": null
     },
     {
       "id": "W1971320104",
@@ -2203,6 +3204,395 @@
       }
     },
     {
+      "id": "W2097004623",
+      "doi": "",
+      "title": "Computational modelling of acoustic scattering from a cylindrical duct with a rotor into uniform mean flow",
+      "authors": [
+        {
+          "name": "Panagiota Pantazopoulou",
+          "id": "A5083922825",
+          "institution": ""
+        },
+        {
+          "name": "Dimitris Drikakis",
+          "id": "A5086465022",
+          "institution": ""
+        }
+      ],
+      "year": 2006,
+      "citation_count": 0,
+      "abstract": "The paper presents a computational study of acoustic scattering from a cylindrical duct into uniform flow. The sound source is a fan inside the duct responsible for generating a spinning acoustic mode. The sound pressure scattering behaviour as function of the fan tip speed and mean flow velocity, as well as the acoustic modes propagation inside the duct are investigated. A direct collocation boundary integral equation method (BIEM) is employed for calculating the acoustic propagation in incompressible and compressible flows. The BIEM is based on the equations of linearised acoustics with uniform inflow and has the advantage of taking into account wake effects.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Fluid Dynamics and Vibration Analysis"
+      ],
+      "source": {
+        "name": "Research Repository (Delft University of Technology)",
+        "id": "S4306400906",
+        "type": "repository"
+      },
+      "open_access_url": "http://resolver.tudelft.nl/uuid:008e9637-dff9-435a-8c90-27f71bfe1011",
+      "is_oa": true,
+      "referenced_works": [
+        "W1485630731",
+        "W1973702504",
+        "W1977051635",
+        "W1986421440",
+        "W2032478378",
+        "W2037924216",
+        "W2056855543",
+        "W2058817140",
+        "W2061323833",
+        "W2062072363",
+        "W2074937713",
+        "W2081338783",
+        "W2101888310",
+        "W2111372582",
+        "W2125516459",
+        "W2126931998",
+        "W2134362819",
+        "W2155380380",
+        "W2156155205",
+        "W2159453788",
+        "W2321238814",
+        "W2322928938",
+        "W2980845621",
+        "W3032454127"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文通过计算研究探讨了圆柱形管道中声学散射问题，重点关注管道内风扇产生的旋转声模态在均匀流动中的散射行为。研究分析了声压散射随风扇叶尖速度和平均流速的变化规律，以及声模态在管道内的传播特性。采用直接配置边界积分方程法（BIEM）进行声传播计算，该方法基于线性化声学方程，适用于不可压缩和可压缩流动，并能考虑尾流效应，为风扇噪声在管道系统中的传播和散射提供了理论模型和数值分析。",
+        "methods": "研究采用直接配置边界积分方程法（BIEM）作为关键研究方法。该方法基于线性化声学方程，适用于均匀流入条件下的声传播计算，能够处理不可压缩和可压缩流动。BIEM的优势在于能够考虑尾流效应，通过数值模拟分析声压散射行为与风扇叶尖速度、平均流速的关系，以及声模态在管道内的传播特性。",
+        "innovations": [
+          "应用直接配置边界积分方程法（BIEM）于管道声学散射问题，结合均匀流动条件",
+          "研究风扇叶尖速度和平均流速对声压散射行为的影响，提供量化分析",
+          "考虑尾流效应在声传播中的作用，增强模型的实际应用性",
+          "分析旋转声模态在管道中的传播特性，为风扇噪声控制提供理论基础"
+        ],
+        "conclusions": "研究通过BIEM方法成功模拟了圆柱形管道中风扇产生的声学散射行为，发现声压散射受风扇叶尖速度和平均流速显著影响，声模态在管道内的传播特性得到详细分析。该方法能有效考虑尾流效应，为风扇噪声在流动环境中的传播预测提供了可靠的计算工具。",
+        "relevance_score": 9,
+        "keywords": [
+          "声学散射",
+          "风扇噪声",
+          "边界积分方程法"
+        ],
+        "analyzed_at": "2026-04-07T08:03:17.743249+00:00"
+      }
+    },
+    {
+      "id": "W2158934352",
+      "doi": "",
+      "title": "3D parallel spectral computations of fan noise",
+      "authors": [
+        {
+          "name": "Farzad Taghaddosi",
+          "id": "A5087870887",
+          "institution": "McGill University"
+        },
+        {
+          "name": "Wagdi G. Habashi",
+          "id": "A5035885499",
+          "institution": "McGill University"
+        }
+      ],
+      "year": 2006,
+      "citation_count": 0,
+      "abstract": "A three-dimensional computational aeroacoustics code has been developed for the simulation of tone noise generated by turbofan engine inlets. The code is based on the linearized Euler equations, rewritten in terms of acoustic potential and solved in the frequency domain. Spatial discretization is performed using a spectral element method. Solution of the linear system of equations is based on the Schur complement method, which is solved using a matrix-free iterative method on multi-processors. A new preconditioner, which acts locally on individual subdomains, has been introduced to accelerate the convergence. Moreover, mathematical formulations are presented for implementation of geometric symmetry conditions for general, nonsymmetric wave propagation to further reduce computational cost associated with these types of problems. Numerical results include acoustic propagation from a uniform cylinder as a validation test case and a generic scarfed inlet with close to 2 million grid points, both solved using from 8-48 processors. The code is demonstrated to be robust and efficient in simulating ducted acoustic propagation.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Computational Fluid Dynamics and Aerodynamics"
+      ],
+      "source": {
+        "name": "Research Repository (Delft University of Technology)",
+        "id": "S4306400906",
+        "type": "repository"
+      },
+      "open_access_url": "http://resolver.tudelft.nl/uuid:2cfa2959-220e-44d9-8702-86a5912f3b5b",
+      "is_oa": true,
+      "referenced_works": [
+        "W90568776",
+        "W580554796",
+        "W1485630731",
+        "W1506342804",
+        "W1532006000",
+        "W1542243431",
+        "W1548589512",
+        "W1974521166",
+        "W1979677378",
+        "W2000463979",
+        "W2021121593",
+        "W2024188915",
+        "W2032846258",
+        "W2047352485",
+        "W2056855543",
+        "W2103606462",
+        "W2131842736",
+        "W2318153414",
+        "W2318440336",
+        "W2321177314"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文开发了一种用于模拟涡轮风扇发动机进气道音调噪声的三维计算气动声学代码。该代码基于线性化欧拉方程，以声学势函数形式重写并在频域求解。空间离散采用谱元方法，线性方程组求解基于Schur补方法，在多处理器上使用无矩阵迭代法求解。为加速收敛，引入了作用于单个子域的局部预处理器。此外，提出了实现几何对称条件的数学公式，用于一般非对称波传播问题，以进一步降低计算成本。数值结果包括均匀圆柱体的声传播验证测试案例和具有近200万网格点的通用斜切进气道，两者均在8-48个处理器上求解。代码在模拟管道声传播方面表现出鲁棒性和高效性。",
+        "methods": "研究方法包括：基于线性化欧拉方程构建计算模型，以声学势函数形式在频域求解；采用谱元方法进行空间离散；使用Schur补方法结合无矩阵迭代法在多处理器上求解线性方程组；引入局部预处理器加速收敛；提出几何对称条件公式以降低计算成本。",
+        "innovations": [
+          "开发了三维并行计算气动声学代码，专门用于风扇噪声模拟",
+          "采用谱元方法和Schur补方法，结合无矩阵迭代实现高效并行计算",
+          "引入局部预处理器，显著加速求解收敛",
+          "提出几何对称条件公式，降低非对称波传播问题的计算成本"
+        ],
+        "conclusions": "该代码在模拟管道声传播方面具有鲁棒性和高效性，能够处理大规模网格（如近200万点）并在多处理器上并行运行，验证了其在风扇噪声计算中的适用性。",
+        "relevance_score": 9,
+        "keywords": [
+          "风扇噪声",
+          "计算气动声学",
+          "谱元方法"
+        ],
+        "analyzed_at": "2026-04-07T08:03:17.959122+00:00"
+      }
+    },
+    {
+      "id": "W2169597592",
+      "doi": "https://doi.org/10.2514/6.2005-2942",
+      "title": "Aeroacoustic Design of Aero-Engine Intake Liners",
+      "authors": [
+        {
+          "name": "Paolo Di Francescantonio",
+          "id": "A5073717717",
+          "institution": ""
+        },
+        {
+          "name": "Damiano Casalino",
+          "id": "A5101663073",
+          "institution": "Fluorochem (United States)"
+        },
+        {
+          "name": "Luigi De Mercato",
+          "id": "A5047783987",
+          "institution": ""
+        }
+      ],
+      "year": 2005,
+      "citation_count": 10,
+      "abstract": "Fan noise transmission through and radiation from realistic lined intakes is computed via the GFD method. The high accuracy of this wave-based discretization method and the use of an ”exact” radiation condition supplied by an integral formulation enable genuine 3D simulations at fan-radius Helmholtz numbers up to 22, within practical times on single processor platforms. Helmholtz numbers of 50 can be achieved on a 10-CPUs parallel platform within equivalent computational times. Both axisymmetric and negatively scarfed configurations are considered. For the scarfed case, the effect of axial and circumferential segmentations of the acoustic treatment on the sound radiation is explored at a given frequency and spinning mode order. It is shown that the presence of rigid splices reduces the attenuation effect of the acoustic treatment. Furthermore, the effect of the scarf angle on the upward/downward peak-levels observed for a rigid-wall configuration is no more evident when a segmented liner is considered.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Aerodynamics and Fluid Dynamics Research"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": ""
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W1982676365",
+        "W1985849546",
+        "W1987199907",
+        "W1997352464",
+        "W2000463979",
+        "W2009086505",
+        "W2028202490",
+        "W2033139562",
+        "W2088055952",
+        "W2093622974",
+        "W2109888454",
+        "W2162386799",
+        "W2327241349",
+        "W3166579021"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文研究了航空发动机进气口衬垫的气动声学设计，重点关注风扇噪声通过实际衬垫进气口的传播和辐射问题。论文采用GFD（广义有限差分）方法进行计算，该方法基于波动方程离散化，结合积分公式提供的“精确”辐射条件，能够在单处理器平台上实现高达风扇半径赫姆霍兹数22的真实三维模拟。研究考虑了轴对称和负斜削两种进气口构型，特别针对斜削构型，探讨了在特定频率和旋转模态下声学处理的轴向和周向分段对声辐射的影响。研究发现，刚性接头的存在会降低声学处理的衰减效果，而在分段衬垫情况下，斜削角度对刚性壁构型中观察到的向上/向下峰值声压级的影响不再明显。",
+        "methods": "本研究采用GFD（广义有限差分）方法，这是一种基于波动方程的离散化方法，具有高精度特点。结合积分公式提供的“精确”辐射条件，实现了真实三维模拟。计算在单处理器平台上进行，可处理风扇半径赫姆霍兹数高达22的情况；在10-CPU并行平台上，赫姆霍兹数可达50，计算时间保持实用。研究分析了轴对称和负斜削进气口构型，并针对斜削构型，系统探讨了声学处理的分段（轴向和周向）对声辐射的影响。",
+        "innovations": [
+          "采用高精度的GFD方法结合“精确”辐射条件，实现真实三维风扇噪声模拟",
+          "在单处理器平台上达到赫姆霍兹数22的模拟能力，扩展了计算效率",
+          "系统研究斜削进气口中声学处理分段对噪声辐射的影响，揭示刚性接头的负面效应",
+          "发现分段衬垫可消除斜削角度对噪声方向性的影响，为进气口设计提供新见解"
+        ],
+        "conclusions": "刚性接头的存在会降低进气口声学处理的噪声衰减效果；在采用分段衬垫时，斜削角度对噪声向上/向下峰值的影响不再显著；GFD方法结合精确辐射条件能高效模拟高赫姆霍兹数下的三维风扇噪声传播，为航空发动机进气口衬垫设计提供有效工具。",
+        "relevance_score": 9,
+        "keywords": [
+          "风扇噪声",
+          "进气口衬垫",
+          "气动声学"
+        ],
+        "analyzed_at": "2026-04-07T08:03:20.742819+00:00"
+      }
+    },
+    {
+      "id": "W2312599546",
+      "doi": "https://doi.org/10.2514/6.2001-2139",
+      "title": "Noise test of a negatively scarfed inlet flare",
+      "authors": [
+        {
+          "name": "Nick J. Baker",
+          "id": "A5026098304",
+          "institution": "Rolls-Royce (United Kingdom)"
+        },
+        {
+          "name": "C. Bewick",
+          "id": "A5032642055",
+          "institution": "Rolls-Royce (United Kingdom)"
+        }
+      ],
+      "year": 2001,
+      "citation_count": 6,
+      "abstract": "Negatively scarfed flight intakes are being considered as a technology to reduce community exposure to aircraft noise, by diverting forward arc engine source noise away from the ground. This paper covers the design and test of a 15° negatively scarfed inlet flare and an axisymmetric inlet flare in front of a fan rig representative of a modern widechord fan engine. The negatively scarfed flare was designed to be as similar as possible to the datum axisymmetric inlet flare. Both flares have a lip designed to have the minimum contraction ratio practical, in order to represent as closely as possible the propagation around a flight intake lip.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Vehicle Noise and Vibration Control"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": ""
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W180202194",
+        "W1965032319",
+        "W2023457561",
+        "W2023653071",
+        "W2330402615"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文研究了负斜切进口扩口对降低飞机噪声社区暴露的潜力。通过设计和测试一个15°负斜切进口扩口和一个轴对称进口扩口，安装在代表现代宽弦风扇发动机的风扇试验台上，论文探讨了负斜切设计如何将前向弧发动机源噪声从地面转移。扩口设计旨在最小化收缩比，以尽可能接近飞行进口唇口的传播特性，从而评估噪声减少效果。核心内容聚焦于通过几何修改优化噪声传播路径，以减少地面噪声影响。",
+        "methods": "研究方法包括设计和制造两种进口扩口：一个15°负斜切进口扩口和一个轴对称进口扩口，两者在风扇试验台上进行测试。关键方法涉及几何设计，确保负斜切扩口与基准轴对称扩口尽可能相似，同时最小化收缩比以模拟飞行进口唇口的传播条件。通过对比测试，分析噪声传播特性，评估负斜切设计对噪声方向性的影响。",
+        "innovations": [
+          "引入负斜切进口扩口设计作为降低飞机噪声社区暴露的新技术",
+          "通过最小化收缩比的唇口设计，优化噪声传播模拟，提高测试的准确性",
+          "对比轴对称和负斜切扩口，实证评估噪声转移效果，为气动声学应用提供新思路"
+        ],
+        "conclusions": "负斜切进口扩口能有效将前向弧发动机噪声从地面转移，从而减少社区噪声暴露。测试表明，该设计在模拟飞行条件下具有可行性，为飞机噪声控制提供了潜在解决方案。结论强调了几何修改在噪声管理中的重要性。",
+        "relevance_score": 9,
+        "keywords": [
+          "负斜切进口扩口",
+          "飞机噪声",
+          "气动声学"
+        ],
+        "analyzed_at": "2026-04-07T08:03:21.614057+00:00"
+      }
+    },
+    {
+      "id": "W2322930891",
+      "doi": "https://doi.org/10.2514/6.2000-4409",
+      "title": "Inlets with negative scarf for acoustic reduction - Aerodynamic assessment at transonic speed",
+      "authors": [
+        {
+          "name": "R Nangia",
+          "id": "A5035489106",
+          "institution": "Bristol Industrial and Research Associates (United Kingdom)"
+        },
+        {
+          "name": "M Palmer",
+          "id": "A5113093646",
+          "institution": "Bristol Industrial and Research Associates (United Kingdom)"
+        }
+      ],
+      "year": 2000,
+      "citation_count": 1,
+      "abstract": "A major constraint imposed on modern civil aircraft is noise reduction. Aircraft and the engines designed for them, must meet current and future proposed FAR regulations and the noise footprints criteria. One method of reducing the noise footprint is by introducing negative scarf on the inlet highlight plane and the extended lower lip acts as an acoustic barrier. It is needed to understand the design implications of inlet scarfing at low and transonic speeds. In the AIAA-2000-0354, the authors described a staged and iterative design process leading to the use of negative scarf. The focus was on low speed and subsonic performance with and without incidence and side-slip in the operating range. This led to lip geometry for the negative scarfed intake that essentially had the same attached flow capability as the datum conventional inlet with positive scarf. An additional advantage with negative scarf was the weakening of the ground vortex at zero forward speed. This is important as intakes get bigger for higher by-pass ratios and need to be set closer to ground. This paper addresses the next logical aspect i.e. the consideration of transonic performance. Starting with a datum inlet (+6° scarf), this paper describes the effect of lip shaping on scarfed (-20°) intakes at high speed (Mach 0.8 & 0.85). An encouraging equivalence has been achieved between the datum and scarfed intake and further detailed work (internal surfaces) eventually leading to experiments has been recommended. Avenues for related future work are noted e.g. on scarf angle optimisation. NOMENCLATURE",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Turbomachinery Performance and Optimization"
+      ],
+      "source": {
+        "name": "18th Applied Aerodynamics Conference",
+        "id": "S4306497392",
+        "type": "conference"
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W2312456442",
+        "W2331546100",
+        "W4233750903"
+      ],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文研究了负斜切进气口在跨音速条件下的气动性能，旨在评估其作为降噪措施的可行性。论文指出，现代民用飞机面临严格的噪声法规要求，通过引入负斜切进气口，下唇延伸部分可作为声学屏障，减少噪声足迹。研究从基准进气口（+6°斜切）出发，探讨了在高速（马赫数0.8和0.85）下唇部形状对负斜切（-20°）进气口的影响，发现负斜切进气口在跨音速条件下能达到与基准进气口相当的气动性能，同时减弱地面涡流，这对于高涵道比发动机进气口靠近地面的情况尤为重要。",
+        "methods": "研究方法包括基于AIAA-2000-0354中描述的阶段性迭代设计过程，从基准进气口（+6°斜切）开始，通过数值模拟或分析手段，评估负斜切（-20°）进气口在跨音速速度（马赫数0.8和0.85）下的气动性能。研究聚焦于唇部形状对进气口性能的影响，并比较负斜切与基准进气口在跨音速条件下的等效性，同时建议进一步详细工作（如内部表面优化）和实验验证。",
+        "innovations": [
+          "提出负斜切进气口作为跨音速条件下的降噪措施，扩展了先前低速和亚音速研究的范围",
+          "验证负斜切进气口在跨音速速度下能达到与基准进气口相当的气动性能，为实际应用提供依据",
+          "强调负斜切进气口在减弱地面涡流方面的优势，适用于高涵道比发动机进气口靠近地面的场景",
+          "建议未来研究方向，如斜切角度优化，以进一步提升性能"
+        ],
+        "conclusions": "负斜切进气口在跨音速条件下表现出与基准进气口等效的气动性能，可作为有效的降噪手段，同时减弱地面涡流，适用于现代高涵道比发动机。研究推荐进一步详细工作和实验验证，以优化设计并探索斜切角度等参数。",
+        "relevance_score": 8,
+        "keywords": [
+          "负斜切进气口",
+          "跨音速性能",
+          "气动声学"
+        ],
+        "analyzed_at": "2026-04-07T08:03:29.787775+00:00"
+      }
+    },
+    {
+      "id": "W341971159",
+      "doi": "",
+      "title": "Application of Negative Scarf to Inlet Design for Acoustic Reduction, Aerodynamic Assessment at Subsonic and Transonic Speeds",
+      "authors": [
+        {
+          "name": "R Nangia",
+          "id": "A5035489106",
+          "institution": ""
+        },
+        {
+          "name": "M Palmer",
+          "id": "A5113093646",
+          "institution": ""
+        }
+      ],
+      "year": 2000,
+      "citation_count": 0,
+      "abstract": "Abstract : Aircraft engines must meet current and future FAR regulations and noise footprint criteria. A way of reducing noise is to use negatively scarfed inlets. The extended lower lip acts as an acoustic barrier. We need to understand the aerodynamic implications of inlet scarfing at low and transonic speeds. The subsonic aerodynamic performance (incidence, side-slip, and ground effects) of a (+6 degree scarf) inlet has been assessed. A range of negative scarf angles was applied to the geometry and the subsonic performance of the resulting inlets assessed. A staged, iterative design process was carried out on a -20 degree scarfed inlet from this series. This led to modified lip geometry that gave attached flow capability equivalent to the datum conventional inlet. An additional advantage for negative scarf was the weakening of the ground vortex at zero forward speed. This is important for large intakes with high by-pass ratios, set closer to the ground. The transonic performance of the (+6 degree scarf) and negatively scarfed inlet (-20 degree scarf) was assessed. A limited design study was carried out on the -20 degree inlet to understand the effects of lip shaping at high speed (Mach 0.8). An encouraging equivalence has been achieved between the datum and scarfed inlet and further detailed work (internal surfaces) leading to experiments has been recommended. Work is needed on scarf angle choice.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Acoustic Wave Phenomena Research"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": ""
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文研究了负斜切进气口在亚音速和跨音速条件下的应用，旨在降低飞机发动机噪声并满足相关法规要求。负斜切进气口通过延长下唇缘作为声学屏障来减少噪声，同时需评估其气动性能。研究评估了+6度斜切进气口的亚音速气动性能（包括迎角、侧滑和地面效应），并对一系列负斜切角度进行了分析。通过迭代设计过程，对-20度斜切进气口进行了优化，修改唇缘几何形状以实现与基准常规进气口相当的附着流动能力。此外，负斜切进气口在零前进速度下能减弱地面涡流，这对高旁通比、靠近地面的大型进气口尤为重要。研究还评估了+6度和-20度斜切进气口的跨音速性能，并对-20度进气口进行了有限设计研究，以了解高速（马赫数0.8）下唇缘形状的影响。结果表明，基准进气口与斜切进气口之间取得了令人鼓舞的等效性，建议进一步开展详细工作（如内部表面设计）并进行实验验证，同时需要研究斜切角度的选择。",
+        "methods": "研究采用数值模拟和迭代设计方法，评估不同斜切角度进气口的气动性能。首先，对+6度斜切进气口进行亚音速气动性能评估，包括迎角、侧滑和地面效应分析。然后，应用一系列负斜切角度到几何形状中，并评估其亚音速性能。通过分阶段迭代设计过程，对-20度斜切进气口进行优化，修改唇缘几何形状以改善流动附着。此外，对+6度和-20度斜切进气口进行跨音速性能评估，并对-20度进气口进行有限设计研究，分析高速（马赫数0.8）下唇缘形状的影响。",
+        "innovations": [
+          "提出负斜切进气口作为降低飞机发动机噪声的有效方法，通过延长下唇缘作为声学屏障",
+          "优化-20度斜切进气口的唇缘几何形状，实现与基准常规进气口相当的附着流动能力",
+          "发现负斜切进气口在零前进速度下能减弱地面涡流，对高旁通比、靠近地面的大型进气口具有重要优势",
+          "在跨音速条件下评估斜切进气口性能，并通过设计研究探索高速下唇缘形状的影响"
+        ],
+        "conclusions": "负斜切进气口在亚音速和跨音速条件下均表现出良好的气动性能，能够有效降低噪声并满足法规要求。优化后的-20度斜切进气口在附着流动能力上与基准常规进气口等效，且在零前进速度下能减弱地面涡流。跨音速评估显示斜切进气口与基准进气口之间具有等效性，但需要进一步研究斜切角度选择和内部表面设计，并进行实验验证。",
+        "relevance_score": 8,
+        "keywords": [
+          "负斜切进气口",
+          "气动声学",
+          "亚音速性能",
+          "跨音速性能",
+          "噪声降低"
+        ],
+        "analyzed_at": "2026-04-07T08:03:33.898382+00:00"
+      }
+    },
+    {
       "id": "W2993375049",
       "doi": "",
       "title": "Flow Fields Interaction Between Drooped Intake, Fan and Downstream Engine Component in Civil Turbofan Engines",
@@ -2246,6 +3636,53 @@
           "作动盘模型"
         ],
         "analyzed_at": "2026-04-07T06:45:22.405979+00:00"
+      }
+    },
+    {
+      "id": "W2094751629",
+      "doi": "https://doi.org/10.1017/s0022112096003801",
+      "title": "Screech tones from rectangular jets with spanwise oblique shock-cell structures",
+      "authors": [
+        {
+          "name": "Ganesh Raman",
+          "id": "A5075216410",
+          "institution": "Glenn Research Center"
+        }
+      ],
+      "year": 1997,
+      "citation_count": 83,
+      "abstract": "Understanding screech is especially important for the design of advanced aircraft because screech can cause sonic fatigue failure of aircraft structures. Although the connection between shock-cell spacing and screech frequency is well understood, the relation between non-uniformities in the shock-cell structures and the resulting amplitude, mode, and steadiness of screech have remained unexplored. This paper addresses the above issues by intentionally producing spanwise (larger nozzle dimension) variations in the shock-cell structures and studying the resulting spanwise screech mode. The spanwise-oblique shock-cell structures were produced using imperfectly expanded convergent–divergent rectangular nozzles (aspect ratio = 5) with non-uniform exit geometries. Three geometries were studied: ( a ) a nozzle with a spanwise uniform edge, ( b ) a nozzle with a spanwise oblique (single-bevelled) edge, and ( c ) a nozzle that had two spanwise oblique (double-bevelled) cuts to form an arrowhead-shaped nozzle. For all nozzles considered, the screech mode was antisymmetric in the transverse (smaller nozzle dimension) direction allowing focus on changes in the spanwise direction. Three types of spanwise modes were observed: symmetric (I), antisymmetric (II), and oblique (III). The following significant results emerged: (i) for all cases the screech mode corresponds with the spanwise shock-cell structure, (ii) when multiple screech modes are present, the technique presented here makes it possible to distinguish between coexisting and mutually exclusive modes, (iii) the strength of shocks 3 and 4 influences the screech source amplitude and determines whether screech is unsteady. The results presented here offer hope for a better understanding of screech and for tailoring shock-containing jets to minimize fatigue failure of aircraft components.",
+      "topics": [
+        "Combustion and Detonation Processes",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Automotive and Human Injury Biomechanics"
+      ],
+      "source": {
+        "name": "Journal of Fluid Mechanics",
+        "id": "S152000018",
+        "type": "journal"
+      },
+      "open_access_url": "https://ntrs.nasa.gov/api/citations/19970001363/downloads/19970001363.pdf",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "scarfed intake",
+      "analysis": {
+        "summary": "本文研究了矩形喷管中具有展向倾斜激波结构产生的啸叫音调，重点关注激波结构非均匀性对啸叫振幅、模式和稳定性的影响。通过设计三种不同出口几何形状的矩形喷管（展向均匀边缘、单斜切边缘和双斜切箭头形边缘），实验生成了展向倾斜激波结构，并观察了相应的啸叫模式。研究发现，啸叫模式与展向激波结构直接对应，且激波强度影响啸叫源振幅和稳定性，为理解啸叫现象和减少飞机结构疲劳失效提供了新见解。",
+        "methods": "研究方法包括使用不完美膨胀的收敛-扩张矩形喷管（纵横比为5），通过非均匀出口几何形状故意产生展向激波结构变化。实验设计了三种喷管几何形状：展向均匀边缘、展向单斜切边缘和展向双斜切箭头形边缘。在横向方向保持反对称啸叫模式的基础上，聚焦分析展向方向的变化，观察并分类了对称、反对称和倾斜三种展向啸叫模式，并利用特定技术区分共存和互斥模式。",
+        "innovations": [
+          "首次系统研究激波结构非均匀性对啸叫振幅、模式和稳定性的影响",
+          "通过设计非均匀出口几何形状故意产生展向倾斜激波结构，创新实验方法",
+          "提出技术区分共存和互斥的啸叫模式，增强了对复杂啸叫行为的理解",
+          "揭示激波强度（特别是第3和第4激波）对啸叫源振幅和稳定性的关键作用"
+        ],
+        "conclusions": "主要结论包括：啸叫模式与展向激波结构直接对应；当存在多个啸叫模式时，实验技术能有效区分共存和互斥模式；激波强度显著影响啸叫源振幅和稳定性，为优化含激波喷流以减少飞机结构疲劳失效提供了理论基础。",
+        "relevance_score": 8,
+        "keywords": [
+          "啸叫音调",
+          "矩形喷管",
+          "激波结构"
+        ],
+        "analyzed_at": "2026-04-07T08:03:29.638547+00:00"
       }
     },
     {

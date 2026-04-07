@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-07T06:45:47.568335+00:00",
+  "last_updated": "2026-04-07T08:03:33.910048+00:00",
   "total_groups": 2,
   "groups": [
     {
@@ -61,24 +61,24 @@
         }
       ],
       "paper_ids": [
-        "W4401980588",
-        "W7124246580"
+        "W7124246580",
+        "W4401980588"
       ],
       "yearly_counts": {
         "2024": 1,
         "2026": 1
       },
       "top_keywords": [
-        "涡轮风扇进气道",
-        "稳态流动畸变",
-        "计算流体动力学",
-        "Aerodynamics and Acoustics in Jet Flows",
-        "Fluid Dynamics and Turbulent Flows",
-        "Computational Fluid Dynamics and Aerodynamics",
         "折叠翼飞行水下无人机",
         "混合空气水下车辆",
         "跨域操作",
-        "Biomimetic flight and propulsion mechanisms"
+        "Biomimetic flight and propulsion mechanisms",
+        "Aerospace Engineering and Energy Systems",
+        "Underwater Vehicles and Communication Systems",
+        "涡轮风扇进气道",
+        "稳态流动畸变",
+        "计算流体动力学",
+        "Aerodynamics and Acoustics in Jet Flows"
       ]
     }
   ]

@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-04-07T06:45:47.573600+00:00",
+  "last_updated": "2026-04-07T08:03:33.917772+00:00",
   "year_range": [
     1960,
     2026
   ],
   "all_subtopics": [
-    "tonal_noise",
-    "broadband_noise",
-    "measurement",
-    "liner_design",
-    "cfd_simulation",
-    "experimental",
-    "analytical",
-    "flow_control"
+    "短舱进气道",
+    "单音噪声",
+    "宽频噪声",
+    "实验测量",
+    "声衬设计",
+    "数值模拟",
+    "解析方法",
+    "流动控制"
   ],
   "intervals": [
     {
@@ -41,8 +41,8 @@
         }
       ],
       "subtopics": {
-        "measurement": 1,
-        "cfd_simulation": 1
+        "实验测量": 1,
+        "数值模拟": 1
       }
     },
     {
@@ -71,9 +71,8 @@
         }
       ],
       "subtopics": {
-        "broadband_noise": 1,
-        "measurement": 1,
-        "experimental": 1
+        "宽频噪声": 1,
+        "实验测量": 1
       }
     },
     {
@@ -106,10 +105,9 @@
         }
       ],
       "subtopics": {
-        "broadband_noise": 1,
-        "measurement": 1,
-        "cfd_simulation": 1,
-        "experimental": 1
+        "宽频噪声": 1,
+        "实验测量": 1,
+        "数值模拟": 1
       }
     },
     {
@@ -138,7 +136,7 @@
         }
       ],
       "subtopics": {
-        "cfd_simulation": 1
+        "数值模拟": 1
       }
     },
     {
@@ -177,8 +175,8 @@
         }
       ],
       "subtopics": {
-        "measurement": 1,
-        "cfd_simulation": 1
+        "实验测量": 1,
+        "数值模拟": 1
       }
     },
     {
@@ -195,8 +193,14 @@
       "period": "1995-1999",
       "start_year": 1995,
       "end_year": 1999,
-      "paper_count": 3,
+      "paper_count": 4,
       "top_papers": [
+        {
+          "id": "W2094751629",
+          "title": "Screech tones from rectangular jets with spanwise oblique shock-cell structures",
+          "citations": 83,
+          "year": 1997
+        },
         {
           "id": "W2509896996",
           "title": "On the effect of a strake-like junction fillet on the lift and drag of a wing",
@@ -234,7 +238,7 @@
           "paper_count": 1
         },
         {
-          "name": "L. Bernstein",
+          "name": "Ganesh Raman",
           "paper_count": 1
         }
       ],
@@ -244,40 +248,107 @@
           "count": 1
         },
         {
+          "name": "Journal of Fluid Mechanics",
+          "count": 1
+        },
+        {
           "name": "The Aeronautical Journal",
           "count": 1
         }
       ],
       "subtopics": {
-        "measurement": 3,
-        "cfd_simulation": 3,
-        "experimental": 3,
-        "analytical": 2,
-        "tonal_noise": 1,
-        "broadband_noise": 1
+        "短舱进气道": 1,
+        "实验测量": 3,
+        "数值模拟": 4,
+        "解析方法": 2,
+        "单音噪声": 2,
+        "宽频噪声": 1
       }
     },
     {
       "period": "2000-2004",
       "start_year": 2000,
       "end_year": 2004,
-      "paper_count": 0,
-      "top_papers": [],
-      "top_authors": [],
-      "top_venues": [],
-      "subtopics": {}
+      "paper_count": 3,
+      "top_papers": [
+        {
+          "id": "W2312599546",
+          "title": "Noise test of a negatively scarfed inlet flare",
+          "citations": 6,
+          "year": 2001
+        },
+        {
+          "id": "W2322930891",
+          "title": "Inlets with negative scarf for acoustic reduction - Aerodynamic assessment at transonic speed",
+          "citations": 1,
+          "year": 2000
+        },
+        {
+          "id": "W341971159",
+          "title": "Application of Negative Scarf to Inlet Design for Acoustic Reduction, Aerodynamic Assessment at Subsonic and Transonic Speeds",
+          "citations": 0,
+          "year": 2000
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "R Nangia",
+          "paper_count": 2
+        },
+        {
+          "name": "M Palmer",
+          "paper_count": 2
+        },
+        {
+          "name": "Nick J. Baker",
+          "paper_count": 1
+        },
+        {
+          "name": "C. Bewick",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "18th Applied Aerodynamics Conference",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "实验测量": 3,
+        "短舱进气道": 1,
+        "数值模拟": 2
+      }
     },
     {
       "period": "2005-2009",
       "start_year": 2005,
       "end_year": 2009,
-      "paper_count": 2,
+      "paper_count": 10,
       "top_papers": [
+        {
+          "id": "W1969131304",
+          "title": "Numerical methods for noise propagation in moving flows, with application to turbofan engines",
+          "citations": 52,
+          "year": 2009
+        },
         {
           "id": "W1969109030",
           "title": "Design and Development of the Blackbird: Challenges and Lessons Learned",
           "citations": 47,
           "year": 2009
+        },
+        {
+          "id": "W2150210109",
+          "title": "Noise radiation from a ducted rotor in a swirling-translating flow",
+          "citations": 30,
+          "year": 2009
+        },
+        {
+          "id": "W2318547594",
+          "title": "Investigation of Sound Radiation from a Scarfed Intake by CAA-FWH Simulations Using Overset Grids",
+          "citations": 15,
+          "year": 2007
         },
         {
           "id": "W1971320104",
@@ -288,35 +359,55 @@
       ],
       "top_authors": [
         {
+          "name": "Dimitris Drikakis",
+          "paper_count": 2
+        },
+        {
+          "name": "R.J. Astley",
+          "paper_count": 1
+        },
+        {
           "name": "Peter W. Merlin",
           "paper_count": 1
         },
         {
-          "name": "Peter Schwaller",
+          "name": "Erika Quaranta",
           "paper_count": 1
         },
         {
-          "name": "Nick J. Baker",
-          "paper_count": 1
-        },
-        {
-          "name": "Dave Tomlinson",
-          "paper_count": 1
-        },
-        {
-          "name": "Pieter Sijtsma",
+          "name": "Eugène J. Kors",
           "paper_count": 1
         }
       ],
       "top_venues": [
         {
+          "name": "Research Repository (Delft University of Technology)",
+          "count": 2
+        },
+        {
+          "name": "Nippon Onkyo Gakkaishi/Acoustical science and technology/Nihon Onkyo Gakkaishi",
+          "count": 1
+        },
+        {
           "name": "47th AIAA Aerospace Sciences Meeting including The New Horizons Forum and Aerospace Exposition",
+          "count": 1
+        },
+        {
+          "name": "Journal of Fluid Mechanics",
+          "count": 1
+        },
+        {
+          "name": "The Journal of the Acoustical Society of America",
           "count": 1
         }
       ],
       "subtopics": {
-        "cfd_simulation": 1,
-        "measurement": 1
+        "声衬设计": 3,
+        "数值模拟": 8,
+        "短舱进气道": 3,
+        "实验测量": 3,
+        "解析方法": 2,
+        "单音噪声": 1
       }
     },
     {
@@ -377,24 +468,30 @@
         }
       ],
       "subtopics": {
-        "measurement": 2,
-        "liner_design": 1,
-        "cfd_simulation": 2,
-        "analytical": 1,
-        "experimental": 1
+        "短舱进气道": 1,
+        "实验测量": 2,
+        "声衬设计": 1,
+        "数值模拟": 2,
+        "解析方法": 1
       }
     },
     {
       "period": "2015-2019",
       "start_year": 2015,
       "end_year": 2019,
-      "paper_count": 10,
+      "paper_count": 11,
       "top_papers": [
         {
           "id": "W2966934481",
           "title": "Quasi 3D Nacelle Design to Simulate Crosswind Flows: Merits and Challenges",
           "citations": 15,
           "year": 2019
+        },
+        {
+          "id": "W2492051605",
+          "title": "Vortex Generators in a Two-Dimensional External-Compression Supersonic Inlet",
+          "citations": 15,
+          "year": 2017
         },
         {
           "id": "W4233245264",
@@ -413,12 +510,6 @@
           "title": "Effects of turbofan engine intake droop and length on fan tone noise",
           "citations": 5,
           "year": 2019
-        },
-        {
-          "id": "W2485766914",
-          "title": "Analysis of High Fidelity Turbomachinery CFD Using Proper Orthogonal Decomposition",
-          "citations": 2,
-          "year": 2016
         }
       ],
       "top_authors": [
@@ -461,24 +552,24 @@
           "count": 1
         },
         {
-          "name": "SCIENTIFIC RESEARCH AND EDUCATION IN THE AIR FORCE",
+          "name": "Journal of Propulsion and Power",
           "count": 1
         }
       ],
       "subtopics": {
-        "cfd_simulation": 8,
-        "tonal_noise": 3,
-        "measurement": 2,
-        "experimental": 1,
-        "analytical": 2,
-        "broadband_noise": 2
+        "短舱进气道": 4,
+        "数值模拟": 9,
+        "单音噪声": 3,
+        "实验测量": 3,
+        "解析方法": 3,
+        "宽频噪声": 3
       }
     },
     {
       "period": "2020-2024",
       "start_year": 2020,
       "end_year": 2024,
-      "paper_count": 14,
+      "paper_count": 20,
       "top_papers": [
         {
           "id": "W4386560420",
@@ -493,22 +584,22 @@
           "year": 2022
         },
         {
+          "id": "W4210258107",
+          "title": "Study of geometric parameters for the design of short intakes with fan modelling",
+          "citations": 17,
+          "year": 2022
+        },
+        {
           "id": "W4392859496",
           "title": "Aerodynamic design of a double slotted morphed flap airfoil– a numerical study",
           "citations": 15,
           "year": 2024
         },
         {
-          "id": "W4282550185",
-          "title": "CFD/CAA coupling for the prediction of fan tone noise propagation and radiation through a drooped intake",
-          "citations": 3,
-          "year": 2022
-        },
-        {
-          "id": "W4399271465",
-          "title": "Fan Buzz-Saw Noise Under Intake Flow Distortion: A Computational Study",
-          "citations": 1,
-          "year": 2024
+          "id": "W4317937972",
+          "title": "Data-Driven Multiobjective Optimization of Wave-Packets for Near-Field Subsonic Jet Noise",
+          "citations": 8,
+          "year": 2023
         }
       ],
       "top_authors": [
@@ -521,16 +612,16 @@
           "paper_count": 3
         },
         {
-          "name": "Joseph Binns",
+          "name": "Umberto Iemma",
           "paper_count": 2
         },
         {
-          "name": "S. S. Shahrokhi",
-          "paper_count": 1
+          "name": "Giorgio Palma",
+          "paper_count": 2
         },
         {
-          "name": "M. Taeibi‐Rahni",
-          "paper_count": 1
+          "name": "Joseph Binns",
+          "paper_count": 2
         }
       ],
       "top_venues": [
@@ -543,26 +634,27 @@
           "count": 1
         },
         {
+          "name": "Shock Waves",
+          "count": 1
+        },
+        {
           "name": "The Physician",
           "count": 1
         },
         {
           "name": "Aerospace",
           "count": 1
-        },
-        {
-          "name": "E3S Web of Conferences",
-          "count": 1
         }
       ],
       "subtopics": {
-        "broadband_noise": 6,
-        "cfd_simulation": 11,
-        "tonal_noise": 4,
-        "analytical": 5,
-        "measurement": 5,
-        "experimental": 2,
-        "liner_design": 1
+        "宽频噪声": 8,
+        "数值模拟": 17,
+        "单音噪声": 5,
+        "实验测量": 8,
+        "短舱进气道": 8,
+        "声衬设计": 2,
+        "解析方法": 8,
+        "流动控制": 1
       }
     },
     {
@@ -627,11 +719,10 @@
         }
       ],
       "subtopics": {
-        "tonal_noise": 1,
-        "measurement": 2,
-        "cfd_simulation": 3,
-        "analytical": 2,
-        "experimental": 1
+        "单音噪声": 1,
+        "实验测量": 2,
+        "数值模拟": 3,
+        "解析方法": 2
       }
     }
   ]

@@ -1,45 +1,49 @@
 {
-  "last_updated": "2026-04-07T06:45:47.585964+00:00",
-  "total_papers": 45,
-  "analyzed_papers": 42,
+  "last_updated": "2026-04-07T08:03:33.923182+00:00",
+  "total_papers": 64,
+  "analyzed_papers": 60,
   "date_range": {
     "earliest": 1953,
     "latest": 2026
   },
-  "avg_citations": 4.6,
+  "avg_citations": 7.2,
   "most_cited": {
-    "id": "W1969109030",
-    "title": "Design and Development of the Blackbird: Challenges and Lessons Learned",
-    "citations": 47,
-    "year": 2009
+    "id": "W2094751629",
+    "title": "Screech tones from rectangular jets with spanwise oblique shock-cell structures",
+    "citations": 83,
+    "year": 1997
   },
   "top_keywords": [
     {
       "keyword": "Aerodynamics and Acoustics in Jet Flows",
-      "count": 20
+      "count": 35
     },
     {
       "keyword": "Aerodynamics and Fluid Dynamics Research",
-      "count": 19
-    },
-    {
-      "keyword": "Fluid Dynamics and Turbulent Flows",
-      "count": 13
-    },
-    {
-      "keyword": "Turbomachinery Performance and Optimization",
-      "count": 12
-    },
-    {
-      "keyword": "风扇噪声",
-      "count": 9
-    },
-    {
-      "keyword": "Computational Fluid Dynamics and Aerodynamics",
-      "count": 8
+      "count": 21
     },
     {
       "keyword": "Acoustic Wave Phenomena Research",
+      "count": 19
+    },
+    {
+      "keyword": "Computational Fluid Dynamics and Aerodynamics",
+      "count": 17
+    },
+    {
+      "keyword": "Fluid Dynamics and Turbulent Flows",
+      "count": 16
+    },
+    {
+      "keyword": "Turbomachinery Performance and Optimization",
+      "count": 14
+    },
+    {
+      "keyword": "风扇噪声",
+      "count": 12
+    },
+    {
+      "keyword": "气动声学",
       "count": 7
     },
     {
@@ -55,19 +59,27 @@
       "count": 5
     },
     {
+      "keyword": "Vehicle Noise and Vibration Control",
+      "count": 5
+    },
+    {
+      "keyword": "Rocket and propulsion systems research",
+      "count": 4
+    },
+    {
+      "keyword": "Plasma and Flow Control in Aerodynamics",
+      "count": 4
+    },
+    {
       "keyword": "部分跨度近似",
       "count": 3
     },
     {
-      "keyword": "Rocket and propulsion systems research",
+      "keyword": "Combustion and flame dynamics",
       "count": 3
     },
     {
-      "keyword": "Plasma and Flow Control in Aerodynamics",
-      "count": 3
-    },
-    {
-      "keyword": "Vehicle Noise and Vibration Control",
+      "keyword": "Fluid Dynamics and Vibration Analysis",
       "count": 3
     },
     {
@@ -81,23 +93,11 @@
     {
       "keyword": "Electromagnetic Launch and Propulsion Technology",
       "count": 2
-    },
-    {
-      "keyword": "进气流动畸变",
-      "count": 2
-    },
-    {
-      "keyword": "Heat Transfer Mechanisms",
-      "count": 2
-    },
-    {
-      "keyword": "稳态流动畸变",
-      "count": 2
     }
   ],
   "peak_year": {
     "year": 2024,
-    "count": 7
+    "count": 9
   },
   "total_groups": 2,
   "papers_by_year": {
@@ -110,25 +110,31 @@
     "1975": 1,
     "1986": 1,
     "1996": 1,
-    "1997": 1,
+    "1997": 2,
     "1998": 1,
-    "2006": 1,
-    "2009": 1,
+    "2000": 2,
+    "2001": 1,
+    "2005": 1,
+    "2006": 3,
+    "2007": 2,
+    "2008": 1,
+    "2009": 3,
     "2011": 1,
     "2014": 2,
     "2015": 1,
     "2016": 3,
-    "2017": 1,
+    "2017": 2,
     "2018": 2,
     "2019": 3,
-    "2022": 4,
-    "2023": 3,
-    "2024": 7,
+    "2021": 1,
+    "2022": 5,
+    "2023": 5,
+    "2024": 9,
     "2026": 3
   },
   "relevance_distribution": {
-    "high": 22,
+    "high": 39,
     "low": 12,
-    "medium": 8
+    "medium": 9
   }
 }

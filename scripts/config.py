@@ -34,19 +34,23 @@ ANALYSIS_DELAY = 1.0  # DeepSeek 请求间隔（秒）
 
 # 风扇噪声研究搜索词
 SEARCH_QUERIES = [
+    # 斜切口短舱进气道
     "drooped intake",
+    "scarfed intake",
+    "short intake",
+    "nacelle",
 ]
 
 # 子主题关键词分类（用于趋势分析）
 SUBTOPIC_KEYWORDS = {
-    "tonal_noise": ["tonal", "tone", "blade passing frequency", "BPF", "rotor-stator interaction"],
-    "broadband_noise": ["broadband", "turbulent", "boundary layer", "trailing edge", "leading edge"],
-    "measurement": ["measurement", "experimental", "test", "array", "microphone", "acoustic test"],
-    "liner_design": ["liner", "acoustic treatment", "sound absorption", "impedance", "duct lining"],
-    "cfd_simulation": ["CFD", "computational", "simulation", "LES", "DNS", "RANS", "numerical"],
-    "experimental": ["wind tunnel", "experiment", "PIV", "hot-wire", "flow visualization"],
-    "analytical": ["analytical", "theoretical", "modeling", "prediction", "mathematical"],
-    "flow_control": ["active control", "passive control", "serpentine", "chevron", "serration"],
+    "短舱进气道": ["drooped intake", "scarfed intake", "short intake", "nacelle"],
+    "单音噪声": ["tonal", "tone", "blade passing frequency", "BPF", "rotor-stator interaction"],
+    "宽频噪声": ["broadband", "turbulent", "boundary layer", "trailing edge", "leading edge"],
+    "实验测量": ["measurement", "experimental", "test", "array", "microphone", "acoustic test", "wind tunnel", "experiment", "PIV", "hot-wire", "flow visualization"],
+    "声衬设计": ["liner", "acoustic treatment", "sound absorption", "impedance", "duct lining"],
+    "数值模拟": ["CFD", "computational", "simulation", "LES", "DNS", "RANS", "numerical"],
+    "解析方法": ["analytical", "theoretical", "modeling", "prediction", "mathematical"],
+    "流动控制": ["active control", "passive control", "serpentine", "chevron", "serration"],
 }
 
 # 追踪的课题组

@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 
 from scripts.config import DATA_DIR, SEARCH_QUERIES, MAX_PAPERS_PER_QUERY, OPENALEX_TOPIC_FILTER
 from scripts.openalex_client import OpenAlexClient
+from scripts.deepseek_client import DeepSeekClient
 
 logger = logging.getLogger(__name__)
 
@@ -114,6 +115,15 @@ def fetch_all_papers():
         key=lambda p: (p.get("year") or 0, p.get("citation_count") or 0),
         reverse=True,
     )
+
+    # AI 相关性筛选：移除与研究主题不直接相关的论文
+    if total_new > 0:
+        try:
+            ai_client = DeepSeekClient()
+            topic_desc = "、".join(SEARCH_QUERIES)
+            papers = ai_client.batch_relevance_check(papers, topic_desc)
+        except Exception as e:
+            logger.warning(f"AI 筛选跳过（DeepSeek 不可用）: {e}")
 
     save_papers({
         "last_updated": "",

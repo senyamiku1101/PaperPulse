@@ -37,6 +37,15 @@ SEARCH_QUERIES = [
     # 斜切口短舱进气道
     "drooped intake",
     "scarfed intake",
+    "short intake",
+
+    # 风扇噪声
+    "fan noise",
+    "tonal noise",
+    "broadband noise",
+
+    # 气动声学
+    "aeroacoustic",
 ]
 
 # 子主题关键词分类（用于趋势分析）
@@ -48,6 +57,7 @@ SUBTOPIC_KEYWORDS = {
     "声衬设计": ["liner", "acoustic treatment", "sound absorption", "impedance", "duct lining"],
     "数值模拟": ["CFD", "computational", "simulation", "LES", "DNS", "RANS", "numerical"],
     "解析方法": ["analytical", "theoretical", "modeling", "prediction", "mathematical"],
+    "进气畸变": ["distortion", "inlet distortion", "circumferential distortion", "radial distortion", "total pressure distortion"],
     "流动控制": ["active control", "passive control", "serpentine", "chevron", "serration"],
 }
 
@@ -123,7 +133,8 @@ RESEARCH_GROUPS = [
         "institution": "University of Southampton",
         "institution_query": " University of Southamptonr",
         "description": "航空发动机风扇噪声研究",
-        "author_ids": ["A5111878691", "A5063240001"],
+	# R. Jeremy Astley, Rie Sugimoto, Zbigniew Rarata, 
+        "author_ids": ["A5111878691", "A5063240001", "A5045514304"],
     },
 ]
 

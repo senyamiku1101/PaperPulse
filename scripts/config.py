@@ -117,6 +117,14 @@ RESEARCH_GROUPS = [
         "description": "航空发动机风扇噪声研究",
         "author_ids": [],
     },
+    {
+        "id": "group_ISVR_Southampton",
+        "name": "ISVR, University of Southampton",
+        "institution": "University of Southampton",
+        "institution_query": " University of Southamptonr",
+        "description": "航空发动机风扇噪声研究",
+        "author_ids": [a5111878691, a5063240001],
+    },
 ]
 
 

@@ -37,8 +37,6 @@ SEARCH_QUERIES = [
     # 斜切口短舱进气道
     "drooped intake",
     "scarfed intake",
-    "short intake",
-    "nacelle",
 ]
 
 # 子主题关键词分类（用于趋势分析）

@@ -1,0 +1,638 @@
+{
+  "last_updated": "2026-04-07T06:45:47.573600+00:00",
+  "year_range": [
+    1960,
+    2026
+  ],
+  "all_subtopics": [
+    "tonal_noise",
+    "broadband_noise",
+    "measurement",
+    "liner_design",
+    "cfd_simulation",
+    "experimental",
+    "analytical",
+    "flow_control"
+  ],
+  "intervals": [
+    {
+      "period": "1960-1964",
+      "start_year": 1960,
+      "end_year": 1964,
+      "paper_count": 1,
+      "top_papers": [
+        {
+          "id": "W1575905902",
+          "title": "A qualitative discussion of the stability and control of VTOL aircraft during hover (out of ground effect) and transition.",
+          "citations": 0,
+          "year": 1964
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "Paul J. Weitz",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "Calhoun: The Naval Postgraduate School Institutional Archive (Naval Postgraduate School)",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "measurement": 1,
+        "cfd_simulation": 1
+      }
+    },
+    {
+      "period": "1965-1969",
+      "start_year": 1965,
+      "end_year": 1969,
+      "paper_count": 1,
+      "top_papers": [
+        {
+          "id": "W843066046",
+          "title": "Further low speed wind tunnel tests on slender cambered wings with apex blowing.",
+          "citations": 0,
+          "year": 1968
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "Joseph D. Cole",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "Calhoun: The Naval Postgraduate School Institutional Archive (Naval Postgraduate School)",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "broadband_noise": 1,
+        "measurement": 1,
+        "experimental": 1
+      }
+    },
+    {
+      "period": "1970-1974",
+      "start_year": 1970,
+      "end_year": 1974,
+      "paper_count": 1,
+      "top_papers": [
+        {
+          "id": "W338542100",
+          "title": "Low speed aerodynamic characteristics of a large scale STOL transport model with an augmented jet flap",
+          "citations": 4,
+          "year": 1971
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "T. N. Aiken",
+          "paper_count": 1
+        },
+        {
+          "name": "Amanda Cook",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "NASA STI Repository (National Aeronautics and Space Administration)",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "broadband_noise": 1,
+        "measurement": 1,
+        "cfd_simulation": 1,
+        "experimental": 1
+      }
+    },
+    {
+      "period": "1975-1979",
+      "start_year": 1975,
+      "end_year": 1979,
+      "paper_count": 1,
+      "top_papers": [
+        {
+          "id": "W2785218982",
+          "title": "Aircraft design studies: S68 multi-role strike aircraft",
+          "citations": 0,
+          "year": 1975
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "D. Howe",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "CERES (Cranfield University)",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "cfd_simulation": 1
+      }
+    },
+    {
+      "period": "1980-1984",
+      "start_year": 1980,
+      "end_year": 1984,
+      "paper_count": 0,
+      "top_papers": [],
+      "top_authors": [],
+      "top_venues": [],
+      "subtopics": {}
+    },
+    {
+      "period": "1985-1989",
+      "start_year": 1985,
+      "end_year": 1989,
+      "paper_count": 1,
+      "top_papers": [
+        {
+          "id": "W234098357",
+          "title": "Recommendations for ground effects research for V/STOL and STOL aircraft and associated equipment for large scale testing",
+          "citations": 1,
+          "year": 1986
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "Richard E. Kuhn",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "NASA Technical Reports Server (NASA)",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "measurement": 1,
+        "cfd_simulation": 1
+      }
+    },
+    {
+      "period": "1990-1994",
+      "start_year": 1990,
+      "end_year": 1994,
+      "paper_count": 0,
+      "top_papers": [],
+      "top_authors": [],
+      "top_venues": [],
+      "subtopics": {}
+    },
+    {
+      "period": "1995-1999",
+      "start_year": 1995,
+      "end_year": 1999,
+      "paper_count": 3,
+      "top_papers": [
+        {
+          "id": "W2509896996",
+          "title": "On the effect of a strake-like junction fillet on the lift and drag of a wing",
+          "citations": 7,
+          "year": 1996
+        },
+        {
+          "id": "W2993375049",
+          "title": "Flow Fields Interaction Between Drooped Intake, Fan and Downstream Engine Component in Civil Turbofan Engines",
+          "citations": 1,
+          "year": 1998
+        },
+        {
+          "id": "W2333882890",
+          "title": "The effects on fan noise of inlet steady flow distortion",
+          "citations": 1,
+          "year": 1997
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "P. Schwaller",
+          "paper_count": 2
+        },
+        {
+          "name": "B.J. Tester",
+          "paper_count": 2
+        },
+        {
+          "name": "D. G. Henshaw",
+          "paper_count": 2
+        },
+        {
+          "name": "Won-Gu Joo",
+          "paper_count": 1
+        },
+        {
+          "name": "L. Bernstein",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "Journal of the Korean Society for Aeronautical & Space Sciences",
+          "count": 1
+        },
+        {
+          "name": "The Aeronautical Journal",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "measurement": 3,
+        "cfd_simulation": 3,
+        "experimental": 3,
+        "analytical": 2,
+        "tonal_noise": 1,
+        "broadband_noise": 1
+      }
+    },
+    {
+      "period": "2000-2004",
+      "start_year": 2000,
+      "end_year": 2004,
+      "paper_count": 0,
+      "top_papers": [],
+      "top_authors": [],
+      "top_venues": [],
+      "subtopics": {}
+    },
+    {
+      "period": "2005-2009",
+      "start_year": 2005,
+      "end_year": 2009,
+      "paper_count": 2,
+      "top_papers": [
+        {
+          "id": "W1969109030",
+          "title": "Design and Development of the Blackbird: Challenges and Lessons Learned",
+          "citations": 47,
+          "year": 2009
+        },
+        {
+          "id": "W1971320104",
+          "title": "Noise Validation of Model Fan Rig with Engine",
+          "citations": 10,
+          "year": 2006
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "Peter W. Merlin",
+          "paper_count": 1
+        },
+        {
+          "name": "Peter Schwaller",
+          "paper_count": 1
+        },
+        {
+          "name": "Nick J. Baker",
+          "paper_count": 1
+        },
+        {
+          "name": "Dave Tomlinson",
+          "paper_count": 1
+        },
+        {
+          "name": "Pieter Sijtsma",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "47th AIAA Aerospace Sciences Meeting including The New Horizons Forum and Aerospace Exposition",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "cfd_simulation": 1,
+        "measurement": 1
+      }
+    },
+    {
+      "period": "2010-2014",
+      "start_year": 2010,
+      "end_year": 2014,
+      "paper_count": 3,
+      "top_papers": [
+        {
+          "id": "W2327967107",
+          "title": "The Effect of Steady Flow Distortion on Mode Propagation in a Turbofan Intake",
+          "citations": 14,
+          "year": 2014
+        },
+        {
+          "id": "W2138109842",
+          "title": "Towards Virtual Testing of Compression Systems in Gas Turbine Engines",
+          "citations": 1,
+          "year": 2011
+        },
+        {
+          "id": "W1842023431",
+          "title": "私の海藻食論～My Sea-vegetarianism",
+          "citations": 0,
+          "year": 2014
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "R.J. Astley",
+          "paper_count": 1
+        },
+        {
+          "name": "Rie Sugimoto",
+          "paper_count": 1
+        },
+        {
+          "name": "Gwénaël Gabard",
+          "paper_count": 1
+        },
+        {
+          "name": "Ellen Norde",
+          "paper_count": 1
+        },
+        {
+          "name": "Ernst Jan Grift",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "Kochi University Digital Repository for Academic Resources (Kochi University)",
+          "count": 1
+        },
+        {
+          "name": "NAFEMS International Journal of CFD Case Studies",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "measurement": 2,
+        "liner_design": 1,
+        "cfd_simulation": 2,
+        "analytical": 1,
+        "experimental": 1
+      }
+    },
+    {
+      "period": "2015-2019",
+      "start_year": 2015,
+      "end_year": 2019,
+      "paper_count": 10,
+      "top_papers": [
+        {
+          "id": "W2966934481",
+          "title": "Quasi 3D Nacelle Design to Simulate Crosswind Flows: Merits and Challenges",
+          "citations": 15,
+          "year": 2019
+        },
+        {
+          "id": "W4233245264",
+          "title": "The Effect of Steady Flow Distortion on Noise Propagation in Turbofan Intakes",
+          "citations": 9,
+          "year": 2016
+        },
+        {
+          "id": "W2914107733",
+          "title": "Informing the power system performance envelope for pulse load operation",
+          "citations": 7,
+          "year": 2018
+        },
+        {
+          "id": "W2945256660",
+          "title": "Effects of turbofan engine intake droop and length on fan tone noise",
+          "citations": 5,
+          "year": 2019
+        },
+        {
+          "id": "W2485766914",
+          "title": "Analysis of High Fidelity Turbomachinery CFD Using Proper Orthogonal Decomposition",
+          "citations": 2,
+          "year": 2016
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "Rie Sugimoto",
+          "paper_count": 3
+        },
+        {
+          "name": "Lei Xiong",
+          "paper_count": 2
+        },
+        {
+          "name": "Erika Quaranta",
+          "paper_count": 2
+        },
+        {
+          "name": "A. F. K. Yeung",
+          "paper_count": 1
+        },
+        {
+          "name": "Nagabhushana Rao Vadlamani",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "International Journal of Turbomachinery Propulsion and Power",
+          "count": 1
+        },
+        {
+          "name": "Modern Applied Science",
+          "count": 1
+        },
+        {
+          "name": "Conference Proceedings of INEC",
+          "count": 1
+        },
+        {
+          "name": "ePrints Soton (University of Southampton)",
+          "count": 1
+        },
+        {
+          "name": "SCIENTIFIC RESEARCH AND EDUCATION IN THE AIR FORCE",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "cfd_simulation": 8,
+        "tonal_noise": 3,
+        "measurement": 2,
+        "experimental": 1,
+        "analytical": 2,
+        "broadband_noise": 2
+      }
+    },
+    {
+      "period": "2020-2024",
+      "start_year": 2020,
+      "end_year": 2024,
+      "paper_count": 14,
+      "top_papers": [
+        {
+          "id": "W4386560420",
+          "title": "Recent Advances in Airfoil Self-Noise Passive Reduction",
+          "citations": 17,
+          "year": 2023
+        },
+        {
+          "id": "W4210621059",
+          "title": "Optimization and Design of a Flexible Droop-Nose Leading-Edge Morphing Wing Based on a Novel Black Widow Optimization Algorithm—Part I",
+          "citations": 17,
+          "year": 2022
+        },
+        {
+          "id": "W4392859496",
+          "title": "Aerodynamic design of a double slotted morphed flap airfoil– a numerical study",
+          "citations": 15,
+          "year": 2024
+        },
+        {
+          "id": "W4282550185",
+          "title": "CFD/CAA coupling for the prediction of fan tone noise propagation and radiation through a drooped intake",
+          "citations": 3,
+          "year": 2022
+        },
+        {
+          "id": "W4399271465",
+          "title": "Fan Buzz-Saw Noise Under Intake Flow Distortion: A Computational Study",
+          "citations": 1,
+          "year": 2024
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "Long Wu",
+          "paper_count": 3
+        },
+        {
+          "name": "Alexander G. Wilson",
+          "paper_count": 3
+        },
+        {
+          "name": "Joseph Binns",
+          "paper_count": 2
+        },
+        {
+          "name": "S. S. Shahrokhi",
+          "paper_count": 1
+        },
+        {
+          "name": "M. Taeibi‐Rahni",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "Proceedings",
+          "count": 2
+        },
+        {
+          "name": "Frontiers in Mechanical Engineering",
+          "count": 1
+        },
+        {
+          "name": "The Physician",
+          "count": 1
+        },
+        {
+          "name": "Aerospace",
+          "count": 1
+        },
+        {
+          "name": "E3S Web of Conferences",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "broadband_noise": 6,
+        "cfd_simulation": 11,
+        "tonal_noise": 4,
+        "analytical": 5,
+        "measurement": 5,
+        "experimental": 2,
+        "liner_design": 1
+      }
+    },
+    {
+      "period": "2025-2026",
+      "start_year": 2025,
+      "end_year": 2026,
+      "paper_count": 3,
+      "top_papers": [
+        {
+          "id": "W7129079259",
+          "title": "Part-span approximation of linear tone noise propagation in an aeroengine intake",
+          "citations": 0,
+          "year": 2026
+        },
+        {
+          "id": "W7124246580",
+          "title": "Advances in Folding-Wing Flying Underwater Drone (FUD) Technology",
+          "citations": 0,
+          "year": 2026
+        },
+        {
+          "id": "W7149575042",
+          "title": "Prototyping of self-sustaining propulsion systems for solar system exploration",
+          "citations": 0,
+          "year": 2026
+        }
+      ],
+      "top_authors": [
+        {
+          "name": "Joseph S.P. Binns",
+          "paper_count": 1
+        },
+        {
+          "name": "Long Wu",
+          "paper_count": 1
+        },
+        {
+          "name": "Alexander G. Wilson",
+          "paper_count": 1
+        },
+        {
+          "name": "Jiyuan Tu",
+          "paper_count": 1
+        },
+        {
+          "name": "Junjie Zhuang",
+          "paper_count": 1
+        }
+      ],
+      "top_venues": [
+        {
+          "name": "Journal of Sound and Vibration",
+          "count": 1
+        },
+        {
+          "name": "Drones",
+          "count": 1
+        },
+        {
+          "name": "JOURNAL OF ADVANCES IN PHYSICS",
+          "count": 1
+        }
+      ],
+      "subtopics": {
+        "tonal_noise": 1,
+        "measurement": 2,
+        "cfd_simulation": 3,
+        "analytical": 2,
+        "experimental": 1
+      }
+    }
+  ]
+}

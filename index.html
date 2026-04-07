@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PaperPulse - 风扇噪声研究追踪</title>
+<meta name="description" content="风扇噪声学术文献自动追踪与分析系统">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<style>
+/* ========================================
+   CSS Variables & Reset
+   ======================================== */
+:root {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: #1e293b;
+  --bg-card-hover: #334155;
+  --bg-input: #0f172a;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-blue: #3b82f6;
+  --accent-blue-dark: #2563eb;
+  --accent-orange: #f59e0b;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-purple: #8b5cf6;
+  --accent-cyan: #06b6d4;
+  --border-color: #334155;
+  --border-light: #475569;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4);
+  --radius: 8px;
+  --radius-lg: 12px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  --max-width: 1400px;
+  --header-height: 60px;
+  --tab-height: 48px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--accent-blue); text-decoration: none; }
+a:hover { color: var(--accent-blue-dark); text-decoration: underline; }
+
+/* ========================================
+   Scrollbar
+   ======================================== */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ========================================
+   Header
+   ======================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: var(--shadow);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: -2px;
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.header-meta .update-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* ========================================
+   Navigation Tabs
+   ======================================== */
+.nav-container {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 0;
+  height: var(--tab-height);
+}
+
+.nav-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.nav-tab:hover {
+  color: var(--text-secondary);
+  background: rgba(255,255,255,0.03);
+}
+
+.nav-tab.active {
+  color: var(--accent-blue);
+  border-bottom-color: var(--accent-blue);
+}
+
+.nav-tab .tab-icon { font-size: 16px; }
+.nav-tab .tab-badge {
+  font-size: 11px;
+  background: var(--accent-blue);
+  color: white;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* ========================================
+   Main Content
+   ======================================== */
+.main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.tab-pane {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.tab-pane.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   Dashboard
+   ======================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-card .stat-icon { font-size: 24px; margin-bottom: 8px; }
+.stat-card .stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.stat-card .stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.stat-card.blue .stat-value { color: var(--accent-blue); }
+.stat-card.green .stat-value { color: var(--accent-green); }
+.stat-card.orange .stat-value { color: var(--accent-orange); }
+.stat-card.purple .stat-value { color: var(--accent-purple); }
+.stat-card.cyan .stat-value { color: var(--accent-cyan); }
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+
+/* Year Chart */
+.year-chart {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 200px;
+  padding-top: 20px;
+}
+
+.chart-bar-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.chart-bar {
+  width: 100%;
+  min-width: 4px;
+  background: linear-gradient(to top, var(--accent-blue), var(--accent-cyan));
+  border-radius: 3px 3px 0 0;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.chart-bar:hover { opacity: 0.8; }
+
+.chart-bar-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  height: 40px;
+  overflow: hidden;
+}
+
+/* Keyword Cloud */
+.keyword-cloud {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start;
+}
+
+.kw-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(59,130,246,0.15);
+  color: var(--accent-blue);
+  border: 1px solid rgba(59,130,246,0.3);
+  cursor: default;
+  transition: all 0.2s;
+}
+
+.kw-tag:hover {
+  background: rgba(59,130,246,0.25);
+  transform: scale(1.05);
+}
+
+.kw-tag .kw-count {
+  margin-left: 6px;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* Recent Papers */
+.recent-papers {
+  margin-top: 24px;
+}
+
+.paper-mini-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.paper-mini-card:hover { background: var(--bg-card-hover); }
+
+.paper-mini-card .paper-year {
+  font-size: 12px;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  min-width: 40px;
+}
+
+.paper-mini-card .paper-title {
+  font-size: 14px;
+  color: var(--text-primary);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.paper-mini-card .paper-citations {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ========================================
+   Paper Browser
+   ======================================== */
+.search-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+}
+
+.search-input-wrapper .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: var(--font-sans);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus { border-color: var(--accent-blue); }
+
+.search-input::placeholder { color: var(--text-muted); }
+
+.filter-select {
+  padding: 10px 32px 10px 12px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: var(--font-sans);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.filter-select:focus { border-color: var(--accent-blue); }
+
+.paper-results-info {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.paper-list { display: flex; flex-direction: column; gap: 12px; }
+
+.paper-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.paper-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent-blue);
+}
+
+.paper-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.paper-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.relevance-badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.relevance-badge.high { background: rgba(16,185,129,0.2); color: var(--accent-green); }
+.relevance-badge.medium { background: rgba(245,158,11,0.2); color: var(--accent-orange); }
+.relevance-badge.low { background: rgba(239,68,68,0.2); color: var(--accent-red); }
+
+.paper-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.paper-card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.paper-card-authors {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.paper-card-summary {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.paper-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.paper-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(139,92,246,0.15);
+  color: var(--accent-purple);
+}
+
+/* Pagination */
+.load-more-container {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--accent-blue);
+  color: white;
+}
+
+.btn-primary:hover { background: var(--accent-blue-dark); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover { border-color: var(--text-muted); color: var(--text-primary); }
+
+/* ========================================
+   Paper Detail Modal
+   ======================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 200;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 24px;
+  overflow-y: auto;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  max-width: 800px;
+  width: 100%;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  background: var(--bg-secondary);
+  z-index: 1;
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.modal-close:hover { background: var(--bg-card-hover); color: var(--text-primary); }
+
+.modal-body { padding: 24px; }
+
+.detail-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  flex: 1;
+  padding-right: 12px;
+}
+
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.detail-section {
+  margin-bottom: 20px;
+}
+
+.detail-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.detail-section-content {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.detail-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ========================================
+   Trend Heatmap
+   ======================================== */
+.heatmap-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.legend-gradient {
+  width: 120px;
+  height: 16px;
+  border-radius: 3px;
+  background: linear-gradient(to right, #1e293b, #1e40af, #3b82f6, #60a5fa, #93c5fd);
+}
+
+.heatmap-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.heatmap-grid {
+  display: grid;
+  gap: 2px;
+  min-width: 800px;
+}
+
+.heatmap-label-row {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.heatmap-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 4px 2px;
+}
+
+.heatmap-row {
+  display: grid;
+  gap: 2px;
+  align-items: center;
+}
+
+.heatmap-row-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding-right: 8px;
+  white-space: nowrap;
+  text-align: right;
+  min-width: 100px;
+}
+
+.heatmap-cell {
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+  position: relative;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.15);
+  opacity: 0.9;
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(59,130,246,0.5);
+}
+
+.heatmap-cell.empty { background: var(--bg-primary); cursor: default; }
+.heatmap-cell.empty:hover { transform: none; box-shadow: none; }
+
+.heatmap-cell.count-0 { background: var(--bg-primary); }
+.heatmap-cell.count-1 { background: #1e3a5f; }
+.heatmap-cell.count-2 { background: #1e40af; }
+.heatmap-cell.count-3 { background: #2563eb; }
+.heatmap-cell.count-4 { background: #3b82f6; }
+.heatmap-cell.count-5 { background: #60a5fa; }
+
+/* Tooltip */
+.heatmap-tooltip {
+  position: fixed;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-primary);
+  pointer-events: none;
+  z-index: 300;
+  box-shadow: var(--shadow-lg);
+  display: none;
+  max-width: 300px;
+}
+
+.heatmap-tooltip.visible { display: block; }
+
+.heatmap-tooltip .tt-period { font-weight: 600; color: var(--accent-blue); }
+.heatmap-tooltip .tt-topic { font-weight: 500; margin-top: 4px; }
+.heatmap-tooltip .tt-count { color: var(--accent-orange); }
+
+/* Trend summary cards below heatmap */
+.trend-periods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.trend-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.trend-card:hover { border-color: var(--accent-blue); }
+
+.trend-card-period {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-bottom: 8px;
+}
+
+.trend-card-stat {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.trend-card-stat strong { color: var(--accent-orange); }
+
+/* ========================================
+   Research Groups
+   ======================================== */
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.group-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.group-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.group-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.group-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.group-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.group-card-inst {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.group-card-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.group-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.group-stat-item {
+  text-align: center;
+}
+
+.group-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.group-stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.group-mini-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 40px;
+  margin-bottom: 12px;
+}
+
+.group-mini-bar {
+  flex: 1;
+  background: var(--accent-blue);
+  border-radius: 2px 2px 0 0;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  min-width: 3px;
+}
+
+.group-mini-bar:hover { opacity: 1; }
+
+.group-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.group-kw {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(6,182,212,0.15);
+  color: var(--accent-cyan);
+}
+
+.group-recent-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.group-recent-paper {
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding: 4px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.group-recent-paper:hover { color: var(--accent-blue); }
+
+/* ========================================
+   AI Q&A
+   ======================================== */
+.qa-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 200px);
+  min-height: 500px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.qa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.qa-header-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.qa-settings-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+.qa-settings-btn:hover { border-color: var(--text-muted); }
+
+.qa-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.qa-welcome {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+}
+
+.qa-welcome-icon { font-size: 48px; margin-bottom: 16px; }
+.qa-welcome h3 { color: var(--text-secondary); margin-bottom: 8px; font-size: 16px; }
+.qa-welcome p { font-size: 13px; line-height: 1.6; max-width: 500px; margin: 0 auto; }
+
+.qa-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.qa-suggestion {
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  background: transparent;
+  font-family: var(--font-sans);
+  transition: all 0.2s;
+}
+
+.qa-suggestion:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.qa-msg {
+  display: flex;
+  gap: 12px;
+  max-width: 85%;
+}
+
+.qa-msg.user { align-self: flex-end; flex-direction: row-reverse; }
+
+.qa-msg-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.qa-msg.user .qa-msg-avatar { background: var(--accent-blue); }
+.qa-msg.assistant .qa-msg-avatar { background: var(--accent-purple); }
+
+.qa-msg-bubble {
+  padding: 12px 16px;
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.qa-msg.user .qa-msg-bubble {
+  background: var(--accent-blue);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.qa-msg.assistant .qa-msg-bubble {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-bottom-left-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.qa-typing {
+  display: flex;
+  gap: 4px;
+  padding: 12px 16px;
+}
+
+.qa-typing span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: typing 1.4s ease-in-out infinite;
+}
+
+.qa-typing span:nth-child(2) { animation-delay: 0.2s; }
+.qa-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+
+.qa-input-area {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+
+.qa-input {
+  flex: 1;
+  padding: 10px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: var(--font-sans);
+  outline: none;
+  resize: none;
+  max-height: 100px;
+}
+
+.qa-input:focus { border-color: var(--accent-blue); }
+.qa-input::placeholder { color: var(--text-muted); }
+
+.qa-send-btn {
+  padding: 10px 20px;
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.qa-send-btn:hover { background: var(--accent-blue-dark); }
+.qa-send-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Settings Modal */
+.settings-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.settings-modal.active { display: flex; }
+
+.settings-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.settings-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.settings-field { margin-bottom: 16px; }
+
+.settings-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.settings-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: var(--font-mono);
+  outline: none;
+}
+
+.settings-input:focus { border-color: var(--accent-blue); }
+
+.settings-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* ========================================
+   Loading State
+   ======================================== */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: opacity 0.5s;
+}
+
+.loading-screen.hidden { opacity: 0; pointer-events: none; }
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loading-text {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+
+.empty-state-icon { font-size: 48px; margin-bottom: 16px; }
+.empty-state h3 { font-size: 18px; color: var(--text-secondary); margin-bottom: 8px; }
+.empty-state p { font-size: 14px; }
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+  .header { padding: 0 16px; }
+  .header-subtitle { display: none; }
+  .header-meta .update-time span { display: none; }
+  .nav-inner { padding: 0 8px; overflow-x: auto; }
+  .nav-tab { padding: 0 14px; font-size: 13px; }
+  .nav-tab .tab-icon { display: none; }
+  .main { padding: 16px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stat-card { padding: 14px; }
+  .stat-card .stat-value { font-size: 24px; }
+  .search-toolbar { flex-direction: column; }
+  .search-input-wrapper { min-width: 100%; }
+  .groups-grid { grid-template-columns: 1fr; }
+  .qa-container { height: calc(100vh - 160px); }
+  .qa-msg { max-width: 95%; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .header-title { font-size: 16px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .nav-tab .tab-badge { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div class="loading-screen" id="loadingScreen">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">正在加载论文数据...</div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <span class="header-logo">📊</span>
+      <div>
+        <div class="header-title">PaperPulse</div>
+        <div class="header-subtitle">风扇噪声研究追踪系统</div>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="update-time">
+        <span class="pulse-dot"></span>
+        <span id="lastUpdate">加载中...</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav class="nav-container">
+  <div class="nav-inner">
+    <div class="nav-tab active" data-tab="dashboard">
+      <span class="tab-icon">📈</span> 总览
+    </div>
+    <div class="nav-tab" data-tab="papers">
+      <span class="tab-icon">📄</span> 论文浏览
+      <span class="tab-badge" id="paperCountBadge">0</span>
+    </div>
+    <div class="nav-tab" data-tab="heatmap">
+      <span class="tab-icon">🗺️</span> 趋势热力图
+    </div>
+    <div class="nav-tab" data-tab="groups">
+      <span class="tab-icon">🏛️</span> 课题组
+    </div>
+    <div class="nav-tab" data-tab="qa">
+      <span class="tab-icon">🤖</span> 智能问答
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main">
+
+  <!-- Tab: Dashboard -->
+  <div class="tab-pane active" id="tab-dashboard">
+    <div class="stats-grid" id="statsGrid"></div>
+    <div class="dashboard-grid">
+      <div>
+        <div class="section-title">📅 年度发表趋势</div>
+        <div class="year-chart">
+          <div class="chart-bars" id="yearChart"></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-title">🏷️ 热门关键词</div>
+        <div class="keyword-cloud" id="keywordCloud"></div>
+      </div>
+    </div>
+    <div class="recent-papers">
+      <div class="section-title">🕐 最新论文</div>
+      <div id="recentPapers"></div>
+    </div>
+  </div>
+
+  <!-- Tab: Papers -->
+  <div class="tab-pane" id="tab-papers">
+    <div class="search-toolbar">
+      <div class="search-input-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="paperSearch"
+               placeholder="搜索论文标题、摘要、关键词...">
+      </div>
+      <select class="filter-select" id="yearFilter">
+        <option value="">所有年份</option>
+      </select>
+      <select class="filter-select" id="relevanceFilter">
+        <option value="">所有相关度</option>
+        <option value="8">高相关 (8-10)</option>
+        <option value="5">中相关 (5-7)</option>
+        <option value="1">低相关 (1-4)</option>
+      </select>
+      <select class="filter-select" id="sortFilter">
+        <option value="year">按年份</option>
+        <option value="citations">按引用</option>
+        <option value="relevance">按相关度</option>
+        <option value="title">按标题</option>
+      </select>
+    </div>
+    <div class="paper-results-info" id="paperResultsInfo"></div>
+    <div class="paper-list" id="paperList"></div>
+    <div class="load-more-container" id="loadMoreContainer">
+      <button class="btn btn-primary" id="loadMoreBtn">加载更多</button>
+    </div>
+  </div>
+
+  <!-- Tab: Heatmap -->
+  <div class="tab-pane" id="tab-heatmap">
+    <div class="heatmap-controls">
+      <div class="heatmap-legend">
+        <span>少</span>
+        <div class="legend-gradient"></div>
+        <span>多</span>
+      </div>
+    </div>
+    <div class="heatmap-container">
+      <div class="heatmap-grid" id="heatmapGrid"></div>
+    </div>
+    <div class="section-title" style="margin-top:24px">📊 各时期详情</div>
+    <div class="trend-periods" id="trendPeriods"></div>
+  </div>
+
+  <!-- Tab: Groups -->
+  <div class="tab-pane" id="tab-groups">
+    <div class="groups-grid" id="groupsGrid"></div>
+  </div>
+
+  <!-- Tab: Q&A -->
+  <div class="tab-pane" id="tab-qa">
+    <div class="qa-container">
+      <div class="qa-header">
+        <div class="qa-header-title">🤖 风扇噪声研究助手</div>
+        <button class="qa-settings-btn" id="qaSettingsBtn">⚙️ 设置 API Key</button>
+      </div>
+      <div class="qa-messages" id="qaMessages">
+        <div class="qa-welcome" id="qaWelcome">
+          <div class="qa-welcome-icon">🎓</div>
+          <h3>欢迎使用风扇噪声研究助手</h3>
+          <p>基于论文数据库回答您关于风扇噪声研究的问题。<br>请先在设置中配置 DeepSeek API Key。</p>
+          <div class="qa-suggestions" id="qaSuggestions">
+            <button class="qa-suggestion" data-q="风扇噪声的主要研究方法有哪些？">研究方法概览</button>
+            <button class="qa-suggestion" data-q="近年来风扇降噪技术有哪些新进展？">降噪技术进展</button>
+            <button class="qa-suggestion" data-q="声衬设计在风扇噪声控制中的应用？">声衬设计应用</button>
+            <button class="qa-suggestion" data-q="宽带噪声和单音噪声的成因和区别？">噪声类型对比</button>
+          </div>
+        </div>
+      </div>
+      <div class="qa-input-area">
+        <input type="text" class="qa-input" id="qaInput"
+               placeholder="输入您的问题..." disabled>
+        <button class="qa-send-btn" id="qaSendBtn" disabled>发送</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Paper Detail Modal -->
+<div class="modal-overlay" id="paperModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="detail-title" id="modalTitle"></h2>
+      <button class="modal-close" id="modalClose">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- Heatmap Tooltip -->
+<div class="heatmap-tooltip" id="heatmapTooltip"></div>
+
+<!-- Q&A Settings Modal -->
+<div class="settings-modal" id="settingsModal">
+  <div class="settings-panel">
+    <div class="settings-title">⚙️ AI 问答设置</div>
+    <div class="settings-field">
+      <div class="settings-label">DeepSeek API Key</div>
+      <input type="password" class="settings-input" id="apiKeyInput"
+             placeholder="sk-...">
+      <div class="settings-hint">API Key 仅存储在浏览器本地 (localStorage)，不会上传到服务器。</div>
+    </div>
+    <div class="settings-actions">
+      <button class="btn btn-outline" id="settingsCancel">取消</button>
+      <button class="btn btn-primary" id="settingsSave">保存</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// PaperPulse Frontend JavaScript
+// ============================================================
+
+// Section 1: Configuration & State
+const CONFIG = {
+  dataBasePath: './data/',
+  papersPerPage: 20,
+  relevanceLevels: {
+    high: { min: 8, max: 10, label: '高相关', class: 'high' },
+    medium: { min: 5, max: 7, label: '中相关', class: 'medium' },
+    low: { min: 1, max: 4, label: '低相关', class: 'low' }
+  }
+};
+
+const STATE = {
+  papers: [],
+  trends: null,
+  groups: null,
+  summary: null,
+  currentTab: 'dashboard',
+  filters: { query: '', yearStart: '', yearEnd: '', relevanceMin: 0, sortBy: 'year' },
+  displayedCount: 0,
+  filteredPapers: [],
+  chatHistory: []
+};
+
+// Section 2: Data Loading
+async function loadAllData() {
+  const files = ['papers.json', 'trends.json', 'groups.json', 'summary.json'];
+  const promises = files.map(f =>
+    fetch(CONFIG.dataBasePath + f)
+      .then(r => r.json())
+      .catch(() => null)
+  );
+  const [papersData, trendsData, groupsData, summaryData] = await Promise.all(promises);
+
+  if (papersData) {
+    STATE.papers = papersData.papers || [];
+    document.getElementById('paperCountBadge').textContent = STATE.papers.length;
+  }
+  if (trendsData) STATE.trends = trendsData;
+  if (groupsData) STATE.groups = groupsData;
+  if (summaryData) STATE.summary = summaryData;
+
+  // Update last update time
+  const updateTime = summaryData?.last_updated || papersData?.last_updated || '';
+  if (updateTime) {
+    const d = new Date(updateTime);
+    document.getElementById('lastUpdate').textContent =
+      `更新于 ${d.toLocaleDateString('zh-CN')}`;
+  }
+}
+
+// Section 3: Dashboard Module
+function renderDashboard() {
+  const summary = STATE.summary;
+  const papers = STATE.papers;
+
+  // Stats cards
+  const statsHtml = [
+    { icon: '📄', value: summary?.total_papers || papers.length, label: '论文总数', color: 'blue' },
+    { icon: '🤖', value: summary?.analyzed_papers || 0, label: 'AI 已分析', color: 'green' },
+    { icon: '📊', value: (summary?.avg_citations || 0).toFixed(1), label: '平均引用', color: 'orange' },
+    { icon: '🏛️', value: summary?.total_groups || 0, label: '追踪课题组', color: 'purple' },
+    { icon: '📅', value: summary?.date_range?.earliest || '-', label: '最早年份', color: 'cyan' },
+    { icon: '🏆', value: summary?.peak_year?.year || '-', label: `发文高峰 (${summary?.peak_year?.count || 0}篇)`, color: 'blue' }
+  ];
+
+  document.getElementById('statsGrid').innerHTML = statsHtml.map(s => `
+    <div class="stat-card ${s.color}">
+      <div class="stat-icon">${s.icon}</div>
+      <div class="stat-value">${s.value}</div>
+      <div class="stat-label">${s.label}</div>
+    </div>
+  `).join('');
+
+  // Year chart
+  renderYearChart();
+
+  // Keyword cloud
+  renderKeywordCloud();
+
+  // Recent papers
+  renderRecentPapers();
+}
+
+function renderYearChart() {
+  const byYear = STATE.summary?.papers_by_year || {};
+  const entries = Object.entries(byYear).sort((a, b) => a[0] - b[0]);
+
+  if (entries.length === 0) return;
+
+  // Show last 30 years or all
+  const recent = entries.slice(-30);
+  const maxCount = Math.max(...recent.map(e => e[1]), 1);
+
+  document.getElementById('yearChart').innerHTML = recent.map(([year, count]) => {
+    const height = Math.max((count / maxCount) * 180, 2);
+    return `
+      <div class="chart-bar-wrapper">
+        <div class="chart-bar" style="height:${height}px" title="${year}: ${count}篇"></div>
+        <div class="chart-bar-label">${year.slice(2)}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderKeywordCloud() {
+  const keywords = STATE.summary?.top_keywords || [];
+  if (!keywords.length) return;
+
+  const maxCount = keywords[0]?.count || 1;
+  document.getElementById('keywordCloud').innerHTML = keywords.slice(0, 20).map(kw => {
+    const size = 0.8 + (kw.count / maxCount) * 0.6;
+    return `<span class="kw-tag" style="font-size:${size}em">${kw.keyword} <span class="kw-count">${kw.count}</span></span>`;
+  }).join('');
+}
+
+function renderRecentPapers() {
+  const recent = STATE.papers
+    .filter(p => p.year)
+    .sort((a, b) => (b.year - a.year) || (b.citation_count - a.citation_count))
+    .slice(0, 10);
+
+  document.getElementById('recentPapers').innerHTML = recent.map(p => `
+    <div class="paper-mini-card" onclick="showPaperDetail('${p.id}')">
+      <span class="paper-year">${p.year}</span>
+      <span class="paper-title">${escapeHtml(p.title)}</span>
+      <span class="paper-citations">引用 ${p.citation_count}</span>
+    </div>
+  `).join('');
+}
+
+// Section 4: Paper Browser Module
+function initPaperBrowser() {
+  // Year filter options
+  const years = [...new Set(STATE.papers.map(p => p.year).filter(Boolean))].sort();
+  const yearSelect = document.getElementById('yearFilter');
+  years.forEach(y => {
+    const opt = document.createElement('option');
+    opt.value = y;
+    opt.textContent = y;
+    yearSelect.appendChild(opt);
+  });
+
+  // Event listeners
+  document.getElementById('paperSearch').addEventListener('input', debounce(applyFilters, 300));
+  document.getElementById('yearFilter').addEventListener('change', applyFilters);
+  document.getElementById('relevanceFilter').addEventListener('change', applyFilters);
+  document.getElementById('sortFilter').addEventListener('change', applyFilters);
+  document.getElementById('loadMoreBtn').addEventListener('click', loadMorePapers);
+
+  applyFilters();
+}
+
+function applyFilters() {
+  const query = document.getElementById('paperSearch').value.toLowerCase().trim();
+  const year = document.getElementById('yearFilter').value;
+  const relLevel = document.getElementById('relevanceFilter').value;
+  const sortBy = document.getElementById('sortFilter').value;
+
+  STATE.filters = { query, year, relevanceMin: parseInt(relLevel) || 0, sortBy };
+  STATE.displayedCount = 0;
+
+  // Filter
+  STATE.filteredPapers = STATE.papers.filter(p => {
+    if (query) {
+      const text = [p.title, p.abstract, ...(p.topics || []),
+        ...(p.analysis?.keywords || []), ...(p.authors?.map(a => a.name) || [])
+      ].join(' ').toLowerCase();
+      if (!text.includes(query)) return false;
+    }
+    if (year && p.year != year) return false;
+    if (STATE.filters.relevanceMin) {
+      const score = p.analysis?.relevance_score || 0;
+      if (score < STATE.filters.relevanceMin) return false;
+    }
+    return true;
+  });
+
+  // Sort
+  STATE.filteredPapers.sort((a, b) => {
+    switch (sortBy) {
+      case 'year': return (b.year || 0) - (a.year || 0) || (b.citation_count || 0) - (a.citation_count || 0);
+      case 'citations': return (b.citation_count || 0) - (a.citation_count || 0);
+      case 'relevance': return (b.analysis?.relevance_score || 0) - (a.analysis?.relevance_score || 0);
+      case 'title': return (a.title || '').localeCompare(b.title || '');
+      default: return 0;
+    }
+  });
+
+  document.getElementById('paperResultsInfo').textContent =
+    `共 ${STATE.filteredPapers.length} 篇论文`;
+  renderPaperList();
+}
+
+function renderPaperList() {
+  const start = STATE.displayedCount;
+  const end = Math.min(start + CONFIG.papersPerPage, STATE.filteredPapers.length);
+  const papers = STATE.filteredPapers.slice(start, end);
+
+  if (start === 0) {
+    document.getElementById('paperList').innerHTML = '';
+  }
+
+  if (STATE.filteredPapers.length === 0) {
+    document.getElementById('paperList').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🔍</div>
+        <h3>未找到匹配的论文</h3>
+        <p>尝试调整搜索条件或关键词</p>
+      </div>`;
+    document.getElementById('loadMoreContainer').style.display = 'none';
+    return;
+  }
+
+  const html = papers.map(p => {
+    const score = p.analysis?.relevance_score || 0;
+    const relClass = score >= 8 ? 'high' : score >= 5 ? 'medium' : 'low';
+    const relLabel = score >= 8 ? '高相关' : score >= 5 ? '中相关' : '低相关';
+    const authors = (p.authors || []).slice(0, 5).map(a => a.name).join(', ');
+    const summary = p.analysis?.summary || p.abstract || '';
+    const keywords = p.analysis?.keywords || p.topics || [];
+
+    return `
+      <div class="paper-card" onclick="showPaperDetail('${p.id}')">
+        <div class="paper-card-header">
+          <div class="paper-card-title">${escapeHtml(p.title)}</div>
+          ${score ? `<span class="relevance-badge ${relClass}">${relLabel} ${score}/10</span>` : ''}
+        </div>
+        <div class="paper-card-meta">
+          <span>📅 ${p.year || 'N/A'}</span>
+          <span>📊 引用 ${p.citation_count || 0}</span>
+          ${p.source?.name ? `<span>📖 ${p.source.name}</span>` : ''}
+          ${p.is_oa ? '<span style="color:var(--accent-green)">🔓 开放获取</span>' : ''}
+        </div>
+        <div class="paper-card-authors">${escapeHtml(authors)}</div>
+        ${summary ? `<div class="paper-card-summary">${escapeHtml(summary.slice(0, 200))}</div>` : ''}
+        ${keywords.length ? `<div class="paper-card-tags">${keywords.slice(0, 5).map(k => `<span class="paper-tag">${escapeHtml(k)}</span>`).join('')}</div>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  document.getElementById('paperList').insertAdjacentHTML('beforeend', html);
+  STATE.displayedCount = end;
+
+  const hasMore = end < STATE.filteredPapers.length;
+  document.getElementById('loadMoreContainer').style.display = hasMore ? 'block' : 'none';
+  document.getElementById('loadMoreBtn').textContent = hasMore
+    ? `加载更多 (${STATE.filteredPapers.length - end} 篇)` : '已全部加载';
+}
+
+function loadMorePapers() {
+  renderPaperList();
+}
+
+// Paper Detail Modal
+function showPaperDetail(paperId) {
+  const p = STATE.papers.find(pp => pp.id === paperId);
+  if (!p) return;
+
+  document.getElementById('modalTitle').textContent = p.title;
+
+  const analysis = p.analysis || {};
+  const authors = (p.authors || []).map(a =>
+    a.institution ? `${a.name} (${a.institution})` : a.name
+  ).join(', ');
+
+  let bodyHtml = `
+    <div class="detail-meta">
+      <span>📅 ${p.year || 'N/A'}</span>
+      <span>📊 引用: ${p.citation_count || 0}</span>
+      ${p.doi ? `<span>🔗 <a href="https://doi.org/${p.doi}" target="_blank">DOI</a></span>` : ''}
+      ${p.open_access_url ? `<span><a href="${p.open_access_url}" target="_blank">📄 全文</a></span>` : ''}
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-title">👥 作者</div>
+      <div class="detail-section-content">${escapeHtml(authors)}</div>
+    </div>
+  `;
+
+  if (p.abstract) {
+    bodyHtml += `
+      <div class="detail-section">
+        <div class="detail-section-title">📝 摘要</div>
+        <div class="detail-section-content">${escapeHtml(p.abstract)}</div>
+      </div>
+    `;
+  }
+
+  if (analysis.summary) {
+    bodyHtml += `
+      <div class="detail-section">
+        <div class="detail-section-title">🤖 AI 综述</div>
+        <div class="detail-section-content">${escapeHtml(analysis.summary)}</div>
+      </div>
+    `;
+  }
+
+  if (analysis.methods) {
+    bodyHtml += `
+      <div class="detail-section">
+        <div class="detail-section-title">🔬 研究方法</div>
+        <div class="detail-section-content">${escapeHtml(analysis.methods)}</div>
+      </div>
+    `;
+  }
+
+  if (analysis.innovations) {
+    bodyHtml += `
+      <div class="detail-section">
+        <div class="detail-section-title">💡 创新点</div>
+        <div class="detail-section-content">${escapeHtml(analysis.innovations)}</div>
+      </div>
+    `;
+  }
+
+  if (analysis.conclusions) {
+    bodyHtml += `
+      <div class="detail-section">
+        <div class="detail-section-title">📌 结论</div>
+        <div class="detail-section-content">${escapeHtml(analysis.conclusions)}</div>
+      </div>
+    `;
+  }
+
+  const keywords = analysis.keywords || p.topics || [];
+  if (keywords.length) {
+    bodyHtml += `
+      <div class="detail-section">
+        <div class="detail-section-title">🏷️ 关键词</div>
+        <div class="detail-keywords">${keywords.map(k => `<span class="paper-tag">${escapeHtml(k)}</span>`).join('')}</div>
+      </div>
+    `;
+  }
+
+  document.getElementById('modalBody').innerHTML = bodyHtml;
+  document.getElementById('paperModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePaperModal() {
+  document.getElementById('paperModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Section 5: Trend Heatmap Module
+function renderHeatmap() {
+  const trends = STATE.trends;
+  if (!trends) {
+    document.getElementById('heatmapGrid').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🗺️</div>
+        <h3>暂无趋势数据</h3>
+        <p>请先运行数据更新脚本生成趋势数据</p>
+      </div>`;
+    return;
+  }
+
+  const subtopics = trends.all_subtopics || [];
+  const intervals = trends.intervals || [];
+
+  if (!subtopics.length || !intervals.length) return;
+
+  // Build heatmap grid using CSS Grid
+  const numCols = intervals.length;
+  let html = '';
+
+  // Column headers (periods)
+  html += '<div style="display:grid;grid-template-columns:100px repeat(' + numCols + ',1fr);gap:2px;margin-bottom:4px">';
+  html += '<div></div>';
+  intervals.forEach(iv => {
+    html += `<div style="text-align:center;font-size:11px;color:var(--text-muted);padding:4px 2px">${iv.period}</div>`;
+  });
+  html += '</div>';
+
+  // Find global max for normalization
+  let maxCount = 0;
+  intervals.forEach(iv => {
+    Object.values(iv.subtopics || {}).forEach(c => {
+      if (c > maxCount) maxCount = c;
+    });
+  });
+
+  // Rows (subtopics)
+  subtopics.forEach(st => {
+    const stLabel = st.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    html += '<div style="display:grid;grid-template-columns:100px repeat(' + numCols + ',1fr);gap:2px;margin-bottom:2px">';
+    html += `<div style="font-size:12px;color:var(--text-secondary);text-align:right;padding-right:8px;display:flex;align-items:center;justify-content:flex-end">${stLabel}</div>`;
+
+    intervals.forEach(iv => {
+      const count = (iv.subtopics || {})[st] || 0;
+      const intensity = maxCount > 0 ? count / maxCount : 0;
+      const bg = getHeatColor(intensity);
+      const topPapers = (iv.top_papers || []).slice(0, 2).map(p => p.title).join('; ');
+
+      html += `<div class="heatmap-cell ${count === 0 ? 'empty' : ''}"
+        style="background:${bg}"
+        data-period="${iv.period}"
+        data-topic="${stLabel}"
+        data-count="${count}"
+        data-top="${escapeAttr(topPapers)}"
+        onmouseenter="showHeatmapTooltip(event)"
+        onmouseleave="hideHeatmapTooltip()"
+        onclick="filterByHeatmap('${iv.period}','${st}')">${count || ''}</div>`;
+    });
+
+    html += '</div>';
+  });
+
+  document.getElementById('heatmapGrid').innerHTML = html;
+
+  // Trend period detail cards
+  renderTrendPeriods(intervals);
+}
+
+function getHeatColor(intensity) {
+  if (intensity === 0) return 'var(--bg-primary)';
+  const r = Math.round(30 + intensity * 29);
+  const g = Math.round(58 + intensity * 72);
+  const b = Math.round(95 + intensity * 161);
+  return `rgb(${r},${g},${b})`;
+}
+
+function showHeatmapTooltip(e) {
+  const cell = e.target.closest('.heatmap-cell');
+  if (!cell || cell.classList.contains('empty')) return;
+
+  const tt = document.getElementById('heatmapTooltip');
+  tt.innerHTML = `
+    <div class="tt-period">${cell.dataset.period}</div>
+    <div class="tt-topic">${cell.dataset.topic}</div>
+    <div class="tt-count">${cell.dataset.count} 篇论文</div>
+    ${cell.dataset.top ? `<div style="margin-top:4px;font-size:12px;color:var(--text-muted)">代表性: ${cell.dataset.top.slice(0, 80)}...</div>` : ''}
+  `;
+  tt.classList.add('visible');
+
+  const rect = cell.getBoundingClientRect();
+  tt.style.left = Math.min(rect.left, window.innerWidth - 320) + 'px';
+  tt.style.top = (rect.bottom + 8) + 'px';
+}
+
+function hideHeatmapTooltip() {
+  document.getElementById('heatmapTooltip').classList.remove('visible');
+}
+
+function filterByHeatmap(period, subtopic) {
+  // Switch to papers tab and filter by period
+  switchTab('papers');
+  const [startYear, endYear] = period.split('-').map(Number);
+
+  // Filter papers by year range
+  STATE.filteredPapers = STATE.papers.filter(p => {
+    const y = p.year;
+    return y >= startYear && y <= endYear;
+  });
+
+  STATE.displayedCount = 0;
+  document.getElementById('paperResultsInfo').textContent =
+    `${period} 期间: 共 ${STATE.filteredPapers.length} 篇论文`;
+  document.getElementById('paperList').innerHTML = '';
+  renderPaperList();
+}
+
+function renderTrendPeriods(intervals) {
+  if (!intervals.length) return;
+
+  document.getElementById('trendPeriods').innerHTML = intervals.slice(-10).reverse().map(iv => {
+    const topAuthors = (iv.top_authors || []).slice(0, 3).map(a => a.name).join(', ');
+    const topVenues = (iv.top_venues || []).slice(0, 2).map(v => v.name).join(', ');
+
+    return `
+      <div class="trend-card" onclick="filterByHeatmap('${iv.period}','')">
+        <div class="trend-card-period">${iv.period}</div>
+        <div class="trend-card-stat">📄 论文数: <strong>${iv.paper_count}</strong></div>
+        <div class="trend-card-stat">👥 代表作者: ${topAuthors || '-'}</div>
+        <div class="trend-card-stat">📖 主要期刊: ${topVenues || '-'}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// Section 6: Research Groups Module
+function renderGroups() {
+  const groups = STATE.groups?.groups || [];
+
+  if (!groups.length) {
+    document.getElementById('groupsGrid').innerHTML = `
+      <div class="empty-state" style="grid-column:1/-1">
+        <div class="empty-state-icon">🏛️</div>
+        <h3>暂无课题组数据</h3>
+        <p>请先运行数据更新脚本</p>
+      </div>`;
+    return;
+  }
+
+  document.getElementById('groupsGrid').innerHTML = groups.map(g => {
+    // Mini bar chart for yearly counts
+    const yearlyValues = Object.values(g.yearly_counts || {});
+    const maxYearly = Math.max(...yearlyValues, 1);
+    const barsHtml = Object.entries(g.yearly_counts || {})
+      .slice(-10)
+      .map(([y, c]) => {
+        const h = Math.max((c / maxYearly) * 36, 2);
+        return `<div class="group-mini-bar" style="height:${h}px" title="${y}: ${c}篇"></div>`;
+      }).join('');
+
+    const recentPapers = (g.recent_papers || []).slice(0, 3).map(p =>
+      `<div class="group-recent-paper" onclick="showPaperDetail('${p.id}')">${p.year} - ${escapeHtml(p.title)}</div>`
+    ).join('');
+
+    const keywords = (g.top_keywords || []).slice(0, 6).map(k =>
+      `<span class="group-kw">${escapeHtml(k)}</span>`
+    ).join('');
+
+    return `
+      <div class="group-card">
+        <div class="group-card-header">
+          <div class="group-card-icon">🏛️</div>
+          <div>
+            <div class="group-card-name">${escapeHtml(g.name)}</div>
+            <div class="group-card-inst">${escapeHtml(g.institution)}</div>
+          </div>
+        </div>
+        <div class="group-card-desc">${escapeHtml(g.description)}</div>
+        <div class="group-stats">
+          <div class="group-stat-item">
+            <div class="group-stat-value">${g.total_papers}</div>
+            <div class="group-stat-label">论文数</div>
+          </div>
+        </div>
+        <div class="group-mini-chart">${barsHtml}</div>
+        ${keywords ? `<div class="group-keywords">${keywords}</div>` : ''}
+        ${recentPapers ? `
+          <div class="group-recent-title">最新论文</div>
+          ${recentPapers}
+        ` : ''}
+      </div>
+    `;
+  }).join('');
+}
+
+// Section 7: AI Q&A Module
+function initQA() {
+  // Check for saved API key
+  const savedKey = localStorage.getItem('deepseek_api_key');
+  if (savedKey) {
+    enableQA();
+  }
+
+  document.getElementById('qaSettingsBtn').addEventListener('click', () => {
+    document.getElementById('settingsModal').classList.add('active');
+    document.getElementById('apiKeyInput').value = savedKey || '';
+  });
+
+  document.getElementById('settingsSave').addEventListener('click', () => {
+    const key = document.getElementById('apiKeyInput').value.trim();
+    if (key) {
+      localStorage.setItem('deepseek_api_key', key);
+      enableQA();
+    }
+    document.getElementById('settingsModal').classList.remove('active');
+  });
+
+  document.getElementById('settingsCancel').addEventListener('click', () => {
+    document.getElementById('settingsModal').classList.remove('active');
+  });
+
+  document.getElementById('qaSendBtn').addEventListener('click', sendQuestion);
+  document.getElementById('qaInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendQuestion();
+    }
+  });
+
+  // Suggestion clicks
+  document.querySelectorAll('.qa-suggestion').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('qaInput').value = btn.dataset.q;
+      sendQuestion();
+    });
+  });
+}
+
+function enableQA() {
+  document.getElementById('qaInput').disabled = false;
+  document.getElementById('qaSendBtn').disabled = false;
+  document.getElementById('qaInput').placeholder = '输入您的问题...';
+}
+
+function findRelevantPapers(question, topN = 15) {
+  const qWords = question.toLowerCase().split(/\s+/);
+  const scored = STATE.papers
+    .filter(p => p.analysis && !p.analysis.error)
+    .map(p => {
+      let score = 0;
+      const analysis = p.analysis;
+      const kwStr = (analysis.keywords || []).join(' ').toLowerCase();
+      const sumStr = (analysis.summary || '').toLowerCase();
+      const titleStr = (p.title || '').toLowerCase();
+
+      qWords.forEach(w => {
+        if (w.length < 2) return;
+        if (titleStr.includes(w)) score += 3;
+        if (kwStr.includes(w)) score += 2;
+        if (sumStr.includes(w)) score += 1;
+      });
+
+      // Boost high relevance papers
+      score += (analysis.relevance_score || 0) * 0.5;
+
+      return { paper: p, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, topN)
+    .map(s => s.paper);
+
+  return scored;
+}
+
+async function sendQuestion() {
+  const input = document.getElementById('qaInput');
+  const question = input.value.trim();
+  if (!question) return;
+
+  const apiKey = localStorage.getItem('deepseek_api_key');
+  if (!apiKey) {
+    document.getElementById('settingsModal').classList.add('active');
+    return;
+  }
+
+  // Hide welcome
+  const welcome = document.getElementById('qaWelcome');
+  if (welcome) welcome.style.display = 'none';
+
+  // Add user message
+  addChatMessage('user', question);
+  input.value = '';
+
+  // Show typing indicator
+  const typingId = addTypingIndicator();
+
+  try {
+    const relevantPapers = findRelevantPapers(question);
+    const context = relevantPapers.map((p, i) => {
+      const a = p.analysis || {};
+      return `[${i+1}] ${p.title} (${p.year})\n综述: ${a.summary || '无'}\n关键词: ${(a.keywords||[]).join(', ')}`;
+    }).join('\n---\n');
+
+    const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'deepseek-chat',
+        messages: [
+          { role: 'system', content: '你是风扇噪声研究领域的专家助手。根据提供的论文资料回答用户问题。要求：1.用中文回答 2.引用论文时注明作者和年份 3.资料不足时如实说明' },
+          { role: 'user', content: `参考资料：\n${context}\n\n用户问题：${question}` }
+        ],
+        max_tokens: 2000,
+        temperature: 0.5
+      })
+    });
+
+    const data = await response.json();
+    const answer = data.choices?.[0]?.message?.content || '抱歉，未能获取到回答。';
+
+    removeTypingIndicator(typingId);
+    addChatMessage('assistant', answer);
+  } catch (err) {
+    removeTypingIndicator(typingId);
+    addChatMessage('assistant', `请求失败: ${err.message}。请检查 API Key 是否正确。`);
+  }
+}
+
+function addChatMessage(role, content) {
+  const container = document.getElementById('qaMessages');
+  const icon = role === 'user' ? '👤' : '🤖';
+  const div = document.createElement('div');
+  div.className = `qa-msg ${role}`;
+  div.innerHTML = `
+    <div class="qa-msg-avatar">${icon}</div>
+    <div class="qa-msg-bubble">${escapeHtml(content).replace(/\n/g, '<br>')}</div>
+  `;
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+
+function addTypingIndicator() {
+  const container = document.getElementById('qaMessages');
+  const div = document.createElement('div');
+  div.className = 'qa-msg assistant';
+  div.id = 'typing-indicator';
+  div.innerHTML = `
+    <div class="qa-msg-avatar">🤖</div>
+    <div class="qa-typing"><span></span><span></span><span></span></div>
+  `;
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+  return 'typing-indicator';
+}
+
+function removeTypingIndicator(id) {
+  const el = document.getElementById(id);
+  if (el) el.remove();
+}
+
+// Section 8: Utility Functions
+function escapeHtml(str) {
+  if (!str) return '';
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function escapeAttr(str) {
+  if (!str) return '';
+  return str.replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function debounce(fn, delay) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+function switchTab(tabName) {
+  STATE.currentTab = tabName;
+  document.querySelectorAll('.nav-tab').forEach(t =>
+    t.classList.toggle('active', t.dataset.tab === tabName)
+  );
+  document.querySelectorAll('.tab-pane').forEach(p =>
+    p.classList.toggle('active', p.id === `tab-${tabName}`)
+  );
+}
+
+// Section 9: Initialization
+async function init() {
+  try {
+    await loadAllData();
+    renderDashboard();
+    initPaperBrowser();
+    renderHeatmap();
+    renderGroups();
+    initQA();
+  } catch (err) {
+    console.error('初始化失败:', err);
+  }
+
+  // Hide loading screen
+  setTimeout(() => {
+    document.getElementById('loadingScreen').classList.add('hidden');
+  }, 300);
+}
+
+// Tab navigation
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+});
+
+// Modal close
+document.getElementById('modalClose').addEventListener('click', closePaperModal);
+document.getElementById('paperModal').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closePaperModal();
+});
+
+// Escape key closes modals
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closePaperModal();
+    document.getElementById('settingsModal').classList.remove('active');
+  }
+});
+
+// Start
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

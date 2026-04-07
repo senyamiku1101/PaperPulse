@@ -1,0 +1,85 @@
+{
+  "last_updated": "2026-04-07T06:45:47.568335+00:00",
+  "total_groups": 2,
+  "groups": [
+    {
+      "id": "group_cambridge",
+      "name": "Cambridge Whittle Lab",
+      "institution": "University of Cambridge",
+      "institution_query": "University of Cambridge",
+      "description": "航空发动机风扇噪声与气动声学",
+      "author_ids": [],
+      "total_papers": 1,
+      "recent_papers": [
+        {
+          "id": "W2966934481",
+          "title": "Quasi 3D Nacelle Design to Simulate Crosswind Flows: Merits and Challenges",
+          "year": 2019,
+          "citations": 15,
+          "relevance_score": 8
+        }
+      ],
+      "paper_ids": [
+        "W2966934481"
+      ],
+      "yearly_counts": {
+        "2019": 1
+      },
+      "top_keywords": [
+        "发动机短舱",
+        "侧风",
+        "流动分离",
+        "准三维模拟",
+        "计算流体动力学",
+        "Aerodynamics and Fluid Dynamics Research",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Aerodynamics and Acoustics in Jet Flows"
+      ]
+    },
+    {
+      "id": "group_buaa",
+      "name": "Beihang University",
+      "institution": "Beihang University",
+      "institution_query": "Beihang University",
+      "description": "风扇气动声学与噪声控制",
+      "author_ids": [],
+      "total_papers": 2,
+      "recent_papers": [
+        {
+          "id": "W7124246580",
+          "title": "Advances in Folding-Wing Flying Underwater Drone (FUD) Technology",
+          "year": 2026,
+          "citations": 0,
+          "relevance_score": 4
+        },
+        {
+          "id": "W4401980588",
+          "title": "Numerical and Experimental Investigation of Steady Flow Distortion in Drooped Turbofan Intakes",
+          "year": 2024,
+          "citations": 0,
+          "relevance_score": 8
+        }
+      ],
+      "paper_ids": [
+        "W4401980588",
+        "W7124246580"
+      ],
+      "yearly_counts": {
+        "2024": 1,
+        "2026": 1
+      },
+      "top_keywords": [
+        "涡轮风扇进气道",
+        "稳态流动畸变",
+        "计算流体动力学",
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Fluid Dynamics and Turbulent Flows",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "折叠翼飞行水下无人机",
+        "混合空气水下车辆",
+        "跨域操作",
+        "Biomimetic flight and propulsion mechanisms"
+      ]
+    }
+  ]
+}

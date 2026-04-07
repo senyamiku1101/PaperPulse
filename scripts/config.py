@@ -99,7 +99,7 @@ RESEARCH_GROUPS = [
         "institution": "Beihang University",
         "institution_query": "Beihang University",
         "description": "风扇气动声学与噪声控制",
-        "author_ids": [a5081338883],
+        "author_ids": [A5081338883],
     },
     {
         "id": "group_sjtu",
@@ -123,7 +123,7 @@ RESEARCH_GROUPS = [
         "institution": "University of Southampton",
         "institution_query": " University of Southamptonr",
         "description": "航空发动机风扇噪声研究",
-        "author_ids": [a5111878691, a5063240001],
+        "author_ids": [A5111878691, A5063240001],
     },
 ]
 

@@ -99,7 +99,7 @@ RESEARCH_GROUPS = [
         "institution": "Beihang University",
         "institution_query": "Beihang University",
         "description": "风扇气动声学与噪声控制",
-        "author_ids": [],
+        "author_ids": [a5081338883],
     },
     {
         "id": "group_sjtu",

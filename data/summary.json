@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-07T08:03:33.923182+00:00",
+  "last_updated": "2026-04-07T08:24:31.021567+00:00",
   "total_papers": 64,
   "analyzed_papers": 60,
   "date_range": {
@@ -99,7 +99,7 @@
     "year": 2024,
     "count": 9
   },
-  "total_groups": 2,
+  "total_groups": 3,
   "papers_by_year": {
     "1953": 1,
     "1954": 2,

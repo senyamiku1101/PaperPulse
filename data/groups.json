@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-07T08:03:33.910048+00:00",
-  "total_groups": 2,
+  "last_updated": "2026-04-07T08:24:31.007166+00:00",
+  "total_groups": 3,
   "groups": [
     {
       "id": "group_cambridge",
@@ -42,7 +42,9 @@
       "institution": "Beihang University",
       "institution_query": "Beihang University",
       "description": "风扇气动声学与噪声控制",
-      "author_ids": [],
+      "author_ids": [
+        "A5081338883"
+      ],
       "total_papers": 2,
       "recent_papers": [
         {
@@ -79,6 +81,124 @@
         "稳态流动畸变",
         "计算流体动力学",
         "Aerodynamics and Acoustics in Jet Flows"
+      ]
+    },
+    {
+      "id": "group_ISVR_Southampton",
+      "name": "ISVR, University of Southampton",
+      "institution": "University of Southampton",
+      "institution_query": " University of Southamptonr",
+      "description": "航空发动机风扇噪声研究",
+      "author_ids": [
+        "A5111878691",
+        "A5063240001"
+      ],
+      "total_papers": 10,
+      "recent_papers": [
+        {
+          "id": "W7129079259",
+          "title": "Part-span approximation of linear tone noise propagation in an aeroengine intake",
+          "year": 2026,
+          "citations": 0,
+          "relevance_score": 9
+        },
+        {
+          "id": "W4399271465",
+          "title": "Fan Buzz-Saw Noise Under Intake Flow Distortion: A Computational Study",
+          "year": 2024,
+          "citations": 1,
+          "relevance_score": 9
+        },
+        {
+          "id": "W4399271367",
+          "title": "Part-Span Approximation of Tone Noise Propagation in an Aeroengine Intake. Part 1: Linear Propagation",
+          "year": 2024,
+          "citations": 1,
+          "relevance_score": 9
+        },
+        {
+          "id": "W4399271433",
+          "title": "Part-Span Approximation of Tone Noise Propagation in an Aeroengine Intake. Part 2: Non-Linear Propagation",
+          "year": 2024,
+          "citations": 0,
+          "relevance_score": 9
+        },
+        {
+          "id": "W4282550185",
+          "title": "CFD/CAA coupling for the prediction of fan tone noise propagation and radiation through a drooped intake",
+          "year": 2022,
+          "citations": 3,
+          "relevance_score": 9
+        },
+        {
+          "id": "W2945256660",
+          "title": "Effects of turbofan engine intake droop and length on fan tone noise",
+          "year": 2019,
+          "citations": 5,
+          "relevance_score": 0
+        },
+        {
+          "id": "W3207211774",
+          "title": "ACTRAN numerical study on the effects of intake geometry and length on fan tone noise propagation and radiation",
+          "year": 2018,
+          "citations": 0,
+          "relevance_score": 9
+        },
+        {
+          "id": "W4233245264",
+          "title": "The Effect of Steady Flow Distortion on Noise Propagation in Turbofan Intakes",
+          "year": 2016,
+          "citations": 9,
+          "relevance_score": 9
+        },
+        {
+          "id": "W2327967107",
+          "title": "The Effect of Steady Flow Distortion on Mode Propagation in a Turbofan Intake",
+          "year": 2014,
+          "citations": 14,
+          "relevance_score": 9
+        },
+        {
+          "id": "W1969131304",
+          "title": "Numerical methods for noise propagation in moving flows, with application to turbofan engines",
+          "year": 2009,
+          "citations": 52,
+          "relevance_score": 9
+        }
+      ],
+      "paper_ids": [
+        "W4399271433",
+        "W4282550185",
+        "W1969131304",
+        "W2945256660",
+        "W4399271465",
+        "W4399271367",
+        "W2327967107",
+        "W3207211774",
+        "W4233245264",
+        "W7129079259"
+      ],
+      "yearly_counts": {
+        "2009": 1,
+        "2014": 1,
+        "2016": 1,
+        "2018": 1,
+        "2019": 1,
+        "2022": 1,
+        "2024": 3,
+        "2026": 1
+      },
+      "top_keywords": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Aerodynamics and Fluid Dynamics Research",
+        "风扇噪声",
+        "部分跨度近似",
+        "噪声传播",
+        "Vehicle Noise and Vibration Control",
+        "计算流体动力学",
+        "Fluid Dynamics and Turbulent Flows",
+        "音调噪声传播"
       ]
     }
   ]

@@ -36,14 +36,14 @@ ANALYSIS_DELAY = 1.0  # DeepSeek 请求间隔（秒）
 SEARCH_QUERIES = [
     # ── 斜切口短舱进气道 ──
     "drooped intake",
-    "scarfed intake",
+
 
 ]
 
 # 子主题关键词分类（用于趋势分析）
 SUBTOPIC_KEYWORDS = {
-    "斜切口短舱进气道": ["drooped intake", "scarfed intake", "short intake", "nacelle"],
-    "风扇噪声": ["fan noise", "tonal noise", "broadband noise"],
+    "斜切口短舱进气道": ["drooped intake", "scarfed intake", "short intake", "turbofan intake"],
+    "风扇噪声": ["fan noise", "tonal noise", "compressor noise", "broadband noise"],
     "压气机气动声学": ["compressor aeroacoustics", "fan aeroacoustics"],
     "稳定性建模": ["analytical", "theoretical", "modeling", "prediction", "mathematical", "actuator disk", "body force model", "streamline curvature"],
     "进气畸变": ["distortion", "inlet distortion", "circumferential distortion", "radial distortion", "steady flow distortion", "static pressure distortion", "total pressure distortion"],
@@ -100,14 +100,6 @@ LOW_VOLUME_THRESHOLD = 300
 
 # 追踪的课题组
 RESEARCH_GROUPS = [
-    {
-        "id": "group_cambridge",
-        "name": "Cambridge Whittle Lab",
-        "institution": "University of Cambridge",
-        "institution_query": "University of Cambridge",
-        "description": "航空发动机风扇噪声与气动声学",
-        "author_ids": [],
-    },
     {
         "id": "group_buaa",
         "name": "Beihang University",

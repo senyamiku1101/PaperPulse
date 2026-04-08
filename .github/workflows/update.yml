@@ -42,26 +42,7 @@ jobs:
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
-        run: |
-          echo "=== Step 1: Fetch papers ==="
-          python -m scripts.main --fetch-only
-
-          echo "=== Step 2: Filter papers ==="
-          python -c "from scripts.filtering import run_filter_pipeline; run_filter_pipeline()"
-
-          echo "=== Step 3: AI analysis ==="
-          python -m scripts.main --analyze-only --no-filter
-
-          echo "=== Step 4: Generate trends ==="
-          python -m scripts.main --trends-only
-
-          echo "=== Step 5: Discover groups ==="
-          python -m scripts.main --groups-only
-
-          echo "=== Step 6: Generate summary ==="
-          python -m scripts.main --summary-only
-
-          echo "=== Pipeline complete ==="
+        run: python -m scripts.main --all
 
       - name: Commit and push changes
         run: |

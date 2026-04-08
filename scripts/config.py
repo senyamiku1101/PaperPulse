@@ -36,6 +36,9 @@ ANALYSIS_DELAY = 1.0  # DeepSeek 请求间隔（秒）
 SEARCH_QUERIES = [
     # ── 斜切口短舱进气道 ──
     "drooped intake",
+    "scarfed intake",
+    "short intake",
+    "turbofan intake",
 
 
 ]

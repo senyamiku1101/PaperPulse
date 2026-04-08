@@ -1,0 +1,2730 @@
+{
+  "last_updated": "2026-04-08T08:25:20.768124+00:00",
+  "total_count": 43,
+  "papers": [
+    {
+      "id": "W7129079259",
+      "doi": "https://doi.org/10.1016/j.jsv.2026.119701",
+      "title": "Part-span approximation of linear tone noise propagation in an aeroengine intake",
+      "authors": [
+        {
+          "name": "Joseph S.P. Binns",
+          "id": "A5126122294",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Long Wu",
+          "id": "A5042589204",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Alexander G. Wilson",
+          "id": "A5111575318",
+          "institution": "University of Southampton"
+        }
+      ],
+      "year": 2026,
+      "citation_count": 0,
+      "abstract": "• Proposed a ‘part-span approximation’ for in-duct tone noise predictions. • Characterised errors introduced by the approximation. • Applied to noise radiation from a realistic intake geometry. • Demonstrated a potentially significant computational saving. A part-span methodology is proposed for the propagation of linear tone noise in aeroengine intake ducts. For fan rotor-associated tone noise sources in particular, but also rotor-stator interaction tones, much of the acoustic energy flux is concentrated towards the duct outer wall, offering the opportunity to reduce the computational expense of numerical predictions by neglecting low-span regions of the duct. Conventional computational fluid dynamics (CFD) methods can predict the acoustic field with reasonable accuracy but are too computationally expensive for iterative application during the design process. The methodology is investigated in four stages, starting with the impact on mode shape representation and in-duct propagation of individual Fourier-Bessel eigenmodes in a cylindrical duct through to far-field radiation. The approach is then applied to cases involving an axisymmetric, yet otherwise realistic, intake geometry, including a test case that considers steady flow distortion effects. Negligible errors for in-duct and far-field predictions are observed in many applied cases. Higher error levels are introduced for modes at low azimuthal harmonics and with ducts of high hub-tip ratios. In-duct, the error is closely linked to the amount of acoustic energy truncated in an approximated duct with an artificial hub wall and is associated with the redistribution of high-order radial mode components. Potential sources of error are identified and categorised: source truncation error, in-duct propagation error, and far-field radiation error. Computationally, the approximation can significantly reduce the size of the mesh required to resolve the acoustic field.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Turbomachinery Performance and Optimization"
+      ],
+      "source": {
+        "name": "Journal of Sound and Vibration",
+        "id": "S99182027",
+        "type": "journal",
+        "issn": [
+          "0022-460X",
+          "1095-8568"
+        ]
+      },
+      "open_access_url": "https://doi.org/10.1016/j.jsv.2026.119701",
+      "is_oa": true,
+      "referenced_works": [
+        "W135681626",
+        "W1485630731",
+        "W1839114806",
+        "W1986812897",
+        "W1990450335",
+        "W1997969777",
+        "W2000463979",
+        "W2007118058",
+        "W2017400139",
+        "W2021121593",
+        "W2024124352",
+        "W2027635328",
+        "W2032231846",
+        "W2074056345",
+        "W2092311497",
+        "W2093512287",
+        "W2102822112",
+        "W2146794926",
+        "W2314646541",
+        "W2401360519",
+        "W2405152467",
+        "W2621307844",
+        "W2729290838",
+        "W2811222773",
+        "W2901955000",
+        "W2902328516",
+        "W2921998893",
+        "W2945705673",
+        "W2998170326",
+        "W3121687520",
+        "W4322742000",
+        "W4398784751"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文提出了一种用于航空发动机进气道线性音调噪声传播预测的“部分跨度近似”方法。该方法针对风扇转子相关音调噪声源和转子-静子相互作用音调噪声，利用声能通量主要集中在外壁附近的特点，通过忽略低跨度区域来降低计算成本。研究通过四个阶段进行验证：从圆柱管道中傅里叶-贝塞尔本征模态的模态表示和管道内传播，到远场辐射分析，并应用于轴对称实际进气道几何形状的案例，包括考虑稳态流动畸变效应的测试。结果表明，在许多应用案例中，管道内和远场预测误差可忽略不计，但在低方位谐波模态和高轮毂-叶尖比管道中误差较高。误差主要源于声能截断和高阶径向模态分量的重新分布，可分为源截断误差、管道内传播误差和远场辐射误差。计算上，该方法能显著减少解析声场所需的网格规模。",
+        "methods": "研究方法包括：提出部分跨度近似方法，通过忽略低跨度区域来简化声场计算；采用傅里叶-贝塞尔本征模态分析圆柱管道中的模态表示和传播；应用计算流体动力学（CFD）方法进行声场预测，但强调传统CFD方法计算成本高；通过四个阶段验证方法：模态分析、管道内传播、远场辐射，以及在实际轴对称进气道几何形状中的应用，包括考虑稳态流动畸变效应的案例；误差分析基于声能截断和模态重新分布，分类为源截断误差、管道内传播误差和远场辐射误差。",
+        "innovations": [
+          "提出部分跨度近似方法，针对风扇噪声传播优化计算效率",
+          "系统分析近似方法引入的误差，并分类为源截断、管道内传播和远场辐射误差",
+          "应用于实际进气道几何形状，验证方法在工程场景中的有效性",
+          "展示显著计算节省潜力，适用于设计迭代过程"
+        ],
+        "conclusions": "部分跨度近似方法能有效预测航空发动机进气道线性音调噪声传播，在多数案例中误差可忽略不计，但低方位谐波模态和高轮毂-叶尖比管道会引入较高误差。该方法通过减少网格规模，显著降低计算成本，适用于设计过程中的迭代应用，为风扇噪声预测提供高效工具。",
+        "relevance_score": 9,
+        "keywords": [
+          "风扇噪声",
+          "音调噪声传播",
+          "部分跨度近似",
+          "航空发动机进气道",
+          "计算流体动力学"
+        ],
+        "analyzed_at": "2026-04-08T08:24:33.737036+00:00"
+      }
+    },
+    {
+      "id": "W7124246580",
+      "doi": "https://doi.org/10.3390/drones10010062",
+      "title": "Advances in Folding-Wing Flying Underwater Drone (FUD) Technology",
+      "authors": [
+        {
+          "name": "Jiyuan Tu",
+          "id": "A5073775763",
+          "institution": "China Academy of Launch Vehicle Technology"
+        },
+        {
+          "name": "Junjie Zhuang",
+          "id": "A5102631754",
+          "institution": "Beihang University"
+        },
+        {
+          "name": "Haixin CHEN",
+          "id": "A5041579751",
+          "institution": "Tsinghua University"
+        },
+        {
+          "name": "Changjian Zhao",
+          "id": "A5123067056",
+          "institution": "China Academy of Launch Vehicle Technology"
+        },
+        {
+          "name": "Hairui Zhang",
+          "id": "A5080728235",
+          "institution": "China Academy of Launch Vehicle Technology"
+        },
+        {
+          "name": "Wenbiao Gan",
+          "id": "A5101685781",
+          "institution": "Beihang University"
+        }
+      ],
+      "year": 2026,
+      "citation_count": 0,
+      "abstract": "The evolution of modern warfare and civil exploration requires platforms that can operate seamlessly across the air–water interface. The folding-wing Hybrid Air and Underwater Vehicle (FUD) has emerged as a transformative solution, combining the high-speed cruising capabilities of fixed-wing aircraft with the stealth characteristics of underwater navigation. This review thoroughly analyzes the advancements and challenges in folding-wing FUD technology. The discussion is framed around four interconnected pillars: the overall design driven by morphing technology, adaptation of the propulsion system, multi-phase dynamic modeling and control, and experimental verification. The paper systematically compares existing technical pathways, including lateral and longitudinal folding mechanisms, as well as dual-use and hybrid propulsion strategies. The analysis indicates that, although significant progress has been made with prototypes demonstrating the ability to transition between air and water, core challenges persist. These challenges include underwater endurance, structural reliability under impact loads, and effective integration of the power system. Additionally, this paper explores promising application scenarios in both military and civilian domains, discussing future development trends that focus on intelligence, integration, and clustering. This review not only consolidates the current state of technology but also emphasizes the necessity for interdisciplinary approaches. By combining advanced materials, computational intelligence, and robust control systems, we can overcome existing barriers to progress. In conclusion, FUD technology is moving from conceptual validation to practical engineering applications, positioning itself to become a crucial asset in future cross-domain operations.",
+      "topics": [
+        "Biomimetic flight and propulsion mechanisms",
+        "Aerospace Engineering and Energy Systems",
+        "Underwater Vehicles and Communication Systems"
+      ],
+      "source": {
+        "name": "Drones",
+        "id": "S4210193350",
+        "type": "journal",
+        "issn": [
+          "2504-446X"
+        ]
+      },
+      "open_access_url": "https://www.mdpi.com/2504-446X/10/1/62/pdf",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文综述了折叠翼飞行水下无人机（FUD）技术的进展与挑战。FUD作为一种跨介质平台，结合了固定翼飞机的高速巡航能力和水下导航的隐身特性，旨在实现空水无缝操作。论文围绕四个核心支柱展开：基于变形技术的整体设计、推进系统适配、多相动态建模与控制以及实验验证。通过系统比较现有技术路径，如横向和纵向折叠机制、双用和混合推进策略，指出尽管原型机已展示空水过渡能力，但仍面临水下续航、冲击载荷下的结构可靠性和动力系统有效集成等核心挑战。文章还探讨了军事和民用领域的应用前景，强调未来发展趋势将聚焦于智能化、集成化和集群化，并呼吁通过跨学科方法结合先进材料、计算智能和鲁棒控制系统来突破现有障碍。",
+        "methods": "研究方法包括文献综述和系统分析。论文通过框架化分析，围绕四个相互关联的支柱（整体设计、推进系统、动态建模与控制、实验验证）来组织讨论。具体方法涉及对现有技术路径的系统比较，如折叠机制（横向和纵向）和推进策略（双用和混合），并结合原型机实验数据进行验证。此外，采用跨学科视角，整合材料科学、计算智能和控制理论，以评估技术进展和挑战。",
+        "innovations": [
+          "系统化综述折叠翼FUD技术的四个核心支柱，提供结构化分析框架",
+          "比较多种技术路径（如折叠机制和推进策略），突出优缺点和适用场景",
+          "强调跨学科方法（如先进材料、计算智能）在解决技术挑战中的必要性",
+          "探讨FUD从概念验证到工程应用的转型趋势，并预测未来智能化、集成化发展方向"
+        ],
+        "conclusions": "FUD技术正从概念验证转向实际工程应用，成为未来跨域作战的关键资产。尽管原型机已实现空水过渡，但水下续航、结构可靠性和动力系统集成等挑战仍需解决。通过跨学科合作，结合先进材料、计算智能和鲁棒控制，有望突破这些障碍。未来发展趋势将侧重于智能化、集成化和集群化，在军事和民用领域具有广阔应用前景。",
+        "relevance_score": 2,
+        "keywords": [
+          "折叠翼无人机",
+          "跨介质平台",
+          "空水过渡"
+        ],
+        "analyzed_at": "2026-04-08T08:24:32.741024+00:00"
+      }
+    },
+    {
+      "id": "W7149575042",
+      "doi": "https://doi.org/10.24297/jap.v24i.9872",
+      "title": "Prototyping of self-sustaining propulsion systems for solar system exploration",
+      "authors": [
+        {
+          "name": "Ramón Ferreiro García",
+          "id": "A5102031810",
+          "institution": "Universidade da Coruña"
+        }
+      ],
+      "year": 2026,
+      "citation_count": 0,
+      "abstract": "This work aims at acquiring deeper knowledge about solar system components including valuable materials as well as clearing viable ways towards extra solar systems. To achieve as much as possible the proposed objectives a viable Self-Sustaining Power Machine (SSPM), including an energy supply and propulsion paradigm shift is proposed. This system will replace the Nuclear Thermal Power and Nuclear Electric Propulsion Systems avoiding its inherent drawbacks, constraints and limitations. Therefore, this research addresses the need to firstly explore accessible celestial bodies within our solar system—planets, their moons and valuable accessible asteroids to utilize their resources. A primary challenge in this endeavor is ensuring a reliable energy supply. Consequently, this article proposes a disruptive change in both: energy supply and propulsion technology, replacing nuclear-based systems with SSPMs. These autonomous space vehicles would integrate the necessary SSPM-based resources to supply electrical power to all critical services and/or systems. Research results indicate us that the propellant fluid is crucial for achieving optimal results (high specific heat and low density with a high adiabatic expansion coefficient) ─(H₂). High temperature allows for high propellant expulsion velocity, resulting in high specific impulse and high thrust under lower propellant flow rate. Hydrogen (H₂) dramatically outperforms Nitrogen (N₂). At 3000K, H₂ achieves an exhaust velocity of 10.34 km/s (Isp ~1054 s), while N₂ only reaches 2.74 km/s (Isp ~280 s). H₂ produces significantly more thrust than N₂ under the same conditions. For example, at a mass flow rate of 100 kg/s and 3000K, H₂ generates ~103.4 tons of thrust, while N₂ generates only ~27.4 tons (Tables 17 &amp; 20). With 50 tons of propellant to push a 10-ton spacecraft, H₂ heated to 3000K can achieve a final velocity of ~26.5 km/s. N₂ under the same conditions can only reach ~7.0 km/s, a massive difference in transit time and mission reach",
+      "topics": [
+        "Spacecraft Dynamics and Control",
+        "Electromagnetic Launch and Propulsion Technology",
+        "Rocket and propulsion systems research"
+      ],
+      "source": {
+        "name": "JOURNAL OF ADVANCES IN PHYSICS",
+        "id": "S2764435124",
+        "type": "journal",
+        "issn": [
+          "2347-3487"
+        ]
+      },
+      "open_access_url": "https://rajpub.com/index.php/jap/article/download/9872/8779",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文提出了一种用于太阳系探索的自持推进系统（SSPM），旨在替代核热能和核电力推进系统，以克服其固有缺陷。论文聚焦于探索太阳系内可及天体（如行星、卫星和小行星）以利用资源，核心挑战在于确保可靠的能源供应。研究通过整合能源供应和推进技术的颠覆性变革，设计自主航天器，利用SSPM为关键系统供电。研究结果表明，推进剂流体（特别是氢气H₂）在高温下（如3000K）能实现高排气速度、高比冲和高推力，显著优于氮气（N₂），从而提升航天器速度和任务范围。",
+        "methods": "研究采用理论分析和数值模拟方法，通过比较不同推进剂（如氢气和氮气）在高温条件下的性能参数，如排气速度、比冲和推力。使用具体案例（如质量流量100 kg/s、温度3000K）进行量化评估，并基于表格数据（如Tables 17 & 20）验证结果，以论证SSPM的可行性和优势。",
+        "innovations": [
+          "提出自持推进系统（SSPM）作为核基推进系统的替代方案，整合能源供应和推进技术",
+          "强调氢气作为推进剂在高温下的优越性能，通过量化对比展示其高排气速度和推力优势",
+          "针对太阳系探索任务，设计自主航天器以利用天体资源，实现能源自持"
+        ],
+        "conclusions": "氢气作为推进剂在高温条件下（如3000K）能显著提升航天器性能，实现高排气速度（10.34 km/s）和高推力（约103.4吨），优于氮气（2.74 km/s和约27.4吨）。这使SSPM系统能有效替代核基系统，支持更快的任务速度和更广的探索范围，例如在相同条件下，氢气可推动航天器达到约26.5 km/s的最终速度，远超氮气的7.0 km/s。",
+        "relevance_score": 2,
+        "keywords": [
+          "自持推进系统",
+          "太阳系探索",
+          "氢气推进剂"
+        ],
+        "analyzed_at": "2026-04-08T08:24:31.210225+00:00"
+      }
+    },
+    {
+      "id": "W4392859496",
+      "doi": "https://doi.org/10.3389/fmech.2024.1371479",
+      "title": "Aerodynamic design of a double slotted morphed flap airfoil– a numerical study",
+      "authors": [
+        {
+          "name": "S. S. Shahrokhi",
+          "id": "A5113143935",
+          "institution": "Sharif University of Technology"
+        },
+        {
+          "name": "M. Taeibi‐Rahni",
+          "id": "A5056320634",
+          "institution": "Sharif University of Technology"
+        },
+        {
+          "name": "Pejman Akbari",
+          "id": "A5080743632",
+          "institution": "California State Polytechnic University"
+        }
+      ],
+      "year": 2024,
+      "citation_count": 15,
+      "abstract": "Introduction: The objective of this study is to develop and simulate a double slotted morphed flap with the intention of reducing drag and enhancing lift, thereby leading to a smaller flap size and reduced weight. Methods: A flap was meticulously designed to accommodate conditions at Mach 0.2 and Reynolds numbers of 4.7×10 6 . To conduct the simulation, ANSYS FLUENT flow solver and POINTWISE grid generator were utilized. The morphing technique employed involved adjusting both flap mean camber and flap slots, ensuring minimal flow interferences. By discretizing the flap mean camber line, various flap geometries were achieved. Results and Discussions: The findings reveal a significant enhancement in the airfoil’s aerodynamic efficiency attributed to the implementation of the new flap design. The study shows that utilizing double-slotted morphing in the NACA 4412 airfoil at a 30° flap deflection angle increased the lift coefficient by 82% compared to the un-morphed state. A comparison of lift coefficients between this research and the NACA 4412 split flap at a 60° deflection angle indicates that the double-slotted morphing in the NACA 4412 airfoil at a smaller deflection angle of 30° results in a 14% higher maximum lift coefficient.",
+      "topics": [
+        "Plasma and Flow Control in Aerodynamics",
+        "Aerodynamics and Fluid Dynamics Research",
+        "Fluid Dynamics and Turbulent Flows"
+      ],
+      "source": {
+        "name": "Frontiers in Mechanical Engineering",
+        "id": "S2596399182",
+        "type": "journal",
+        "issn": [
+          "2297-3079"
+        ]
+      },
+      "open_access_url": "https://www.frontiersin.org/articles/10.3389/fmech.2024.1371479/pdf?isPublishedV2=False",
+      "is_oa": true,
+      "referenced_works": [
+        "W1567515930",
+        "W1667667581",
+        "W1968152867",
+        "W1984954264",
+        "W1992268080",
+        "W2056460127",
+        "W2082612843",
+        "W2088351203",
+        "W2096334832",
+        "W2137042265",
+        "W2167764013",
+        "W2332117478",
+        "W2765492568",
+        "W2768119936",
+        "W2789936259",
+        "W2794704230",
+        "W2887152147",
+        "W2895647778",
+        "W2930115824",
+        "W2956345620",
+        "W2968755683",
+        "W2997044244",
+        "W3007684083",
+        "W3008100619",
+        "W3010369492",
+        "W3010906012",
+        "W3032940093",
+        "W3094144452",
+        "W3139069790",
+        "W3181618378",
+        "W3204505794",
+        "W4200553757",
+        "W4210858308",
+        "W4223655777",
+        "W4281250711",
+        "W4285384396",
+        "W4388940923",
+        "W6637195941"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本研究通过数值模拟方法，开发并评估了一种双缝变形襟翼的空气动力学设计，旨在降低阻力、提升升力，从而减小襟翼尺寸和重量。研究基于NACA 4412翼型，在0.2马赫数和雷诺数4.7×10^6条件下进行模拟，通过调整襟翼平均弯度和缝槽实现变形设计。结果表明，在30°襟翼偏转角下，双缝变形设计使升力系数相比未变形状态提升82%，且与60°偏转角的NACA 4412分裂襟翼相比，最大升力系数高出14%，显著提高了翼型的气动效率。",
+        "methods": "研究采用数值模拟方法，使用ANSYS FLUENT流动求解器和POINTWISE网格生成器进行仿真。通过离散化襟翼平均弯度线，生成多种襟翼几何形状，并应用变形技术调整襟翼平均弯度和缝槽，以最小化流动干扰。模拟条件设定为马赫数0.2和雷诺数4.7×10^6，重点分析双缝变形襟翼在NACA 4412翼型上的气动性能。",
+        "innovations": [
+          "开发双缝变形襟翼设计，结合缝槽和变形技术优化气动性能",
+          "通过数值模拟验证在较小偏转角（30°）下实现高升力提升，相比传统设计更高效",
+          "提出减小襟翼尺寸和重量的潜在应用，提升翼型整体效率"
+        ],
+        "conclusions": "双缝变形襟翼设计能显著提升翼型气动效率，在30°偏转角下升力系数增加82%，且最大升力系数高于传统分裂襟翼在60°偏转角下的结果，表明该设计在减小尺寸和重量的同时，有效增强了升力性能。",
+        "relevance_score": 5,
+        "keywords": [
+          "气动设计",
+          "双缝襟翼",
+          "数值模拟"
+        ],
+        "analyzed_at": "2026-04-08T08:24:30.447525+00:00"
+      }
+    },
+    {
+      "id": "W4399271465",
+      "doi": "https://doi.org/10.2514/6.2024-3426",
+      "title": "Fan Buzz-Saw Noise Under Intake Flow Distortion: A Computational Study",
+      "authors": [
+        {
+          "name": "Long Wu",
+          "id": "A5042589204",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Alexander G. Wilson",
+          "id": "A5111575318",
+          "institution": "University of Southampton"
+        }
+      ],
+      "year": 2024,
+      "citation_count": 1,
+      "abstract": "Steady intake flow distortion due to non-axisymmetric intake geometry and angle of attack of the flight stream can affect various fan tone noise, especially fan buzz-saw noise. In this paper, unsteady CFD simulations have been performed on fully coupled fan and intake models to study the effect of intake flow distortion on fan buzz-saw noise. Three cases have been investigated, namely a baseline case, an axisymmetric distorted case, and a drooped distorted case, and comparisons have been made on the intake noise data extracted from the CFD calculations. The distortion fields generated in the last two cases have been compared and characterised by Fourier-Bessel harmonics. The results show that the distortion generated in the drooped case is more significant and has resulted in stronger circumferential mode scattering appearing initially in the fan domain. The main effect of the distortions in both cases is to cause scattering of the rotor-locked modes into adjacent circumferential harmonics, as the shock waves propagate through the intake ducts.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Fluid Dynamics and Turbulent Flows",
+        "Heat Transfer Mechanisms"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": "",
+        "issn": []
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W135681626",
+        "W1986812897",
+        "W1997969777",
+        "W2011274669",
+        "W2040267805",
+        "W2043359638",
+        "W2055279926",
+        "W2093512287",
+        "W2160675348",
+        "W2314770774",
+        "W2318838787",
+        "W2323066823",
+        "W2398040114",
+        "W2620637346",
+        "W2754484179",
+        "W2809831563",
+        "W2810731262",
+        "W2885250120",
+        "W2901955000",
+        "W2902328516",
+        "W2921998893",
+        "W2998170326",
+        "W4282550185"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文通过计算流体动力学（CFD）模拟，研究了进气流动畸变对风扇锯齿噪声的影响。论文聚焦于非轴对称进气几何和飞行流攻角引起的稳态进气畸变，分析了其对风扇音调噪声，特别是锯齿噪声的作用。研究基于全耦合风扇和进气模型，对比了基线、轴对称畸变和下垂畸变三种情况下的进气噪声数据。结果表明，下垂畸变情况下的畸变更显著，导致更强的周向模态散射，主要影响是使转子锁定模态在激波传播过程中散射到相邻周向谐波中。",
+        "methods": "研究方法包括使用非稳态CFD模拟，对全耦合风扇和进气模型进行数值计算。通过提取CFD计算中的进气噪声数据，对比分析三种不同情况（基线、轴对称畸变和下垂畸变）。畸变场通过傅里叶-贝塞尔谐波进行表征和比较，以量化畸变效应。",
+        "innovations": [
+          "直接研究进气流动畸变对风扇锯齿噪声的影响，填补了该领域在非轴对称进气条件下的知识空白。",
+          "采用全耦合风扇和进气模型的CFD模拟，提高了模拟的真实性和准确性。",
+          "通过傅里叶-贝塞尔谐波分析畸变场，提供了量化畸变效应的新方法。",
+          "对比不同畸变情况，揭示了下垂畸变对周向模态散射的更强影响。"
+        ],
+        "conclusions": "主要结论是进气流动畸变，特别是下垂畸变，会显著增强风扇锯齿噪声，导致转子锁定模态散射到相邻周向谐波中。这为风扇噪声控制提供了理论依据，强调了进气设计在减少噪声中的重要性。",
+        "relevance_score": 9,
+        "keywords": [
+          "风扇锯齿噪声",
+          "进气流动畸变",
+          "CFD模拟"
+        ],
+        "analyzed_at": "2026-04-08T08:24:30.054727+00:00"
+      }
+    },
+    {
+      "id": "W4399271367",
+      "doi": "https://doi.org/10.2514/6.2024-3072",
+      "title": "Part-Span Approximation of Tone Noise Propagation in an Aeroengine Intake. Part 1: Linear Propagation",
+      "authors": [
+        {
+          "name": "Joseph Binns",
+          "id": "A5108938632",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Long Wu",
+          "id": "A5042589204",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Alexander G. Wilson",
+          "id": "A5111575318",
+          "institution": "University of Southampton"
+        }
+      ],
+      "year": 2024,
+      "citation_count": 1,
+      "abstract": "A part-span methodology is proposed for the approximation of fan tone noise propagation in aeroengine intake ducts. For fan rotor-associated tone noise sources in particular, but also rotor-stator interaction tones, much of the acoustic energy flux is concentrated towards the outer wall of the duct, offering the opportunity to reduce the computational expense of numerical predictions by neglecting the low-span regions of the duct. While conventional CFD methods can predict the acoustic field with reasonable accuracy, the computational expense is too high for iterative application during the design process. The research community also requires more efficient methods to understand modern challenges in aeroengine noise, such as the impact of increased flow distortion with UHBR (Ultra-High Bypass Ratio) designs. Part I of this study considers linear propagation. An analytic study is performed first using a uniform circular duct with uniform mean flow to assess the effect of the part-span approximation on individual Fourier-Bessel modes. This is followed by linear Computational AeroAcoustics (CAA) calculations of intake noise propagation and radiation using an axisymmetric but otherwise realistic geometry. Seven potential sources of error, associated with the part-span approximation, are identified and categorised into three characteristics: source truncation error, in-duct propagation error, and far-field radiation error. Part II of this study, reported separately, extends the current work to high-amplitude non-linear propagation.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Aerodynamics and Fluid Dynamics Research"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": "",
+        "issn": []
+      },
+      "open_access_url": "https://eprints.soton.ac.uk/496743/1/Part_span_approximation_Binns_P1.pdf",
+      "is_oa": true,
+      "referenced_works": [
+        "W135681626",
+        "W1606119439",
+        "W1986812897",
+        "W2007118058",
+        "W2045571414",
+        "W2314646541",
+        "W2401360519",
+        "W2620637346",
+        "W2902328516",
+        "W2907887292",
+        "W4233245264",
+        "W4239742683",
+        "W4282550185",
+        "W4297973381",
+        "W6860314820"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文提出了一种部分跨度方法，用于近似航空发动机进气道中风扇音调噪声的传播。研究聚焦于线性传播情况，针对风扇转子相关音调噪声源和转子-静子相互作用音调，指出大部分声能通量集中在管道外壁附近，从而允许忽略低跨度区域以降低数值预测的计算成本。论文首先通过均匀圆形管道和均匀平均流的解析研究，评估部分跨度近似对单个傅里叶-贝塞尔模态的影响，然后使用轴对称但实际几何形状进行线性计算气动声学（CAA）计算，分析进气道噪声传播和辐射。研究识别了与部分跨度近似相关的七个潜在误差源，并将其分为三类：源截断误差、管道内传播误差和远场辐射误差。该工作旨在为设计过程提供更高效的方法，以应对现代航空发动机噪声挑战，如超高涵道比设计带来的流动畸变影响。",
+        "methods": "研究方法包括解析分析和数值模拟。首先，通过解析研究使用均匀圆形管道和均匀平均流模型，评估部分跨度近似对傅里叶-贝塞尔模态的影响。其次，采用线性计算气动声学（CAA）方法，基于轴对称但实际几何形状进行进气道噪声传播和辐射的数值计算。这些方法结合了理论建模和计算模拟，以系统分析部分跨度近似的误差源和有效性。",
+        "innovations": [
+          "提出部分跨度近似方法，通过忽略管道低跨度区域来降低风扇音调噪声传播预测的计算成本",
+          "识别并分类了与部分跨度近似相关的七个潜在误差源，包括源截断误差、管道内传播误差和远场辐射误差",
+          "结合解析研究和线性CAA计算，系统评估近似方法在均匀和实际几何条件下的性能",
+          "针对航空发动机噪声设计中的迭代应用需求，提供高效解决方案，以应对如UHBR设计带来的流动畸变等现代挑战"
+        ],
+        "conclusions": "部分跨度近似方法在风扇音调噪声传播的线性预测中具有潜力，能显著降低计算成本，同时通过误差分类为实际应用提供指导。解析和数值结果表明，该方法适用于声能通量集中在外壁的情况，但需注意误差控制。研究为后续非线性传播分析（Part II）奠定了基础，并支持航空发动机噪声设计中的高效迭代优化。",
+        "relevance_score": 9,
+        "keywords": [
+          "风扇音调噪声",
+          "部分跨度近似",
+          "计算气动声学"
+        ],
+        "analyzed_at": "2026-04-08T08:24:46.512005+00:00"
+      }
+    },
+    {
+      "id": "W4401980588",
+      "doi": "https://doi.org/10.1115/gt2024-124697",
+      "title": "Numerical and Experimental Investigation of Steady Flow Distortion in Drooped Turbofan Intakes",
+      "authors": [
+        {
+          "name": "Yuhan Zhang",
+          "id": "A5100385420",
+          "institution": "Beihang University"
+        },
+        {
+          "name": "Dong Xu",
+          "id": "A5100650106",
+          "institution": "Beihang University"
+        },
+        {
+          "name": "Zhenyu Li",
+          "id": "A5077479178",
+          "institution": "Beihang University"
+        },
+        {
+          "name": "Dakun Sun",
+          "id": "A5063686427",
+          "institution": "Beihang University"
+        },
+        {
+          "name": "Xiaofeng Sun",
+          "id": "A5081338883",
+          "institution": "Beihang University"
+        }
+      ],
+      "year": 2024,
+      "citation_count": 0,
+      "abstract": "Abstract In some civil aero engines, steady flow distortion in turbofan intakes is often caused by the non-axisymmetric geometry, mostly droop and scarf, and the trend of shortening the nacelle exacerbates this distortion. Much analysis of previous research has established models for numerically predicting the propagation of modes through the region of steady flow distortion, but experimental measurements of the internal flow field in the intake remain challenging. The main objective of this paper is to demonstrate the feasibility of experimentally investigating the steady flow distortion in drooped turbofan intakes, providing a framework for a deeper understanding of the flow mechanisms in these intakes. Firstly, based on two types of geometrical shape, droop and scarf, three different geometries of intakes are designed, and the steady flow distortions they generate are compared using computational fluid dynamics (CFD). Secondly, the generation mechanism of steady-state distortion will be briefly discussed. Finally, this study designs fan experiments under static inlet conditions. The experiments are conducted on an aspirated fan test rig, and total pressure and static pressure measurements are recorded with a 5-hole Aero-Probe. The research results indicate that the fan experiment is successful in capturing this steady flow distortion. Both droop and scarf type intakes cause minor steady flow distortion at the outlet of the intake, which rapidly decays in the duct.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Fluid Dynamics and Turbulent Flows",
+        "Computational Fluid Dynamics and Aerodynamics"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": "",
+        "issn": []
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文针对民用航空发动机中涡轮风扇进气道的稳态流动畸变问题展开研究，重点关注由非轴对称几何形状（如下垂和斜切）引起的畸变现象。随着短舱缩短趋势加剧，这种畸变问题更为突出。论文通过数值模拟和实验方法，探讨了下垂型涡轮风扇进气道中稳态流动畸变的生成机制和传播特性。研究首先基于下垂和斜切两种几何形状设计了三种不同进气道，利用计算流体动力学（CFD）比较了它们产生的稳态流动畸变；其次简要分析了稳态畸变的生成机制；最后在静态进气条件下设计了风扇实验，使用吸气式风扇测试台和5孔Aero-Probe进行总压和静压测量。结果表明，实验成功捕捉到了稳态流动畸变，且下垂和斜切型进气道在出口处均引起轻微畸变，但畸变在管道内迅速衰减。",
+        "methods": "研究方法主要包括数值模拟和实验验证。首先，基于下垂和斜切几何形状设计三种进气道模型，采用计算流体动力学（CFD）进行数值模拟，以比较和分析稳态流动畸变的特性。其次，通过理论分析简要探讨稳态畸变的生成机制。最后，在静态进气条件下进行风扇实验，使用吸气式风扇测试台，配备5孔Aero-Probe测量总压和静压，以实验验证数值模拟结果并捕捉实际流动畸变。",
+        "innovations": [
+          "实验验证框架的建立：首次通过风扇实验成功捕捉下垂型涡轮风扇进气道中的稳态流动畸变，为深入理解流动机制提供了实验基础。",
+          "几何形状影响分析：系统比较了下垂和斜切两种非轴对称几何形状对稳态流动畸变的影响，揭示了畸变在管道内的衰减特性。",
+          "综合研究方法：结合CFD数值模拟和实验测量，为进气道流动畸变研究提供了更全面的方法框架。"
+        ],
+        "conclusions": "研究结论表明，下垂和斜切型涡轮风扇进气道在出口处均会引起轻微的稳态流动畸变，但这种畸变在管道内迅速衰减。风扇实验成功验证了数值模拟的可行性，为后续进气道流动机制研究提供了有效框架。这有助于优化进气道设计，减少由几何非对称性引起的流动问题。",
+        "relevance_score": 8,
+        "keywords": [
+          "涡轮风扇进气道",
+          "稳态流动畸变",
+          "下垂几何形状"
+        ],
+        "analyzed_at": "2026-04-08T08:24:49.854820+00:00"
+      }
+    },
+    {
+      "id": "W4399271433",
+      "doi": "https://doi.org/10.2514/6.2024-3073",
+      "title": "Part-Span Approximation of Tone Noise Propagation in an Aeroengine Intake. Part 2: Non-Linear Propagation",
+      "authors": [
+        {
+          "name": "Joseph Binns",
+          "id": "A5108938632",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Long Wu",
+          "id": "A5042589204",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Alexander G. Wilson",
+          "id": "A5111575318",
+          "institution": "University of Southampton"
+        }
+      ],
+      "year": 2024,
+      "citation_count": 0,
+      "abstract": "Part I of this study, reported separately, introduced a part-span approximation for linear propagation of fan tone noise in aeroengine intake ducts. Analytical and computational methods were used to understand how artificially changing the hub-to-tip ratio of a duct impacts the representation of acoustic modes and their propagation. In many representative cases, the approximation was successfully applied and potential sources of error were highlighted. This understanding is extended in the present paper to include non-linear effects. While conventional CFD methods can predict the acoustic field with reasonable accuracy, the computational expense is too high for iterative application during the design process. The research community also requires more efficient methods to understand modern challenges such as the impact of increased flow distortion with future UHBR (Ultra-High Bypass Ratio) designs. The effect of the part-span approximation is first assessed for high-amplitude acoustic waves in uniform ducts with uniform flow. The part-span approximation is then implemented for an axisymmetric, but otherwise realistic, intake geometry with non-uniform inflow and a realistic buzz-saw noise source. The results of this simulation are compared with results from a conventional full-span calculation. The approximation provides a significant saving in computational expense and successfully captures much of the acoustic content of interest.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Aerodynamics and Fluid Dynamics Research"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": "",
+        "issn": []
+      },
+      "open_access_url": "https://eprints.soton.ac.uk/497005/1/Part-Span_NonLinear_AIAA_Conference.pdf",
+      "is_oa": true,
+      "referenced_works": [
+        "W135681626",
+        "W1971320104",
+        "W1986812897",
+        "W1990450335",
+        "W1997969777",
+        "W2007118058",
+        "W2024124352",
+        "W2043359638",
+        "W2045571414",
+        "W2093512287",
+        "W2160675348",
+        "W2314646541",
+        "W2327967107",
+        "W2401360519",
+        "W2620637346",
+        "W2729290838",
+        "W2902328516",
+        "W2907887292",
+        "W2998170326",
+        "W4214761092",
+        "W4233245264",
+        "W4235505166",
+        "W4239742683",
+        "W4282550185",
+        "W4399271367",
+        "W4399271465"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文是研究航空发动机进气道风扇噪声传播的两部分系列论文的第二部分，专注于非线性传播效应。在第一部分提出的部分跨度近似方法基础上，本文扩展了该方法以处理高振幅声波的非线性传播问题。研究首先在均匀管道和均匀流动条件下评估了部分跨度近似对高振幅声波的影响，然后将其应用于具有非均匀流入和真实锯齿噪声源的轴对称进气道几何结构。通过与传统全跨度计算结果的比较，验证了该近似方法在显著降低计算成本的同时，能够有效捕捉关键声学内容，为现代超高通比设计中的流动畸变影响等挑战提供了高效分析工具。",
+        "methods": "本研究采用分析方法和计算模拟相结合的研究策略。首先，在均匀管道和均匀流动条件下，通过理论分析和数值模拟评估部分跨度近似对高振幅声波非线性传播的影响。然后，将该近似方法应用于更现实的轴对称进气道几何结构，其中包含非均匀流入和真实锯齿噪声源，以模拟实际工程场景。关键研究方法包括使用计算流体动力学（CFD）方法进行声场预测，但通过部分跨度近似来优化计算效率，避免传统CFD方法的高计算成本，使其适用于设计过程中的迭代应用。",
+        "innovations": [
+          "将部分跨度近似方法从线性传播扩展到非线性传播领域，处理高振幅声波效应",
+          "在非均匀流入和真实噪声源条件下验证近似方法的有效性，提升工程实用性",
+          "显著降低计算成本，为航空发动机进气道噪声设计提供高效分析工具，应对超高通比设计带来的新挑战"
+        ],
+        "conclusions": "部分跨度近似方法在非线性传播条件下仍能有效工作，成功捕捉了关键声学特征，同时大幅减少了计算开销。该方法适用于具有非均匀流动和真实噪声源的进气道几何结构，为航空发动机噪声预测和优化设计提供了高效、实用的解决方案，有助于应对未来超高通比发动机设计中的流动畸变等复杂问题。",
+        "relevance_score": 9,
+        "keywords": [
+          "风扇噪声",
+          "非线性传播",
+          "部分跨度近似",
+          "航空发动机进气道",
+          "计算流体动力学"
+        ],
+        "analyzed_at": "2026-04-08T08:24:49.121787+00:00"
+      }
+    },
+    {
+      "id": "W4403007961",
+      "doi": "https://doi.org/10.33737/gpps24-tc-097",
+      "title": "Crosswind aerodynamics of low pressure ratio fans",
+      "authors": [
+        {
+          "name": "Alejandro Castillo Pardo",
+          "id": "A5043878380",
+          "institution": ""
+        },
+        {
+          "name": "E. J. Gunn",
+          "id": "A5020045028",
+          "institution": ""
+        },
+        {
+          "name": "Tim S. Williams",
+          "id": "A5003239948",
+          "institution": ""
+        },
+        {
+          "name": "Cesare A. Hall Hall",
+          "id": "A5108994149",
+          "institution": ""
+        },
+        {
+          "name": "Tobias Brandvik",
+          "id": "A5042772655",
+          "institution": ""
+        },
+        {
+          "name": "Stéphane Baralon",
+          "id": "A5010817563",
+          "institution": ""
+        },
+        {
+          "name": "Rolls-Royce plc",
+          "id": "",
+          "institution": ""
+        }
+      ],
+      "year": 2024,
+      "citation_count": 0,
+      "abstract": "Ultra-high bypass ratio (UHBPR) turbofans offer significant reductions in fuel burn and pollutant emissions due to their higher propulsive efficiency. To minimise drag and weight penalties with larger fan diameters, shorter and slimmer intakes are used. Compact intakes pose a risk of delivering highly distorted flow into the fan when operating at high power in strong crosswind. The fan-distortion interaction can degrade the thrust delivered by the engine, jeopardise the stable operability and threaten the mechanical integrity of the fan. This paper aims to understand the impact of crosswind direction on the aerodynamics of a low pressure ratio fan with both a conventional and a short intake. A fully coupled numerical model of the fan, intake and external flow-field is used to quantify how crosswind direction and intake length impact the loss generation and work through the fan. For crosswind from the left (looking into the engine) the ground vortex is co-rotating relative to the fan direction. This causes co-swirl at the fan tip at entry to the windward lip separation leading to reduced incidence and fan work. In contrast, crosswind from the right causes counter-swirl towards the fan tip as it leaves the separated region, leading to higher work and large corner separations extending down the span. A shorter intake length has a more closely coupled fan and intake lip, which tends to suppress the extent of the windward lip separation, but increases the swirl variations at the casing. This leads to reduced rotor losses for crosswind from the right but increased loss for crosswind from the left. Overall, for a short intake, the fan work is found to be around 6% higher for crosswind from the right relative to crosswind from the left. Despite the large levels of distortion in extreme crosswind, the prototype fan demonstrates in all cases it can operate stably without a significant drop in performance.",
+      "topics": [
+        "Turbomachinery Performance and Optimization",
+        "Aerodynamics and Fluid Dynamics Research",
+        "Plasma and Flow Control in Aerodynamics"
+      ],
+      "source": {
+        "name": "Proceedings",
+        "id": "S4220651356",
+        "type": "journal",
+        "issn": [
+          "2504-4400"
+        ]
+      },
+      "open_access_url": "https://doi.org/10.33737/gpps24-tc-097",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文研究了超高高涵道比涡扇发动机在强侧风条件下，低压比风扇的空气动力学特性，重点关注侧风方向对风扇性能的影响。通过对比传统进气道和短进气道，论文探讨了侧风引起的流动畸变如何影响风扇的做功和损失生成。研究发现，侧风方向（从左或右）会导致不同的旋流模式，进而影响风扇的进气条件和性能。短进气道虽然能抑制迎风唇部分离，但增加了机匣处的旋流变化，导致不同侧风方向下的损失差异。总体而言，在极端侧风条件下，原型风扇仍能稳定运行，性能无明显下降。",
+        "methods": "研究采用完全耦合的数值模型，包括风扇、进气道和外部流场，以量化侧风方向和进气道长度对风扇损失生成和做功的影响。通过模拟不同侧风方向（从左和右）和进气道类型（传统和短进气道），分析流动畸变、旋流模式和分离区域的变化，从而评估风扇的空气动力学响应。",
+        "innovations": [
+          "首次系统研究侧风方向对低压比风扇空气动力学的具体影响，揭示不同侧风方向导致的旋流差异及其对风扇性能的作用机制。",
+          "通过对比传统和短进气道，阐明进气道长度如何调节风扇与进气道唇部的耦合效应，影响流动分离和损失分布。",
+          "在极端侧风条件下验证原型风扇的稳定运行能力，为超高高涵道比发动机设计提供关键数据支持。"
+        ],
+        "conclusions": "侧风方向显著影响风扇的空气动力学性能：从左来的侧风导致同向旋流，减少风扇做功；从右来的侧风导致反向旋流，增加风扇做功和角部分离。短进气道能抑制迎风唇部分离，但加剧机匣旋流变化，导致不同侧风方向下的损失差异。在极端侧风条件下，风扇仍能稳定运行，性能无明显下降，表明设计具有鲁棒性。",
+        "relevance_score": 8,
+        "keywords": [
+          "风扇空气动力学",
+          "侧风",
+          "流动畸变",
+          "进气道设计",
+          "数值模拟"
+        ],
+        "analyzed_at": "2026-04-08T08:24:49.868429+00:00"
+      }
+    },
+    {
+      "id": "W4386560420",
+      "doi": "https://doi.org/10.3390/aerospace10090791",
+      "title": "Recent Advances in Airfoil Self-Noise Passive Reduction",
+      "authors": [
+        {
+          "name": "Behzad Amirsalari",
+          "id": "A5016303896",
+          "institution": "Carleton University"
+        },
+        {
+          "name": "Joana Rocha",
+          "id": "A5032605925",
+          "institution": "Carleton University"
+        }
+      ],
+      "year": 2023,
+      "citation_count": 17,
+      "abstract": "Airflow-induced noise prediction and reduction is one of the priorities for both the energy and aviation industries. This review paper provides valuable insights into flow-induced noise computation, prediction, and optimization methods with state-of-the-art efforts in passive noise reduction on airfoils, blades, and wings. This review covers the combination of several approaches in this field, including analytical, numerical, empirical, semi-empirical, artificial intelligence, and optimization methods. Under passive noise reduction techniques, leading and trailing edge treatments, porous materials, controlled diffusion airfoils, morphing wings, surface treatments, and other unique geometries that researchers developed are among the design modification methods discussed here. This work highlights the benefits of incorporating multiple techniques to achieve the best results concerning the desired application and design. In addition, this work provides an overview of the advantages and disadvantages of each tool, with a particular emphasis on the possible challenges when implementing them. The methods and techniques discussed herein will help increase the acoustic efficiency of aerial structures, making them a beneficial resource for researchers, engineers, and other professionals working in aviation noise reduction.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Fluid Dynamics and Turbulent Flows"
+      ],
+      "source": {
+        "name": "Aerospace",
+        "id": "S4210169245",
+        "type": "journal",
+        "issn": [
+          "2226-4310"
+        ]
+      },
+      "open_access_url": "https://www.mdpi.com/2226-4310/10/9/791/pdf?version=1694409737",
+      "is_oa": true,
+      "referenced_works": [
+        "W132622927",
+        "W166110234",
+        "W616225202",
+        "W999207820",
+        "W1057021034",
+        "W1821904708",
+        "W1913934968",
+        "W1963795331",
+        "W1964195730",
+        "W1964581121",
+        "W1965693222",
+        "W1966021462",
+        "W1966070916",
+        "W1968042803",
+        "W1969171601",
+        "W1969637060",
+        "W1973088577",
+        "W1974797276",
+        "W1979482591",
+        "W1979793559",
+        "W1981524462",
+        "W1983768889",
+        "W1989081892",
+        "W1990756149",
+        "W1993166517",
+        "W1998832839",
+        "W1999209420",
+        "W2000682045",
+        "W2002430024",
+        "W2003434598",
+        "W2004103706",
+        "W2009033554",
+        "W2016744923",
+        "W2017694272",
+        "W2020333762",
+        "W2021830957",
+        "W2022075376",
+        "W2023754092",
+        "W2024657681",
+        "W2029358513",
+        "W2029454068",
+        "W2031868884",
+        "W2036255495",
+        "W2044751363",
+        "W2047750725",
+        "W2049006558",
+        "W2050690867",
+        "W2051436724",
+        "W2054523352",
+        "W2063040035"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文是一篇关于翼型自噪声被动降噪技术最新进展的综述论文。论文系统回顾了气流诱导噪声的计算、预测和优化方法，重点关注翼型、叶片和机翼的被动降噪技术。综述涵盖了该领域多种方法的结合，包括解析、数值、经验、半经验、人工智能和优化方法。在被动降噪技术方面，讨论了前缘和后缘处理、多孔材料、控制扩散翼型、变形机翼、表面处理及其他独特几何形状等设计修改方法。论文强调结合多种技术以实现最佳降噪效果，并概述了各种工具的优缺点及实施中可能面临的挑战，旨在提高航空结构的声学效率。",
+        "methods": "本文采用文献综述方法，系统梳理了翼型自噪声被动降噪领域的研究进展。关键研究方法包括：综合运用解析法、数值模拟（如计算流体动力学和计算气动声学）、经验与半经验模型、人工智能技术（如机器学习和优化算法）进行噪声预测和设计优化。在被动降噪技术方面，重点分析了前缘/后缘处理、多孔材料应用、翼型几何优化（如控制扩散翼型和变形机翼）、表面处理等实验和数值方法，并评估了这些方法的组合应用效果。",
+        "innovations": [
+          "系统综述了翼型自噪声被动降噪的多学科方法集成，包括传统方法与人工智能的结合",
+          "全面比较了不同被动降噪技术（如前缘/后缘处理、多孔材料、几何优化）的优缺点",
+          "强调了针对特定应用场景定制化组合多种降噪技术的重要性",
+          "指出了实施这些技术时可能面临的挑战，为未来研究提供方向"
+        ],
+        "conclusions": "翼型自噪声被动降噪可通过多种技术组合实现显著效果，如前缘/后缘处理、多孔材料和几何优化等。结合解析、数值、经验和人工智能方法能提高噪声预测和设计优化效率。然而，不同技术各有优缺点，实施时需考虑具体应用需求和挑战。这些进展有助于提升航空结构的声学性能，对航空和能源领域的噪声控制具有重要参考价值。",
+        "relevance_score": 9,
+        "keywords": [
+          "翼型自噪声",
+          "被动降噪",
+          "气动声学",
+          "噪声预测",
+          "航空噪声"
+        ],
+        "analyzed_at": "2026-04-08T08:24:59.731119+00:00"
+      }
+    },
+    {
+      "id": "W4388578689",
+      "doi": "https://doi.org/10.1051/e3sconf/202344601003",
+      "title": "On the Correct Generation of a Single Sound Mode in a Duct with Flow in COMSOL Multiphysics",
+      "authors": [
+        {
+          "name": "Vadim Palchikovskiy",
+          "id": "A5110977244",
+          "institution": "Perm National Research Polytechnic University"
+        },
+        {
+          "name": "С. М. Белобородов",
+          "id": "A5055211642",
+          "institution": "Perm National Research Polytechnic University"
+        }
+      ],
+      "year": 2023,
+      "citation_count": 0,
+      "abstract": "The paper considers the statement of a single-mode sound generation in a duct with flow in the COMSOL Multiphysics finite element analysis software. Verification of the COMSOL Multiphysics solution is based on a comparison with the analytical solution of a single-mode propagation in an annular duct with uniform flow. The verified statement of a single-mode generation in COMSOL Multiphysics is then used to predict the noise of a JT15D turbofan engine in the far field. The results of computations are compared with JT15D static test data and known numerical simulation results.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Acoustic Wave Phenomena Research",
+        "Aerodynamics and Fluid Dynamics Research"
+      ],
+      "source": {
+        "name": "E3S Web of Conferences",
+        "id": "S4210186093",
+        "type": "journal",
+        "issn": [
+          "2267-1242",
+          "2555-0403"
+        ]
+      },
+      "open_access_url": "https://www.e3s-conferences.org/articles/e3sconf/pdf/2023/83/e3sconf_hstd2023_01003.pdf",
+      "is_oa": true,
+      "referenced_works": [
+        "W1534878576",
+        "W1996686965",
+        "W2007118058",
+        "W2063840303",
+        "W2314646541",
+        "W2316691250",
+        "W2398040114",
+        "W2500988829",
+        "W2799991105",
+        "W2945256660"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文研究了在COMSOL Multiphysics有限元分析软件中，如何在有流动的管道中正确生成单一声音模式。论文首先通过对比均匀流动环形管道中单一模式传播的解析解，验证了COMSOL Multiphysics解决方案的准确性。随后，利用已验证的单一模式生成方法，预测了JT15D涡扇发动机在远场的噪声。计算结果与JT15D静态测试数据和已知数值模拟结果进行了比较，旨在为风扇噪声预测提供一种可靠的数值模拟方法。",
+        "methods": "研究方法主要包括：使用COMSOL Multiphysics软件进行有限元分析，设置管道流动中的单一声音模式生成问题；通过与均匀流动环形管道中单一模式传播的解析解进行对比，验证数值模拟的准确性；将验证后的方法应用于JT15D涡扇发动机的远场噪声预测，并与静态测试数据和现有数值模拟结果进行比较，以评估方法的有效性。",
+        "innovations": [
+          "在COMSOL Multiphysics中实现并验证了有流动管道中单一声音模式的正确生成方法",
+          "将验证后的单一模式生成技术应用于实际涡扇发动机（JT15D）的远场噪声预测",
+          "通过对比解析解、实验数据和模拟结果，提供了一种可靠的风扇噪声数值模拟框架"
+        ],
+        "conclusions": "主要结论包括：COMSOL Multiphysics中的单一声音模式生成方法经过验证是准确的；该方法能有效预测JT15D涡扇发动机的远场噪声，与测试数据和模拟结果一致；这为风扇噪声的数值模拟提供了一种实用工具，有助于气动声学研究和工程应用。",
+        "relevance_score": 8,
+        "keywords": [
+          "风扇噪声",
+          "COMSOL Multiphysics",
+          "单一声音模式"
+        ],
+        "analyzed_at": "2026-04-08T08:24:56.712339+00:00"
+      }
+    },
+    {
+      "id": "W4210621059",
+      "doi": "https://doi.org/10.3390/designs6010010",
+      "title": "Optimization and Design of a Flexible Droop-Nose Leading-Edge Morphing Wing Based on a Novel Black Widow Optimization Algorithm—Part I",
+      "authors": [
+        {
+          "name": "Musavir Bashir",
+          "id": "A5101932836",
+          "institution": "Université du Québec à Montréal"
+        },
+        {
+          "name": "Simon Longtin Martel",
+          "id": "A5066832882",
+          "institution": "Université du Québec à Montréal"
+        },
+        {
+          "name": "Ruxandra Mihaela Botez",
+          "id": "A5006804321",
+          "institution": "Université du Québec à Montréal"
+        },
+        {
+          "name": "Tony Wong",
+          "id": "A5052551939",
+          "institution": "Université du Québec à Montréal"
+        }
+      ],
+      "year": 2022,
+      "citation_count": 17,
+      "abstract": "An aerodynamic optimization for a Droop-Nose Leading-Edge (DNLE) morphing of a well-known UAV, the UAS-S45, is proposed, using a novel Black Widow Optimization (BWO) algorithm. This approach integrates the optimization algorithm with a modified Class-Shape Transformation (CST) parameterization method to enhance aerodynamic performance by minimizing drag and maximizing aerodynamic endurance at the cruise flight condition. The CST parameterization technique is used to parameterize the reference airfoil by introducing local shape changes and provide skin flexibility to obtain various optimized morphing airfoil configurations. The optimization framework uses an in-house MATLAB algorithm, while the aerodynamic calculations use the XFoil solver with flow transition estimation criteria. These results are validated with a CFD solver utilizing the Transition (γ−Reθ) Shear Stress Transport (SST) turbulence model. Numerical studies verified the effectiveness of the optimization strategy, and the optimized airfoils have shown a significant improvement in overall aerodynamic performance by up to 12.18% drag reduction compared to the reference airfoil, and an increase in aerodynamic endurance of up to 10% for the UAS-S45 optimized airfoil configurations over its reference airfoil. These results indicate the importance of leading-edge morphing in enhancing the aerodynamic efficiency of the UAS-S45 airfoil.",
+      "topics": [
+        "Aeroelasticity and Vibration Control",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Aerospace and Aviation Technology"
+      ],
+      "source": {
+        "name": "Designs",
+        "id": "S4210222353",
+        "type": "journal",
+        "issn": [
+          "2411-9660"
+        ]
+      },
+      "open_access_url": "https://www.mdpi.com/2411-9660/6/1/10/pdf?version=1644569248",
+      "is_oa": true,
+      "referenced_works": [
+        "W14980099",
+        "W84994641",
+        "W407687506",
+        "W1972163839",
+        "W1976279731",
+        "W2027137366",
+        "W2029358513",
+        "W2052539737",
+        "W2056014055",
+        "W2068353912",
+        "W2089155000",
+        "W2094740719",
+        "W2105742696",
+        "W2157823032",
+        "W2158176561",
+        "W2206959956",
+        "W2292809374",
+        "W2306296840",
+        "W2311950715",
+        "W2314476908",
+        "W2315640139",
+        "W2320533402",
+        "W2320584010",
+        "W2323669231",
+        "W2326582414",
+        "W2329163488",
+        "W2331274811",
+        "W2409782662",
+        "W2416071689",
+        "W2503666253",
+        "W2571369867",
+        "W2571372758",
+        "W2800538760",
+        "W2911089588",
+        "W2924288071",
+        "W2945962387",
+        "W2972662002",
+        "W2974620885",
+        "W2975928344",
+        "W2980570898",
+        "W2987641561",
+        "W3009750505",
+        "W3026839564",
+        "W3035122175",
+        "W3037772365",
+        "W3046254876",
+        "W3049656307",
+        "W3082737722",
+        "W3085266538",
+        "W3120066164"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文提出了一种基于新型黑寡妇优化算法的柔性下垂前缘变形翼优化设计方法，应用于UAS-S45无人机。研究通过集成黑寡妇优化算法和改进的类形状变换参数化方法，在巡航飞行条件下最小化阻力和最大化气动续航能力，以提升气动性能。优化框架采用内部MATLAB算法，气动计算使用XFoil求解器，并通过CFD验证结果。数值研究表明，优化后的翼型相比参考翼型，阻力降低高达12.18%，气动续航能力提升达10%，证明了前缘变形在提高UAS-S45翼型气动效率中的重要性。",
+        "methods": "研究方法包括：使用新型黑寡妇优化算法进行气动优化，结合改进的类形状变换参数化方法对参考翼型进行参数化，引入局部形状变化和蒙皮柔性以生成多种优化变形翼型配置。优化框架基于内部MATLAB算法实现，气动计算采用XFoil求解器并考虑流动转换估计准则，结果通过CFD求解器（使用Transition (γ−Reθ) SST湍流模型）进行验证。",
+        "innovations": [
+          "提出并应用新型黑寡妇优化算法于气动优化问题",
+          "集成改进的类形状变换参数化方法，增强翼型设计的灵活性和精度",
+          "针对UAS-S45无人机下垂前缘变形翼进行优化，显著提升气动性能"
+        ],
+        "conclusions": "优化策略有效，优化后的翼型相比参考翼型，阻力降低高达12.18%，气动续航能力提升达10%，表明前缘变形能显著提高UAS-S45翼型的气动效率。",
+        "relevance_score": 5,
+        "keywords": [
+          "气动优化",
+          "黑寡妇优化算法",
+          "下垂前缘变形翼"
+        ],
+        "analyzed_at": "2026-04-08T08:24:58.620376+00:00"
+      }
+    },
+    {
+      "id": "W4282550185",
+      "doi": "https://doi.org/10.2514/6.2022-3100",
+      "title": "CFD/CAA coupling for the prediction of fan tone noise propagation and radiation through a drooped intake",
+      "authors": [
+        {
+          "name": "Rie Sugimoto",
+          "id": "A5063240001",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Alexander O. James",
+          "id": "A5005716892",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Alan McAlpine",
+          "id": "A5091337964",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "R.J. Astley",
+          "id": "A5111878691",
+          "institution": "University of Southampton"
+        }
+      ],
+      "year": 2022,
+      "citation_count": 3,
+      "abstract": "Nonlinear CFD and linear CAA are combined to model the generation, propagation and radiation of tonal noise in a lined, drooped, turbofan intake at a high power setting. Single/multiple passage or full rotor RANS CFD is used to model the generation and non-linear propagation of \"buzz tones\" close to the fan in an unlined intake. The effect of the liner and radiation to the far-field is represented by a linear, frequency domain, CAA numerical scheme. By separating the non-linear source generation and propagation, dealt with in the RANS CFD solution, from the prediction of liner attenuation and far-field radiation, dealt with in the less demanding CAA model, solutions can be obtained at relatively modest computational cost for realistic three-dimensional, drooped intakes, taking into account non-linear propagation, attenuation by intake liners, and the effect of steady flow distortion on far field directivity. An adjustment is also made in the current model to approximate the effect of boundary layer refraction over the surface of the liner which is not accounted for in the 'slip' impedance boundary condition commonly imposed at the liner surface in linear CAA models. Matching of the non-linear CFD source to the linear CAA propagation model is achieved by constructing a notional \"equivalent\" modal CAA source at the fan plane which is compatible with the RANS solution sampled at the throat of an unlined intake. This source is applied to subsequent CAA calculations for lined and drooped intakes. The above approach is approximate in that the source and non-linear propagation effects are treated as being independent of the presence of the liner. This assumption is tested by comparing predictions obtained by using the current approach to a restricted set of non-linear analytic solutions, to high fidelity CFD data, and to measured data from a drooped intake test rig.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Wind and Air Flow Studies",
+        "Aerodynamics and Fluid Dynamics Research"
+      ],
+      "source": {
+        "name": "28th AIAA/CEAS Aeroacoustics 2022 Conference",
+        "id": "S4363607867",
+        "type": "conference",
+        "issn": []
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W1990450335",
+        "W1997969777",
+        "W2007118058",
+        "W2024124352",
+        "W2027635328",
+        "W2054642975",
+        "W2056855543",
+        "W2083743533",
+        "W2093512287",
+        "W2093622974",
+        "W2314646541",
+        "W2323066823",
+        "W2324818169",
+        "W2398040114",
+        "W2401360519",
+        "W2945895148",
+        "W2998170326"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文提出了一种结合非线性计算流体动力学（CFD）和线性计算气动声学（CAA）的耦合方法，用于预测高功率设置下带衬里、下垂式涡轮风扇进气口中风扇音调噪声的生成、传播和辐射。研究通过分离非线性源生成和传播（由RANS CFD处理）与衬里衰减和远场辐射预测（由线性CAA模型处理），在相对较低的计算成本下，实现了对三维下垂进气口的噪声分析，考虑了非线性传播、衬里衰减以及稳态流动畸变对远场指向性的影响。论文还通过调整模型近似考虑了衬里表面边界层折射效应，并通过构建等效模态CAA源实现CFD与CAA的匹配，验证了方法的近似有效性。",
+        "methods": "研究方法包括：使用单/多通道或全转子RANS CFD模拟无衬里进气口中风扇附近“嗡嗡音调”的生成和非线性传播；采用线性频域CAA数值方案处理衬里效应和远场辐射；通过构建等效模态CAA源在风扇平面匹配CFD和CAA模型；通过比较非线性解析解、高保真CFD数据和实测数据，验证方法的近似假设和准确性。",
+        "innovations": [
+          "提出CFD/CAA耦合方法，分离非线性源生成和线性传播，降低计算成本",
+          "考虑衬里表面边界层折射效应，改进线性CAA模型中的阻抗边界条件",
+          "构建等效模态CAA源实现CFD与CAA的匹配，适用于三维下垂进气口",
+          "验证方法近似性，通过多源数据对比评估假设的合理性"
+        ],
+        "conclusions": "CFD/CAA耦合方法能有效预测风扇音调噪声在下垂进气口中的传播和辐射，在计算成本可控下考虑了非线性传播、衬里衰减和流动畸变影响；近似处理源与衬里独立性的假设经测试基本合理，但需进一步优化以提高精度。",
+        "relevance_score": 9,
+        "keywords": [
+          "风扇噪声",
+          "CFD/CAA耦合",
+          "音调噪声传播"
+        ],
+        "analyzed_at": "2026-04-08T08:25:00.806666+00:00"
+      }
+    },
+    {
+      "id": "W4285270732",
+      "doi": "https://doi.org/10.1299/transjsme.21-00357",
+      "title": "Effect of inlet distortion with crosswind on aircraft-engine intake aerodynamic performance",
+      "authors": [
+        {
+          "name": "Hiroki Naruse",
+          "id": "A5076873379",
+          "institution": "Tokyo University of Science"
+        },
+        {
+          "name": "Tatsuya Ishii",
+          "id": "A5108633870",
+          "institution": "Japan Aerospace Exploration Agency"
+        },
+        {
+          "name": "Hideshi Oinuma",
+          "id": "A5030449457",
+          "institution": "Japan Aerospace Exploration Agency"
+        },
+        {
+          "name": "Shinya Kusuda",
+          "id": "A5082757027",
+          "institution": "IHI Corporation (Czechia)"
+        },
+        {
+          "name": "Yoshinori Ooba",
+          "id": "A5016303631",
+          "institution": "IHI Corporation (Czechia)"
+        },
+        {
+          "name": "Karin Hirakawa",
+          "id": "A5080948879",
+          "institution": "IHI Corporation (Czechia)"
+        },
+        {
+          "name": "Hikaru AONO",
+          "id": "A5038517720",
+          "institution": "Shinshu University"
+        },
+        {
+          "name": "Hitoshi Ishikawa",
+          "id": "A5003265716",
+          "institution": "Tokyo University of Science"
+        }
+      ],
+      "year": 2022,
+      "citation_count": 1,
+      "abstract": "This paper describes an experimental study on inlet distortion in the flow ingested to an intake of a ducted fan. Recent high bypass ratio engines tend to shorten the nacelle length for better fuel consumption. In return, the shorter the nacelle intake, the more intensive the inlet distortion inside the intake, which leads to deteriorating fan aerodynamic performance and intensifying the fan noise. This study aims at understanding the influence of intake geometries on the distortion ingested to a ducted fan and thus the fan noise caused by the interaction of the distortion with the fan blades. A subscale fan (fan simulator) coupled with intake models were used in the experiment. The intake models with different axial lengths were prepared to compare the distortion in front of the fan. One is a nominal intake as a reference. The other intake has a short non-dimensional distance from the lip to the fan surface. Crosswind conditions were imposed to realize a clearer influence of the distortion on the acoustic and aerodynamic parameters. According to the experimental results, the intake models provided a distinct increase in sound pressure levels inside the intake. It is anticipated that the sound amplification is attributed to the distortion associated with the intake lip geometry, intake length, and crosswind speed. Non-dimensional total pressure distribution revealed the high correlation between the fan noise and the inlet distortion.",
+      "topics": [
+        "Turbomachinery Performance and Optimization",
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Aerodynamics and Fluid Dynamics Research"
+      ],
+      "source": {
+        "name": "Transactions of the JSME (in Japanese)",
+        "id": "S4210205410",
+        "type": "journal",
+        "issn": [
+          "2187-9761"
+        ]
+      },
+      "open_access_url": "https://www.jstage.jst.go.jp/article/transjsme/advpub/0/advpub_21-00357/_pdf",
+      "is_oa": true,
+      "referenced_works": [
+        "W1486904197",
+        "W1978774091",
+        "W2050270562",
+        "W2064751856",
+        "W2085999420",
+        "W2091450895",
+        "W2710118768",
+        "W2774983446",
+        "W2888884487",
+        "W2945256660",
+        "W2949959018",
+        "W3035457074",
+        "W6726576438"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文通过实验研究了进气道畸变对涵道风扇气动性能和噪声的影响。随着现代高涵道比发动机为降低油耗而缩短短舱长度，进气道畸变加剧，导致风扇气动性能下降和噪声增强。研究聚焦于进气道几何形状（特别是轴向长度）和侧风条件对畸变的影响，以及畸变与风扇叶片相互作用产生的噪声。实验使用缩比风扇（风扇模拟器）配合不同轴向长度的进气道模型，在侧风条件下测量声压级和总压力分布。结果表明，进气道畸变与风扇噪声高度相关，短进气道和侧风会显著增加噪声水平。",
+        "methods": "研究采用实验方法，使用缩比风扇（风扇模拟器）与不同轴向长度的进气道模型进行测试。进气道模型包括一个作为参考的标准进气道和一个从唇口到风扇表面距离较短的非尺寸化进气道。实验施加侧风条件以增强畸变对声学和气动参数的影响。关键测量包括进气道内的声压级和非尺寸化总压力分布，以分析畸变与噪声之间的相关性。",
+        "innovations": [
+          "实验研究进气道几何形状（特别是轴向长度）和侧风对涵道风扇进气道畸变的综合影响",
+          "通过非尺寸化总压力分布揭示进气道畸变与风扇噪声之间的高相关性",
+          "结合声学和气动参数分析，为短进气道设计中的噪声控制提供新见解"
+        ],
+        "conclusions": "进气道畸变随进气道长度缩短和侧风条件加剧而增强，导致风扇噪声显著增加。非尺寸化总压力分布显示畸变与噪声高度相关，声放大主要归因于进气道唇口几何形状、长度和侧风速。这为优化发动机短舱设计以减少噪声提供了实验依据。",
+        "relevance_score": 8,
+        "keywords": [
+          "inlet distortion",
+          "fan noise",
+          "ducted fan"
+        ],
+        "analyzed_at": "2026-04-08T08:25:00.188144+00:00"
+      }
+    },
+    {
+      "id": "W4313117644",
+      "doi": "https://doi.org/10.33737/gpps21-tc-109",
+      "title": "Study on the Flow Characteristics of Fan Coupled Nacelle Intake under Different Angle of Attack",
+      "authors": [
+        {
+          "name": "Min Qi",
+          "id": "A5038478398",
+          "institution": "Northwestern Polytechnical University"
+        },
+        {
+          "name": "Zhanxue Wang",
+          "id": "A5050836156",
+          "institution": "Northwestern Polytechnical University"
+        },
+        {
+          "name": "Li Zhou",
+          "id": "A5100452310",
+          "institution": "Northwestern Polytechnical University"
+        },
+        {
+          "name": "Wenjian Deng",
+          "id": "A5005303057",
+          "institution": "Northwestern Polytechnical University"
+        }
+      ],
+      "year": 2022,
+      "citation_count": 0,
+      "abstract": "The main function of nacelle intake is to provide the fan with stable and uniform flow in a wide operating range. The next-generation civil turbofan engine requires nacelle intake to have shorter length and larger lip thickness. However, the thicker lip is, the higher the probability flow to be separated, and the total pressure distortion disturbance is quickly transmitted to the fan, which causes the increase of the inhalation of distortion. Eventually, the stability of the engine is destroyed. Therefore, it is necessary to study the distortion of the nacelle intake and the coupling effect of the nacelle intake and fan. Aiming at the coupling effect of intake distortion of the nacelle intake and fan under a high angle of attack, the research focus on the flow characteristics of isolated nacelle intake and intake/ fan integrated model under different angle of attack. Results show that the intake presents different flow patterns under different Ma and mass flow rate; however, the interaction between the intake and fan presents a similar pattern. The presence of fan leads to the flow swirl angle changes significantly and mass redistribution. The studies also indicate that the intake distortion sensitivity level decrease with the fan coupling. The sensitivity of the distortion index decreases from 4.057% to 0.315% under cruise condition; the sensitivity of the distortion index decreases from 0.186% to 0.1423% under take-off condition.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Aerodynamics and Fluid Dynamics Research",
+        "Fluid Dynamics and Turbulent Flows"
+      ],
+      "source": {
+        "name": "Proceedings",
+        "id": "S4220651356",
+        "type": "journal",
+        "issn": [
+          "2504-4400"
+        ]
+      },
+      "open_access_url": "https://doi.org/10.33737/gpps21-tc-109",
+      "is_oa": true,
+      "referenced_works": [
+        "W2014345680",
+        "W2088318103",
+        "W2376118357",
+        "W2746973526",
+        "W2747213019",
+        "W2802274635",
+        "W6743198259",
+        "W6751141868"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文研究了不同攻角下风扇耦合短舱进气道的气动特性。短舱进气道的主要功能是为风扇提供稳定均匀的流动，但新一代民用涡扇发动机要求进气道具有更短长度和更大唇口厚度，这增加了流动分离风险，导致总压畸变扰动快速传递至风扇，进而引发畸变吸入增加，破坏发动机稳定性。研究聚焦于高攻角下进气道畸变与风扇的耦合效应，通过分析孤立进气道和进气道/风扇集成模型在不同攻角下的流动特性，发现进气道在不同马赫数和质量流量下呈现不同流动模式，但进气道与风扇的相互作用模式相似。风扇的存在显著改变了流动旋流角并导致质量重新分布，同时降低了进气道畸变敏感度。",
+        "methods": "研究采用数值模拟和实验分析相结合的方法，关键研究方法包括：建立孤立短舱进气道模型和进气道/风扇集成模型，在不同攻角条件下进行流动特性分析；通过改变马赫数和质量流量参数，评估进气道流动模式的变化；利用总压畸变指数量化畸变敏感度，并对比巡航和起飞条件下风扇耦合前后的数据。研究还关注了流动旋流角和质量分布的动态变化，以揭示耦合效应的影响机制。",
+        "innovations": [
+          "首次系统研究高攻角下短舱进气道畸变与风扇的耦合效应，填补了该领域在复杂工况下的知识空白。",
+          "通过对比孤立进气道和集成模型，揭示了风扇存在对流动旋流角和质量重新分布的显著影响，为优化进气道设计提供了新见解。",
+          "量化了风扇耦合对进气道畸变敏感度的降低效果，具体数据表明在巡航条件下畸变指数敏感度从4.057%降至0.315%，起飞条件下从0.186%降至0.1423%，为发动机稳定性提升提供了实证支持。"
+        ],
+        "conclusions": "主要结论包括：短舱进气道在不同马赫数和质量流量下呈现多样化的流动模式，但进气道与风扇的相互作用模式具有相似性；风扇的耦合显著改变了流动特性，如旋流角变化和质量重新分布；更重要的是，风扇耦合有效降低了进气道畸变敏感度，在巡航和起飞条件下均观察到敏感度显著下降，这有助于增强发动机的稳定性和性能。研究强调了考虑进气道与风扇耦合效应在发动机设计中的重要性。",
+        "relevance_score": 8,
+        "keywords": [
+          "风扇耦合",
+          "短舱进气道",
+          "流动特性",
+          "攻角",
+          "畸变敏感度"
+        ],
+        "analyzed_at": "2026-04-08T08:25:11.110397+00:00"
+      }
+    },
+    {
+      "id": "W2966934481",
+      "doi": "https://doi.org/10.3390/ijtpp4030025",
+      "title": "Quasi 3D Nacelle Design to Simulate Crosswind Flows: Merits and Challenges",
+      "authors": [
+        {
+          "name": "A. F. K. Yeung",
+          "id": "A5001879206",
+          "institution": "University of Cambridge"
+        },
+        {
+          "name": "Nagabhushana Rao Vadlamani",
+          "id": "A5013004524",
+          "institution": "Indian Institute of Technology Madras"
+        },
+        {
+          "name": "Tom Hynes",
+          "id": "A5113580692",
+          "institution": "University of Cambridge"
+        },
+        {
+          "name": "Sumit Sarvankar",
+          "id": "A5070634016",
+          "institution": "Indian Institute of Technology Madras"
+        }
+      ],
+      "year": 2019,
+      "citation_count": 15,
+      "abstract": "This paper studies the computational modelling of the flow separation over the engine nacelle lips under the off-design condition of significant crosswind. A numerical framework is set up to reproduce the general flow characteristics under crosswinds with increasing engine mass flow rate, which include: low-speed separation, attached flow and high speed shock-induced separation. A quasi-3D (Q3D) duct extraction method from the full 3D (F3D) simulations has been developed. Results obtained from the Q3D simulations are shown to largely reproduce the trends observed (isentropic Mach number variations and high-speed separation behaviour) in the 3D intake, substantially reducing the simulation time by a factor of 50. The agreement between the F3D and Q3D simulations is encouraging when the flow either fully attached or with modest levels of separation but degrades when the flow fully detaches. Results are shown to deviate beyond this limit since the captured streamtube shape (and hence the corresponding Q3D duct shape) changes with the mass flow rate. Interestingly, the drooped intake investigated in the current study is prone to earlier separation under crosswinds when compared to an axisymmetric intake. Implications of these results on the industrial nacelle lip design are also discussed.",
+      "topics": [
+        "Aerodynamics and Fluid Dynamics Research",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Aerodynamics and Acoustics in Jet Flows"
+      ],
+      "source": {
+        "name": "International Journal of Turbomachinery Propulsion and Power",
+        "id": "S4210213304",
+        "type": "journal",
+        "issn": [
+          "2504-186X"
+        ]
+      },
+      "open_access_url": "https://www.mdpi.com/2504-186X/4/3/25/pdf?version=1568710829",
+      "is_oa": true,
+      "referenced_works": [
+        "W1978774091",
+        "W1979787043",
+        "W1999377150",
+        "W2017012196",
+        "W2029015362",
+        "W2085999420",
+        "W2092808635",
+        "W2162588443",
+        "W2170682461",
+        "W2172765311",
+        "W2335501119",
+        "W2411268682",
+        "W2482110454",
+        "W2497379685",
+        "W2889565470",
+        "W2913421952",
+        "W2955768263",
+        "W4254767429",
+        "W7021240604"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2019年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2945256660",
+      "doi": "https://doi.org/10.2514/6.2019-2581",
+      "title": "Effects of turbofan engine intake droop and length on fan tone noise",
+      "authors": [
+        {
+          "name": "Lei Xiong",
+          "id": "A5006831882",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Rie Sugimoto",
+          "id": "A5063240001",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Erika Quaranta",
+          "id": "A5050499646",
+          "institution": "University of Southampton"
+        }
+      ],
+      "year": 2019,
+      "citation_count": 5,
+      "abstract": "",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Aerodynamics and Fluid Dynamics Research",
+        "Vehicle Noise and Vibration Control"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": "",
+        "issn": []
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W803047512",
+        "W1971320104",
+        "W2007118058",
+        "W2008909060",
+        "W2069778707",
+        "W2314646541",
+        "W2327967107",
+        "W2398040114",
+        "W2754484179",
+        "W4233245264"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2019年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2907980344",
+      "doi": "https://doi.org/10.5539/mas.v13n2p21",
+      "title": "Sukhoi SU-47 Berkut and Eurofighter Typhoon Models Flow Visualization and Performance Investigation Using GAMA Water Tunnel",
+      "authors": [
+        {
+          "name": "Sutrisno Sutrisno",
+          "id": "A5100343010",
+          "institution": "Universitas Gadjah Mada"
+        },
+        {
+          "name": "Febryanto Nugroho",
+          "id": "A5087111218",
+          "institution": "Universitas Gadjah Mada"
+        },
+        {
+          "name": "Yogi Adi Pratama",
+          "id": "A5056334273",
+          "institution": "Universitas Gadjah Mada"
+        },
+        {
+          "name": "Sigit Iswahyudi",
+          "id": "A5066186044",
+          "institution": "Universitas Gadjah Mada"
+        },
+        {
+          "name": "Setyawan Bekti Wibowo",
+          "id": "A5060440369",
+          "institution": "Universitas Gadjah Mada"
+        }
+      ],
+      "year": 2019,
+      "citation_count": 1,
+      "abstract": "Changes and modifications to the wings of fighter aircraft were carried out, one of which was the forward swept wing which was a moderate wing that continues to develop. There were also types of delta wings that had been applied to many fighter planes. Both types of aircraft wings had certainly different aerodynamic characteristics. This research would study the flow visualization that occurs in the aircraft model body to determine the aerodynamic characteristics of the forward swept wing and delta wing. This study used a water tunnel to observe the aerodynamic flow and forces that occurred in both types of wings. This visualization test used similar aircraft models: SU-47 Berkut and Eurofighter Typhoon. The results provided flow visualization, coefficient of lift (Cl), and coefficient of drag (Cd) which showed that the stall that occurred on the aircraft model similar to the SU-47 Berkut occurred at an angle of attack (AoA) 500 with a Cl max value of 2.66. Meanwhile, the Eurofighter Typhoon stall model occurred at an angle of attack 450 with a Cl max value of 1.48.",
+      "topics": [
+        "Aerospace and Aviation Technology",
+        "Aerospace Engineering and Control Systems",
+        "Computational Fluid Dynamics and Aerodynamics"
+      ],
+      "source": {
+        "name": "Modern Applied Science",
+        "id": "S2764751271",
+        "type": "journal",
+        "issn": [
+          "1913-1844",
+          "1913-1852"
+        ]
+      },
+      "open_access_url": "http://www.ccsenet.org/journal/index.php/mas/article/download/0/0/38038/38510",
+      "is_oa": true,
+      "referenced_works": [
+        "W163784010",
+        "W196562285",
+        "W330034154",
+        "W1479681422",
+        "W1480413054",
+        "W1553495437",
+        "W1766881488",
+        "W1971223696",
+        "W1987339402",
+        "W1992506029",
+        "W1996115960",
+        "W1999007430",
+        "W2053400334",
+        "W2097663181",
+        "W2214594845",
+        "W2332953575",
+        "W2619444485",
+        "W2773001296",
+        "W2786049336",
+        "W2786904878",
+        "W2803530649",
+        "W2885674589",
+        "W2887498127",
+        "W2895850580",
+        "W2901514946",
+        "W4230114855",
+        "W6606592111"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2019年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2914107733",
+      "doi": "https://doi.org/10.24868/issn.2515-818x.2018.020",
+      "title": "Informing the power system performance envelope for pulse load operation",
+      "authors": [
+        {
+          "name": "Kristen L. Mills",
+          "id": "A5082987102",
+          "institution": "Rolls-Royce (United Kingdom)"
+        },
+        {
+          "name": "Jin Wen Xiong",
+          "id": "A5034352357",
+          "institution": "Nanyang Technological University"
+        },
+        {
+          "name": "X Liu",
+          "id": "A5024793285",
+          "institution": ""
+        },
+        {
+          "name": "Pabbathi Venkatesh",
+          "id": "A5082351048",
+          "institution": "Nanyang Technological University"
+        }
+      ],
+      "year": 2018,
+      "citation_count": 7,
+      "abstract": "Future warship power systems may be subject to pulsed loads manifesting through emergent combat systems such as directed energy weapons, associated sensors and electronic warfare equipment. The integration of combat system loads with the ship’s power system means that performance becomes intrinsically linked to combat effectiveness. Hence, understanding the capability of the power system to service such loads is vital in ensuring the operator’s ability to fight the ship. This paper describes the challenge of pulse load integration from the perspective of the power system design authority. Modelling and simulation has been employed to study the electrical response of a representative power system when subject to a range pulse load characteristics. Subsequently, the effects of pulse loading are reviewed in terms of impact upon the prime mover. It is concluded that whilst electrical supply performance can be maintained within allowable power quality limits as defined by STANAG 1008, the mechanical effects can be to the detriment of engine life, highlighting key recommendations to understand both electrical and mechanical performance envelope in design for integration.",
+      "topics": [
+        "Electromagnetic Launch and Propulsion Technology",
+        "Maritime Transport Emissions and Efficiency",
+        "Advanced Battery Technologies Research"
+      ],
+      "source": {
+        "name": "Conference Proceedings of INEC",
+        "id": "S4386872429",
+        "type": "conference",
+        "issn": [
+          "2515-818X"
+        ]
+      },
+      "open_access_url": "https://zenodo.org/record/2270654/files/INEC%202018%20Paper%20026%20Mills%20FINAL.pdf",
+      "is_oa": true,
+      "referenced_works": [
+        "W605936037",
+        "W1573568723",
+        "W1969166459",
+        "W2073032774",
+        "W2136908369",
+        "W2540193158",
+        "W2766099895",
+        "W2766532543",
+        "W2914107733",
+        "W3200227921",
+        "W6634320990",
+        "W6642287446"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2018年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W3207211774",
+      "doi": "",
+      "title": "ACTRAN numerical study on the effects of intake geometry and length on fan tone noise propagation and radiation",
+      "authors": [
+        {
+          "name": "Lei Xiong",
+          "id": "A5006831882",
+          "institution": ""
+        },
+        {
+          "name": "Rie Sugimoto",
+          "id": "A5063240001",
+          "institution": ""
+        },
+        {
+          "name": "Erika Quaranta",
+          "id": "A5050499646",
+          "institution": ""
+        }
+      ],
+      "year": 2018,
+      "citation_count": 0,
+      "abstract": "In this study, the geometry of a drooped intake of a scale rig for typical turbofan engines is artificially modified to create fictitious shorter intake geometries in order to investigate the impact of the intake length on the forward radiated fan noise. The study has been conducted by using three-dimensional ACTRAN TM models, and computations were performed over a wide range of frequencies. The noise source of interest is buzz-saw tones, hence rotor-locked single mode at the fan plane at integer-multiples of the engine shaft rotation speed at each engine order was used to define the noise source. In parallel, ACTRAN TM predictions by using the axisymmetric models generated based on the sideline profile of the drooped intake have also been performed for comparison and understanding the three-dimensional effect on the radiation directivities. &lt;br/&gt;The ACTRAN results show that the impact of the intake length is quite small if the intake is not acoustically lined. In case of lined intake, however, the far-field directivity can be significantly modified by the change of the intake length. &lt;br/&gt;",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Vehicle Noise and Vibration Control",
+        "Acoustic Wave Phenomena Research"
+      ],
+      "source": {
+        "name": "ePrints Soton (University of Southampton)",
+        "id": "S4306401019",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2018年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2751016815",
+      "doi": "https://doi.org/10.19062/2247-3173.2017.19.1.19",
+      "title": "MICROFIGHTER AS AN ALTERNATIVE TO FOURTH GENERATION FIGHTER PLANES",
+      "authors": [
+        {
+          "name": "PRICOP Mihai-Victor",
+          "id": "A5070111562",
+          "institution": "National Institute for Aerospace Research Elie Carafoli"
+        },
+        {
+          "name": "Mircea Boșcoianu",
+          "id": "A5038514432",
+          "institution": "Henri Coanda Air Force Academy"
+        },
+        {
+          "name": "Cătălin NAE",
+          "id": "A5046775986",
+          "institution": "Henri Coanda Air Force Academy"
+        },
+        {
+          "name": "M. G. Cojocaru",
+          "id": "A5112300260",
+          "institution": "National Institute for Aerospace Research Elie Carafoli"
+        }
+      ],
+      "year": 2017,
+      "citation_count": 0,
+      "abstract": "The paper presents an affordable low observable concept for a very light strikefighter plane, using a mixture of high and low tech. Currently for a small defense budget, trying to comply with leading military standards enables a small number of fourth generation warplanes, typically degraded with respect to essential capabilities such as air defense and deep strike, due to the restrictions in purchase of high performance weaponry. A solution is to eliminate standard compliance and adopt cost effective solutions, based on a mix of proven items and newly emerging technologies, in an attempt to obtain better solutions than degraded fourth generation warplane as available on the market.",
+      "topics": [
+        "Guidance and Control Systems"
+      ],
+      "source": {
+        "name": "SCIENTIFIC RESEARCH AND EDUCATION IN THE AIR FORCE",
+        "id": "S2764414453",
+        "type": "journal",
+        "issn": [
+          "2247-3173"
+        ]
+      },
+      "open_access_url": "https://doi.org/10.19062/2247-3173.2017.19.1.19",
+      "is_oa": true,
+      "referenced_works": [
+        "W1553797634",
+        "W1566179750"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2017年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W4233245264",
+      "doi": "https://doi.org/10.2514/6.2016-3028",
+      "title": "The Effect of Steady Flow Distortion on Noise Propagation in Turbofan Intakes",
+      "authors": [
+        {
+          "name": "Albert G. Prinn",
+          "id": "A5080707732",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Rie Sugimoto",
+          "id": "A5063240001",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "R.J. Astley",
+          "id": "A5111878691",
+          "institution": "University of Southampton"
+        }
+      ],
+      "year": 2016,
+      "citation_count": 9,
+      "abstract": "Steady flow distortion in turbofan intakes is caused by non-axisymmetric nacelle geometry (`droop' and `scarf') and by incident flow which is not necessarily aligned with the nacelle axis. Predictions of propagation and attenuation in turbofan nacelles are commonly based on an assumption that the nacelle is straight and axisymmetric and that the mean flow does not vary azimuthally about the axis. Analytic and numerical solutions for the acoustic field are then obtained by assuming that each azimuthal Fourier component of the field can be treated separately and that no scattering occurs between them. When a numerical scheme is used, a solution can be obtained by discretising each azimuthal component on a two-dimensional slice through the duct axis and by solving separately for each azimuthal order (a `2.5D' model). This avoids the need to solve the discrete problem on a three-dimensional mesh. When three-dimensional geometric features and fully three dimensional mean flow are taken into account, such assumptions no longer hold. The propagation of fan noise through the intake then becomes a more challenging three-dimensional problem. In the current article, a numerical study is presented in which a three-dimensional numerical simulation is performed to assess the effect of steady flow distortion on the propagation and attenuation of fan tones in a lined, drooped intake. The objective of the study is to assess whether such effects are significant in determining acoustic power and directivity for current and future turbofan designs. The results presented here focus on the effect of flow distortion at take-off when strong rotor-locked tones dominate in the forward arc. A sequence of fan intake models of increasing geometrical complexity is presented and these are used to determine the degree of fidelity which is required in the description of the geometry and mean flow to make useful acoustic predictions. The results indicate that quite modest levels of flow distortion distribute the acoustic power of a dominant engineorder fan tone into a much broader spectrum of adjacent azimuthal orders at the throat, and significantly modify the far field directivity. These predictions appear to be consistent with existing measured test rig data which is also presented.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Aerodynamics and Fluid Dynamics Research",
+        "Fluid Dynamics and Turbulent Flows"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": "",
+        "issn": []
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W1485630731",
+        "W2054642975",
+        "W2148041336",
+        "W2165062106",
+        "W2314646541",
+        "W2327967107",
+        "W4298771957"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2016年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2485766914",
+      "doi": "",
+      "title": "Analysis of High Fidelity Turbomachinery CFD Using Proper Orthogonal Decomposition",
+      "authors": [
+        {
+          "name": "Ronald A. Spencer",
+          "id": "A5023189159",
+          "institution": ""
+        }
+      ],
+      "year": 2016,
+      "citation_count": 2,
+      "abstract": "Assessing the impact of inlet flow distortion in turbomachinery is desired early in the design cycle. This thesis introduces and validates the use of methods based on the Proper Orthogonal Decomposition (POD) to analyze clean and 1/rev static pressure distortion simulation results at design and near stall operating condition. The value of POD comes in its ability to efficiently extract both quantitative and qualitative information about dominant spatial flow structures as well as information about temporal fluctuations in flow properties. Observation of the modes allowed qualitative identification of shock waves as well as quantification of their location and range of motion. Modal coefficients revealed the location of the passage shock at a given angular location. Distortion amplification and attenuation between rotors was also identified. A relationship was identified between how distortion manifests itself based on downstream conditions. POD provides an efficient means for extracting the most meaningful information from large CFD simulation data. Static pressure and axial velocity were analyzed to explore the flow physics of 3 rotors of a compressor with a distorted inlet. Based on the results of the analysis of static pressure using the POD modes, it was concluded that there was a decreased range of motion in passage shock oscillation. Analysis of axial velocity POD modes revealed the presence of a separated region on the low pressure surface of the blade which was most dynamic in rotor 1. The thickness of this structure decreased in the near stall operating condition. The general conclusion is made that as the fan approaches stall the apparent effects of distortion are lessened which leads to less variation in the operating condition. This is due to the change in operating condition placing the fan at a different position on the speedline such that distortion effects are less pronounced. POD modes of entropy flux were used to identify three distinct levels of entropy flux in the blade row passage. The separated region was the region with the highest entropy due to the irreversibilities associated with separation.",
+      "topics": [
+        "Turbomachinery Performance and Optimization",
+        "Aerosol Filtration and Electrostatic Precipitation",
+        "Cavitation Phenomena in Pumps"
+      ],
+      "source": {
+        "name": "ScholarsArchive  (Brigham Young University)",
+        "id": "S4377196308",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=6845&context=etd",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2016年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2753248665",
+      "doi": "",
+      "title": "Modelling and Performance Aspects of Coanda Flap Systems",
+      "authors": [
+        {
+          "name": "Korbinian Franz Stadlberger",
+          "id": "A5015795275",
+          "institution": ""
+        }
+      ],
+      "year": 2016,
+      "citation_count": 1,
+      "abstract": "Im Kontext von klappenlosen Flugsteuerungskonzepten gewinnt die aktive Strmungskontrolle mittels gezielter",
+      "topics": [
+        "Aerospace and Aviation Technology",
+        "Air Traffic Management and Optimization"
+      ],
+      "source": {
+        "name": "mediaTUM – the media and publications repository of the Technical University Munich (Technical University Munich)",
+        "id": "S4306400453",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "http://nbn-resolving.de/urn/resolver.pl?urn:nbn:de:bvb:91-diss-20161130-1307255-1-2",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2016年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2753707060",
+      "doi": "",
+      "title": "FAN AND INTAKE COUPLED AERODYNAMIC DESIGN OPTIMIZATION FOR UHBR AERO-ENGINES WITH LOW-PRESSURE RATIO FANS",
+      "authors": [
+        {
+          "name": "Johakim Corryoer",
+          "id": "A5069961145",
+          "institution": ""
+        },
+        {
+          "name": "Rainer Schnell",
+          "id": "A5022560140",
+          "institution": ""
+        },
+        {
+          "name": "Eebrhard Nicke",
+          "id": "A5036528152",
+          "institution": ""
+        }
+      ],
+      "year": 2015,
+      "citation_count": 0,
+      "abstract": "To reduce fuel consumption as well as noise and CO2 emissions, the overall trend in civil aviation is to decrease&#13;\\nexhaust velocities associated with an increase of the fan diameter, implying more weight and more drag because of&#13;\\nthe larger nacelle size. To compensate for the introduced weight increase, the concept of nacelles with short inlet,&#13;\\nfor which the interaction between the nacelle and the fan is higher than for current engines, is often considered. This&#13;\\npaper proposes to design a short inlet geometry with a length over diameter ratio of l/D�0.35 that provides better or&#13;\\nequal aerodynamic performances, predominantly for the fan, than conventional long inlet configurations with typical&#13;\\nratios of l/D�0.65. To obtain such a design, an optimization process with a flow field covering the entire fan, intake&#13;\\nand nacelle system is used. The first step is to define the parameterization of the nacelle which finally contains&#13;\\nthe nacelle and the intake contour as basics parameters. The next step is to establish a robust and automatic&#13;\\nmeshing procedure of the entire calculation domain (far field, nacelle, intake and fan), which guarantees a high&#13;\\nmesh quality independent of the parameter selected. AutoOpti, which is an optimization tool developed at DLR,&#13;\\nis applied, providing an optimization framework based on an evolutionary algorithm with heavy surrogate model&#13;\\nenhancements. For the calculations, which are realized with the DLR in-house solver TRACE, three operating&#13;\\nconditions are considered: static take-off (OP1), take-off (OP2) and cruise (OP3). The classification of the results&#13;\\nis based on the assessment of the fan aerodynamic performances, considering fan total pressure ratio for OP1&#13;\\nand OP2 with the aim to increase the fan stability limit and on the isentropic efficiency for OP3. Among the Paretofront,&#13;\\nthe best individual is selected and analyzed qualitatively and quantitatively, explaining the performance gain&#13;\\nand corresponding geometric modifications of the intake and lip section. A new optimization process is realized to&#13;\\nminimize the pressure peak observed at static take-off condition on the nacelle’s leading edge. Then, a full annulus&#13;\\nnacelle geometry is created in order to study the influence of some asymmetric parameters such as the angle of&#13;\\nthe nacelle inlet face (droop angle), the thickness in circumferential direction and the inflow angle",
+      "topics": [
+        "Aerodynamics and Fluid Dynamics Research",
+        "Advanced Aircraft Design and Technologies",
+        "Turbomachinery Performance and Optimization"
+      ],
+      "source": {
+        "name": "elib (German Aerospace Center)",
+        "id": "S4377196266",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2015年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2327967107",
+      "doi": "https://doi.org/10.2514/6.2014-3113",
+      "title": "The Effect of Steady Flow Distortion on Mode Propagation in a Turbofan Intake",
+      "authors": [
+        {
+          "name": "R.J. Astley",
+          "id": "A5111878691",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Rie Sugimoto",
+          "id": "A5063240001",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Gwénaël Gabard",
+          "id": "A5016412272",
+          "institution": "University of Southampton"
+        },
+        {
+          "name": "Ellen Norde",
+          "id": "A5001500254",
+          "institution": "University of Twente"
+        },
+        {
+          "name": "Ernst Jan Grift",
+          "id": "A5045769970",
+          "institution": "University of Twente"
+        },
+        {
+          "name": "Marc Bocquier",
+          "id": "A5097886948",
+          "institution": "École Centrale de Lyon"
+        }
+      ],
+      "year": 2014,
+      "citation_count": 14,
+      "abstract": "Steady flow distortion in turbofan intakes is caused by non-axisymmetric nacelle geometry (`droop' and `scarf') and by non-zero flow incidence to the nacelle axis. Much analysis of sound propagation and attenuation in turbofan ducts, both analytic and numerical, is based on assumptions that the local cross-section of the intake is annular or circular and the mean flow is axially symmetric. Separable modal solutions then exist and the radial and azimuthal orders of the modes correlate with cut-on ratio, mode angle and modal attenuation. While the cross-section close to the fan face is necessarily axisymmetric to accommodate rotating elements, the nacelle itself is usually drooped and scarfed to ensure that at flight incidence the flow onto the fan is as axially and radially uniform as possible. As a consequence, steady azimuthal flow distortion occurs in the throat of the nacelle. In the current article, a model is proposed to predict the properties of modes propagating through such a region of azimuthal flow distortion. The mean flow is decomposed into a Fourier superposition of low order azimuthal components, and the eigen-modes propagating on the flow are then calculated by using a spectral representation in the azimuthal direction. In the radial direction, a numerical, Finite Element model is used. A second approach in which a radial expansion is used in terms of hard-walled symmetric eigenmodes, rather than finite element radial shape functions, has also been implemented for hard-walled ducts. Both methods give consistent results for modes propagating on distorted Hows in the absence of acoustic liners. Results are presented also for the case when a locally reacting acoustic liner is present at the outer wall. Levels of steady How distortion typical of those found in realistic intakes are shown to have a significant effect on modeshapes and on the azimuthal components which contribute to a single mode. Finally predictions are made for the distribution of azimuthal components in modes propagating in a drooped fan rig intake. These are compared to measured data from a circumferential mode detection array at the throat of such an intake.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Aerodynamics and Fluid Dynamics Research",
+        "Acoustic Wave Phenomena Research"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": "",
+        "issn": []
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W2054642975",
+        "W2110088373",
+        "W2148041336",
+        "W2150838656",
+        "W2165062106",
+        "W2314646541",
+        "W2316340865",
+        "W4298105265",
+        "W4298771957"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2014年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W1842023431",
+      "doi": "",
+      "title": "私の海藻食論～My Sea-vegetarianism",
+      "authors": [
+        {
+          "name": "正和 舘脇",
+          "id": "A5061569009",
+          "institution": ""
+        }
+      ],
+      "year": 2014,
+      "citation_count": 0,
+      "abstract": "",
+      "topics": [
+        "Military Technology and Strategies",
+        "Legal and Regulatory Analysis",
+        "Linguistic, Cultural, and Literary Studies"
+      ],
+      "source": {
+        "name": "Institutional Repositories DataBase (IRDB)",
+        "id": "S7407056385",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "https://kochi.repo.nii.ac.jp/?action=repository_action_common_download&item_id=6396&item_no=1&attribute_id=17&file_no=1",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2014年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2138109842",
+      "doi": "https://doi.org/10.59972/gxbuf1zn",
+      "title": "Towards Virtual Testing of Compression Systems in Gas Turbine Engines",
+      "authors": [
+        {
+          "name": "A. I. Sayma",
+          "id": "A5047105840",
+          "institution": ""
+        }
+      ],
+      "year": 2011,
+      "citation_count": 1,
+      "abstract": "Current trends in the computational fluid dynamics (CFD) analysis of gas turbine engines are in the direction of the so called “virtual testing”. Although this term is used nowadays loosely in the context of this application, the ultimate objective of virtual tests is to replace partly or fully rig and engine tests during the design and certification of engines. In the past few decades, significant developments have been achieved in the discretisation methods and the associated CFD algorithms. Combined with the rapid developments in hardware in both speed and memory which are becoming increasingly available at affordable prices, the simulation of full engine or rig tests are increasingly becoming a reality. This paper describes a method by which virtual tests can be conducted on a low pressure compression system of a gas turbine engine using smart boundary conditions and allowing the sweep along a speed characteristic or sweep along a working line during the mapping of the compressor characteristic in a similar fashion to a typical rig test. The low pressure compression system is equipped with a variable downstream nozzle and the rotational speed is allowed to vary during the computations. The simulations are validated using NASA rotor 67 experimental data against which good agreement was obtained.",
+      "topics": [
+        "Turbomachinery Performance and Optimization",
+        "Advanced Combustion Engine Technologies",
+        "Real-time simulation and control systems"
+      ],
+      "source": {
+        "name": "NAFEMS International Journal of CFD Case Studies",
+        "id": "S4387290695",
+        "type": "journal",
+        "issn": [
+          "1462-236X"
+        ]
+      },
+      "open_access_url": "https://openaccess.city.ac.uk/id/eprint/7901/1/AISAYMA-NAFEMS-Journal-2011.pdf",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2011年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W1969109030",
+      "doi": "https://doi.org/10.2514/6.2009-1522",
+      "title": "Design and Development of the Blackbird: Challenges and Lessons Learned",
+      "authors": [
+        {
+          "name": "Peter W. Merlin",
+          "id": "A5032673804",
+          "institution": "Armstrong Flight Research Center"
+        }
+      ],
+      "year": 2009,
+      "citation_count": 47,
+      "abstract": "The Lockheed Blackbirds hold a unique place in the development of aeronautics. In their day, the A-12, YF-12, M-21, D-21, and SR-71 variants outperformed all other jet airplanes in terms of altitude and speed. Now retired, they remain the only production aircraft capable of sustained Mach 3 cruise and operational altitudes above 80,000 feet. In this paper the author describes the design evolution of the Blackbird from Lockheed's early Archangel studies for the Central Intelligence Agency through Senior Crown, production of the Air Force's SR-71. He describes the construction and materials challenges faced by Lockheed, the Blackbird's performance characteristics and capabilities, and the National Aeronautics and Space Administration's role in using the aircraft as a flying laboratory to collect data on materials, structures, loads, heating, aerodynamics, and performance for high-speed aircraft.",
+      "topics": [
+        "Rocket and propulsion systems research",
+        "Advanced Aircraft Design and Technologies"
+      ],
+      "source": {
+        "name": "47th AIAA Aerospace Sciences Meeting including The New Horizons Forum and Aerospace Exposition",
+        "id": "S4306499471",
+        "type": "journal",
+        "issn": []
+      },
+      "open_access_url": "https://ntrs.nasa.gov/api/citations/20090007797/downloads/20090007797.pdf",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2009年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W1971320104",
+      "doi": "https://doi.org/10.2514/6.2006-2479",
+      "title": "Noise Validation of Model Fan Rig with Engine",
+      "authors": [
+        {
+          "name": "Peter Schwaller",
+          "id": "A5012391981",
+          "institution": "Rolls-Royce (United Kingdom)"
+        },
+        {
+          "name": "Nick J. Baker",
+          "id": "A5026098304",
+          "institution": "Rolls-Royce (United Kingdom)"
+        },
+        {
+          "name": "Dave Tomlinson",
+          "id": "A5058035327",
+          "institution": "Rolls-Royce (United Kingdom)"
+        },
+        {
+          "name": "Pieter Sijtsma",
+          "id": "A5017217072",
+          "institution": "Netherlands Aerospace Centre"
+        },
+        {
+          "name": "Robert Hemmings",
+          "id": "A5013363341",
+          "institution": ""
+        }
+      ],
+      "year": 2006,
+      "citation_count": 10,
+      "abstract": "In this paper, the measured noise characteristics of a 1/3 scale aeroengine turbofan are compared with tests with a c ylindrical intake and a drooped intake more realistic of the aeroengine. The differences in noise are discussed and explained with the help of circumferential mode detection in the fan intake. The noise from the rig with a drooped intake is then compared to the noise from a full scale statically tested aeroengine after suitable scaling and correction factors were applied. Good agreement was achieved except at low frequencies where the comparison was compromised by the engine jet noise.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Vehicle Noise and Vibration Control",
+        "Turbomachinery Performance and Optimization"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": "",
+        "issn": []
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W2015644425",
+        "W2165062106",
+        "W2185979483",
+        "W4285719527"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "2006年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2993375049",
+      "doi": "",
+      "title": "Flow Fields Interaction Between Drooped Intake, Fan and Downstream Engine Component in Civil Turbofan Engines",
+      "authors": [
+        {
+          "name": "Won-Gu Joo",
+          "id": "A5113827723",
+          "institution": ""
+        }
+      ],
+      "year": 1998,
+      "citation_count": 1,
+      "abstract": "A three dimensional numerical computational method using actuator disk blade row model is applied to the problems of calculating the asymmetric performance of a turbofan due to the three dimensional nature of the intake and due to the presence of the engine pylon and the core engine in high bypass ratio civil turbofan engines. Good agreement between prediction and experimental results is demonstrated. The relative importance of the intake asymmetry and the pylon and the core engine is discussed.",
+      "topics": [
+        "Turbomachinery Performance and Optimization",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Combustion and flame dynamics"
+      ],
+      "source": {
+        "name": "Journal of the Korean Society for Aeronautical & Space Sciences",
+        "id": "S4210179979",
+        "type": "journal",
+        "issn": [
+          "1225-1348",
+          "2287-6871"
+        ]
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1998年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2333882890",
+      "doi": "https://doi.org/10.2514/6.1997-1590",
+      "title": "The effects on fan noise of inlet steady flow distortion",
+      "authors": [
+        {
+          "name": "P. Schwaller",
+          "id": "A5083960632",
+          "institution": "Rolls-Royce (United Kingdom)"
+        },
+        {
+          "name": "B.J. Tester",
+          "id": "A5112078303",
+          "institution": "Rolls-Royce (United Kingdom)"
+        },
+        {
+          "name": "D. G. Henshaw",
+          "id": "A5003370348",
+          "institution": "Rolls-Royce (United Kingdom)"
+        },
+        {
+          "name": "P. Schwaller",
+          "id": "A5083960632",
+          "institution": "Rolls-Royce (United Kingdom)"
+        },
+        {
+          "name": "B.J. Tester",
+          "id": "A5112078303",
+          "institution": "Rolls-Royce (United Kingdom)"
+        },
+        {
+          "name": "D. G. Henshaw",
+          "id": "A5003370348",
+          "institution": "Rolls-Royce (United Kingdom)"
+        }
+      ],
+      "year": 1997,
+      "citation_count": 1,
+      "abstract": "The Pan Test Rig Tests on a model aero-engine fan are used to determine the effects of steady intake flow distortion on fan tone noise. Three different experimental intakes are tested; a clean axisymmetric intake generating little flow distortion onto the fan; a simple droop generating a single-lobed sinusoidal flow distortion; and a droop generating a complex multi-lobed sinusoidal flow distortion. Both far-field noise and in-duct acoustic modes are measured showing the magnitude and character of the noise due to the intake flow distortions. A theoretical prediction method is then described which is shown to give reasonable estimates of these measured effects.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Turbomachinery Performance and Optimization",
+        "Heat Transfer Mechanisms"
+      ],
+      "source": {
+        "name": "",
+        "id": "",
+        "type": "",
+        "issn": []
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1997年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2509896996",
+      "doi": "https://doi.org/10.1017/s0001924000027275",
+      "title": "On the effect of a strake-like junction fillet on the lift and drag of a wing",
+      "authors": [
+        {
+          "name": "L. Bernstein",
+          "id": "A5108373225",
+          "institution": "Queen Mary University of London"
+        },
+        {
+          "name": "Sabarina Abdul Hamid",
+          "id": "A5024541688",
+          "institution": "Queen Mary University of London"
+        }
+      ],
+      "year": 1996,
+      "citation_count": 7,
+      "abstract": "Summary An experimental study of the effects on the low-speed aerodynamic characteristics of a strake-like fillet is described, modelled on one used on an Airbus A320 variant fitted at the leading edge of a swept wing-plate junction. The wing, swept back at 20°, was of NACA 0015 section and chord 500 mm, both normal to its leading edge. A turbulent boundary layer had developed on the plate well ahead of the junction. The tests were conducted at a unit Reynolds number of 1.56 x 10 6 m -1 . Surface pressure distributions were measured on the plate in the neighbourhood of the leading edge junction and also on the aerofoil and fillet at wing incidences of 0°, 3°, 6°, 9° and 12°. These were supplemented by surface oil-flow studies. The mean velocity and turbulence intensity fields around the leading edge were examined for incidences of 0° and 9°, using both a single tube yaw meter developed for the purpose and an X-wire anemometer. The X-wire anemometer was also used downstream of the trailing edge of the swept wing; five of the Reynolds stresses and the mean velocity field were measured. The sectional lift coefficients on the aerofoil were found to diminish as the junction was approached, slightly more so with the fillet than without it. The sectional drag coefficients due to pressure increased as the junction was approached, the fillet moderating this increase to only a small extent. However, the addition of the drooped fillet modified the flow considerably. The horseshoe-like vortex was less well defined than without it. At zero incidence, the peak in the turbulence intensity levels was virtually eliminated on what became effectively the compression side of the wing due to the local camber introduced by the asymmetric fillet. The turbulence levels were also reduced by the addition of the fillet at an incidence of 9°. However, the turbulent activity was spread through a larger proportion of the viscous region. The secondary flows and the turbulence activity in the wake are associated with unrecoverable kinetic energy and will be manifest as drag on the surfaces forming the junction. It is concluded that a carefully designed fillet, optimised for the cruise incidence of an aircraft, can reduce the peak turbulence levels in the junction. It remains unclear whether the total drag associated with the junction flow can be reduced significantly. However because of its effects on the turbulence, there may be other benefits, for example on the efficiency of downstream elements, such as fuselage-mounted engine intakes or the following stages of an axial flow machine. Junction fillets might also be used to control the scouring of river beds around bridge piers.",
+      "topics": [
+        "Aerodynamics and Fluid Dynamics Research",
+        "Fluid Dynamics and Turbulent Flows",
+        "Turbomachinery Performance and Optimization"
+      ],
+      "source": {
+        "name": "The Aeronautical Journal",
+        "id": "S2764989785",
+        "type": "journal",
+        "issn": [
+          "0001-9240",
+          "2059-6464"
+        ]
+      },
+      "open_access_url": "",
+      "is_oa": false,
+      "referenced_works": [
+        "W271288987",
+        "W611110997",
+        "W1610574499",
+        "W1978420422",
+        "W2069531465",
+        "W2075708354",
+        "W2163811505",
+        "W2593262228"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1996年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W234098357",
+      "doi": "",
+      "title": "Recommendations for ground effects research for V/STOL and STOL aircraft and associated equipment for large scale testing",
+      "authors": [
+        {
+          "name": "Richard E. Kuhn",
+          "id": "A5018581297",
+          "institution": ""
+        }
+      ],
+      "year": 1986,
+      "citation_count": 1,
+      "abstract": "The current understanding of the effects of ground proximity on V/STOL and STOL aircraft is reviewd. Areas covered include (1) single jet suckdown in hover, (2) fountain effects on multijet configurations, (3) STOL ground effects including the effect of the ground vortex flow field, (4) downwash at the tail, and (5) hot gas ingestion in both hover and STOL operation. The equipment needed for large scale testing to extend the state of the art is reviewed and developments in three areas are recommended as follows: (1) improve methods for simulating the engine exhaust and inlet flows; (2) develop a model support system that can simulate realistic rates of climb and descent as well as steady height operation; and (3) develop a blowing BLC ground board as an alternative to a moving belt ground board to properly simulate the flow on the ground.",
+      "topics": [
+        "Aerodynamics and Fluid Dynamics Research",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Aerospace and Aviation Technology"
+      ],
+      "source": {
+        "name": "NASA Technical Reports Server (NASA)",
+        "id": "S4306402118",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "http://hdl.handle.net/2060/19880008201",
+      "is_oa": true,
+      "referenced_works": [
+        "W123764762",
+        "W237949850",
+        "W259863374",
+        "W262235543",
+        "W284259075",
+        "W802337756",
+        "W821060718",
+        "W934693887",
+        "W1484886781",
+        "W1993158852",
+        "W2313112329",
+        "W2320828728",
+        "W2326994753",
+        "W2797816625",
+        "W3007612972",
+        "W3139600180",
+        "W3164826283",
+        "W3168322907",
+        "W3172424272",
+        "W3209569680"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1986年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W2785218982",
+      "doi": "",
+      "title": "Aircraft design studies: S68 multi-role strike aircraft",
+      "authors": [
+        {
+          "name": "D. Howe",
+          "id": "A5111812663",
+          "institution": ""
+        }
+      ],
+      "year": 1975,
+      "citation_count": 0,
+      "abstract": "The 868 aircraft design study was for a multi-role strike&#13;\\naircraft with a variable sweepback wing. The study was&#13;\\nundertaken as the result of experience gained in a previous&#13;\\ninvestigation of a naval strike aircraft, the 864 (Ref.1). The&#13;\\nmore recent design was for a land based aircraft intended to be&#13;\\ncapable of fulfilling strike, interception and search roles.&#13;\\nThe design take off weight was 50,000 lbs and the normal&#13;\\nmaximum speed condition was Mach 2 at altitude although a short&#13;\\ndash to M 2.5 was catered for. An internal bay was provided&#13;\\nfor the carriage of various combinations of stores. Side by&#13;\\nside seating was adopted for the two crew members and some&#13;\\ndifficulty was experienced with the structural layout of the&#13;\\nfuselage and the design of the main undercarriage because of&#13;\\nthis.",
+      "topics": [
+        "Rocket and propulsion systems research"
+      ],
+      "source": {
+        "name": "CERES (Cranfield University)",
+        "id": "S4306401778",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "http://dspace.lib.cranfield.ac.uk/handle/1826/9638",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1975年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W338542100",
+      "doi": "",
+      "title": "Low speed aerodynamic characteristics of a large scale STOL transport model with an augmented jet flap",
+      "authors": [
+        {
+          "name": "T. N. Aiken",
+          "id": "A5008469360",
+          "institution": "Ames Research Center"
+        },
+        {
+          "name": "Amanda Cook",
+          "id": "A5101750794",
+          "institution": ""
+        }
+      ],
+      "year": 1971,
+      "citation_count": 4,
+      "abstract": "Wind tunnel tests to determine low-speed aerodynamic characteristics of large-scale STOL transport model with augmented jet flap",
+      "topics": [
+        "Aerodynamics and Fluid Dynamics Research",
+        "Air Traffic Management and Optimization",
+        "Fluid Dynamics and Turbulent Flows"
+      ],
+      "source": {
+        "name": "NASA STI Repository (National Aeronautics and Space Administration)",
+        "id": "S4377196257",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "http://hdl.handle.net/2060/19710016707",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1971年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W843066046",
+      "doi": "",
+      "title": "Further low speed wind tunnel tests on slender cambered wings with apex blowing.",
+      "authors": [
+        {
+          "name": "Joseph D. Cole",
+          "id": "A5005964416",
+          "institution": ""
+        }
+      ],
+      "year": 1968,
+      "citation_count": 0,
+      "abstract": "This thesis describes research work carried out in the 8 ft.x 6 ft.low-speed wind tunnel of the.Aero dynamics",
+      "topics": [
+        "Aerodynamics and Fluid Dynamics Research",
+        "Advanced Aircraft Design and Technologies",
+        "Fluid Dynamics and Turbulent Flows"
+      ],
+      "source": {
+        "name": "Calhoun: The Naval Postgraduate School Institutional Archive (Naval Postgraduate School)",
+        "id": "S4306400952",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "http://hdl.handle.net/10945/40052",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1968年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W1575905902",
+      "doi": "",
+      "title": "A qualitative discussion of the stability and control of VTOL aircraft during hover (out of ground effect) and transition.",
+      "authors": [
+        {
+          "name": "Paul J. Weitz",
+          "id": "A5024079781",
+          "institution": ""
+        }
+      ],
+      "year": 1964,
+      "citation_count": 0,
+      "abstract": "A survey of the latest available literature was made in order to qualitatively discuss stability and control problems of vertical takeoff and landing (VTOL) aircraft during hover (out of ground effect) and the transition to level flight. Modes of propulsion and methods of performing the transition maneuver are discussed. Comparisons are made of the various methods utilized for providing control forces at zero and very low speeds. The need for quantitative control power requirements and handling qualities criteria is presented. The instability of VTOL aircraft while hovering is discussed, as are the basic reasons for the poor damping characteristics at low speeds. Problems which have been encountered to date with research aircraft and which are peculiar to a given VTOL mode are discussed by mode. The need for automatic stabilization and precision instrumentation requirements are presented.",
+      "topics": [
+        "Aerospace and Aviation Technology",
+        "Aerospace Engineering and Control Systems",
+        "Real-time simulation and control systems"
+      ],
+      "source": {
+        "name": "Calhoun: The Naval Postgraduate School Institutional Archive (Naval Postgraduate School)",
+        "id": "S4306400952",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "https://calhoun.nps.edu/bitstreams/36e1c773-0250-43e8-9f86-d1af0cb16e1f/download",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1964年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W1481943637",
+      "doi": "",
+      "title": "Low-speed wind-tunnel investigation of a triangular sweptback air inlet in the root of a 45 degree sweptback wing",
+      "authors": [
+        {
+          "name": "Arvid L Keith",
+          "id": "A5112524805",
+          "institution": ""
+        },
+        {
+          "name": "Jack Schiff",
+          "id": "A5065794806",
+          "institution": ""
+        }
+      ],
+      "year": 1955,
+      "citation_count": 0,
+      "abstract": "Report presenting a low-speed investigation in the two-dimensional low-turbulence tunnel to study a sweptback wing-root air-inlet configuration believed suitable for transonic-speed jet-powered airplanes. Two models were tested: a basic model with an NACA 64-008 wing with quarter-chord sweepback of 45 degrees and an inlet model with a triangular-shaped inlet installed in the wing root. Results regarding the original and modified inlets and the final inlet are provided.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Turbomachinery Performance and Optimization",
+        "Fluid Dynamics and Turbulent Flows"
+      ],
+      "source": {
+        "name": "University of North Texas Digital Library (University of North Texas)",
+        "id": "S4306400792",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "https://digital.library.unt.edu/ark:/67531/metadc56030/",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1955年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W625164011",
+      "doi": "",
+      "title": "Effectiveness of Boundary-layer Removal near Throat of Ramp-type Side Inlet at Free-stream Mach Number of 2.0",
+      "authors": [
+        {
+          "name": "Leonard J Obery",
+          "id": "A5019803223",
+          "institution": ""
+        },
+        {
+          "name": "R. W. Cubbison",
+          "id": "A5021641911",
+          "institution": ""
+        }
+      ],
+      "year": 1954,
+      "citation_count": 26,
+      "abstract": "Report presenting the effect of removal of the boundary layer inside the inlet on the performance of a twin-duct side-air-intake system in the 8- by 6-foot supersonic wind tunnel at a free-stream Mach number of 2.0. Results regarding the internal performance characteristics of inlets, supercritical mass-flow ratio, diffuser total-pressure recovery, and effect of bleeding the boundary layer are provided.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Fluid Dynamics and Turbulent Flows",
+        "Computational Fluid Dynamics and Aerodynamics"
+      ],
+      "source": {
+        "name": "University of North Texas Digital Library (University of North Texas)",
+        "id": "S4306400792",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "https://digital.library.unt.edu/ark:/67531/metadc60947/",
+      "is_oa": true,
+      "referenced_works": [
+        "W255341643"
+      ],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1954年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W1523986779",
+      "doi": "",
+      "title": "Effect on the low-speed aerodynamic characteristics of a 49 degree sweptback wing having an aspect ratio of 3.78 of blowing air over the trailing-edge flap and aileron",
+      "authors": [
+        {
+          "name": "Edward F Whittle",
+          "id": "A5072776317",
+          "institution": ""
+        },
+        {
+          "name": "Stanley Lipson",
+          "id": "A5071503543",
+          "institution": ""
+        }
+      ],
+      "year": 1954,
+      "citation_count": 0,
+      "abstract": "Report presenting an investigation in the full-scale tunnel to determine the effects on the aerodynamic characteristics of a 49.1 degree sweptback wing of blowing a high-energy stream of air over a trailing-edge flap and an aileron. The results indicated that significant increases in lift coefficient and an improvement in aileron effectiveness may be obtained by the blowing method of boundary-layer control.",
+      "topics": [
+        "Aerodynamics and Fluid Dynamics Research",
+        "Aerospace and Aviation Technology",
+        "Advanced Aircraft Design and Technologies"
+      ],
+      "source": {
+        "name": "University of North Texas Digital Library (University of North Texas)",
+        "id": "S4306400792",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "https://digital.library.unt.edu/ark:/67531/metadc60322/",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1954年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W343228595",
+      "doi": "",
+      "title": "Investigation at Transonic Speeds of a Forward-located Underslung Air Inlet on a Body of Revolution",
+      "authors": [
+        {
+          "name": "P. K. Pierpont",
+          "id": "A5023331499",
+          "institution": ""
+        },
+        {
+          "name": "J. A. Braden",
+          "id": "A5068582458",
+          "institution": ""
+        }
+      ],
+      "year": 1953,
+      "citation_count": 0,
+      "abstract": "Report presenting an investigation in the transonic tunnel to determine the flow phenomena, pressure recovery, and external drag of a forward-located underslung air scoop mounted on a basic body of revolution with fineness ratio 11, which when cut off to provide an exit for the internal flow had a fineness ratio of 8. Results regarding the surface pressure distributions, drag, lift and pitching moment, and flow into the inlet on the modified model are provided.",
+      "topics": [
+        "Aerodynamics and Acoustics in Jet Flows",
+        "Plasma and Flow Control in Aerodynamics",
+        "Fluid Dynamics and Turbulent Flows"
+      ],
+      "source": {
+        "name": "University of North Texas Digital Library (University of North Texas)",
+        "id": "S4306400792",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "https://digital.library.unt.edu/ark:/67531/metadc59515/",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "",
+        "methods": "",
+        "innovations": "",
+        "conclusions": "",
+        "relevance_score": 0,
+        "keywords": [],
+        "skipped": true,
+        "reason": "1953年论文，仅统计不逐篇分析"
+      }
+    },
+    {
+      "id": "W286016631",
+      "doi": "",
+      "title": "Comparisons of AEROX computer program predictions of lift and induced drag with flight test data",
+      "authors": [
+        {
+          "name": "John A. Axelson",
+          "id": "A5003141536",
+          "institution": ""
+        },
+        {
+          "name": "G. C. Hill",
+          "id": "A5019106560",
+          "institution": ""
+        }
+      ],
+      "year": null,
+      "citation_count": 0,
+      "abstract": "The AEROX aerodynamic computer program which provides accurate predictions of induced drag and trim drag for the full angle of attack range and for Mach numbers from 0.4 to 3.0 is described. This capability is demonstrated comparing flight test data and AEROX predictions for 17 different tactical aircraft. Values of minimum (skin friction, pressure, and zero lift wave) drag coefficients and lift coefficient offset due to camber (when required) were input from the flight test data to produce total lift and drag curves. The comparisons of trimmed lift drag polars show excellent agreement between the AEROX predictions and the in flight measurements.",
+      "topics": [
+        "Aerospace and Aviation Technology",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Fluid Dynamics and Turbulent Flows"
+      ],
+      "source": {
+        "name": "NASA STI Repository (National Aeronautics and Space Administration)",
+        "id": "S4377196257",
+        "type": "repository",
+        "issn": []
+      },
+      "open_access_url": "http://hdl.handle.net/2060/19810021544",
+      "is_oa": true,
+      "referenced_works": [],
+      "search_query": "drooped intake",
+      "analysis": {
+        "summary": "本文介绍了AEROX气动计算机程序，该程序能够准确预测全攻角范围和马赫数0.4至3.0下的诱导阻力和配平阻力。通过比较17种不同战术飞机的飞行测试数据与AEROX预测结果，验证了该程序的性能。输入飞行测试数据中的最小阻力系数（包括摩擦阻力、压力阻力和零升波阻）以及因弯度引起的升力系数偏移（如需要），生成了总升力和阻力曲线。结果表明，配平升阻极曲线的比较显示AEROX预测与飞行测量数据之间具有极好的一致性。",
+        "methods": "研究方法主要包括使用AEROX计算机程序进行气动预测，并与飞行测试数据进行对比验证。具体步骤包括：从飞行测试数据中提取最小阻力系数（涵盖摩擦阻力、压力阻力和零升波阻）和升力系数偏移（如适用），作为输入参数生成总升力和阻力曲线。通过比较17种战术飞机的配平升阻极曲线，评估预测精度。",
+        "innovations": [
+          "开发了AEROX气动计算机程序，能够准确预测全攻角范围和宽马赫数范围（0.4至3.0）下的诱导阻力和配平阻力。",
+          "通过大规模飞行测试数据验证（17种不同战术飞机），增强了预测方法的可靠性和普适性。",
+          "整合了多种阻力成分（如摩擦阻力、压力阻力和波阻）和升力偏移因素，提高了气动预测的综合性和准确性。"
+        ],
+        "conclusions": "AEROX计算机程序在预测诱导阻力和配平阻力方面表现出色，与飞行测试数据的比较显示极好的一致性，验证了该程序在宽攻角和马赫数范围内的准确性和实用性。",
+        "relevance_score": 5,
+        "keywords": [
+          "AEROX程序",
+          "诱导阻力",
+          "飞行测试"
+        ],
+        "analyzed_at": "2026-04-08T08:25:20.767293+00:00"
+      }
+    }
+  ]
+}

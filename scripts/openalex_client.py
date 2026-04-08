@@ -75,18 +75,19 @@ class OpenAlexClient:
         per_page: int = 100,
         cursor: Optional[str] = None,
     ) -> tuple[list[dict], Optional[str]]:
-        """搜索论文，返回 (结果列表, next_cursor)"""
+        """搜索论文，返回 (结果列表, next_cursor)
+
+        注意：不使用 select 参数，因为 select 与 cursor 分页不兼容
+        （OpenAlex 在 select 模式下不返回 next_cursor）
+        """
         params = {
             "search": query,
             "per_page": min(per_page, 200),
-            "select": "id,doi,title,authorships,publication_year,cited_by_count,"
-                      "abstract_inverted_index,topics,primary_location,open_access,"
-                      "referenced_works,keywords",
         }
         if filters:
             params["filter"] = filters
-        if cursor:
-            params["cursor"] = cursor
+        # cursor 分页：第一页传 * 启动，后续传返回的 next_cursor
+        params["cursor"] = cursor or "*"
 
         data = self._get("/works", params)
         results = data.get("results", [])
@@ -111,11 +112,8 @@ class OpenAlexClient:
             params: dict = {
                 "filter": f"author.id:{author_id}",
                 "per_page": min(per_page, 200),
-                "select": "id,doi,title,publication_year,cited_by_count,"
-                          "abstract_inverted_index,topics,primary_location,open_access",
             }
-            if cursor:
-                params["cursor"] = cursor
+            params["cursor"] = cursor or "*"
             data = self._get("/works", params)
             results = data.get("results", [])
             all_works.extend(results)
@@ -159,6 +157,7 @@ class OpenAlexClient:
             "name": source_info.get("display_name") or "",
             "id": (source_info.get("id") or "").replace("https://openalex.org/", ""),
             "type": source_info.get("type") or "",
+            "issn": source_info.get("issn") or [],
         }
 
         # Open Access 信息

@@ -989,6 +989,141 @@ a:hover { color: var(--accent-blue-dark); text-decoration: underline; }
 .group-recent-paper:hover { color: var(--accent-blue); }
 
 /* ========================================
+   Heatmap Detail Panel
+   ======================================== */
+.heatmap-detail {
+  margin-top: 24px;
+  display: none;
+}
+
+.heatmap-detail.active { display: block; }
+
+.heatmap-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.heatmap-detail-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.heatmap-detail-close {
+  padding: 6px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+.heatmap-detail-close:hover { border-color: var(--text-muted); color: var(--text-primary); }
+
+/* 热力图 + 摘要并排 */
+.heatmap-row-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .heatmap-row-layout { grid-template-columns: 1fr; }
+}
+
+.ai-summary-panel {
+  background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08));
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  position: sticky;
+  top: calc(var(--header-height) + var(--tab-height) + 24px);
+}
+
+.ai-summary-panel-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-purple);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ai-summary-panel-period {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-bottom: 8px;
+}
+
+.ai-summary-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+.ai-summary-placeholder {
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: center;
+  padding: 40px 0;
+}
+
+/* 论文列表 */
+.period-papers-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.period-paper-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.period-paper-item:last-child { border-bottom: none; }
+
+.period-paper-year {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  min-width: 36px;
+  padding-top: 2px;
+}
+
+.period-paper-info { flex: 1; }
+
+.period-paper-link {
+  font-size: 13px;
+  color: var(--accent-blue);
+  text-decoration: none;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.period-paper-link:hover { text-decoration: underline; }
+
+.period-paper-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ========================================
    AI Q&A
    ======================================== */
 .qa-container {
@@ -1429,9 +1564,16 @@ a:hover { color: var(--accent-blue-dark); text-decoration: underline; }
         <span>多</span>
       </div>
     </div>
-    <div class="heatmap-container">
-      <div class="heatmap-grid" id="heatmapGrid"></div>
+    <div class="heatmap-row-layout">
+      <div class="heatmap-container">
+        <div class="heatmap-grid" id="heatmapGrid"></div>
+      </div>
+      <div class="ai-summary-panel" id="aiSummaryPanel">
+        <div class="ai-summary-panel-title">🤖 AI Summary</div>
+        <div class="ai-summary-placeholder">点击热力图中的时间段查看 AI 研究综述</div>
+      </div>
     </div>
+    <div class="heatmap-detail" id="heatmapDetail"></div>
     <div class="section-title" style="margin-top:24px">📊 各时期详情</div>
     <div class="trend-periods" id="trendPeriods"></div>
   </div>
@@ -1951,21 +2093,7 @@ function hideHeatmapTooltip() {
 }
 
 function filterByHeatmap(period, subtopic) {
-  // Switch to papers tab and filter by period
-  switchTab('papers');
-  const [startYear, endYear] = period.split('-').map(Number);
-
-  // Filter papers by year range
-  STATE.filteredPapers = STATE.papers.filter(p => {
-    const y = p.year;
-    return y >= startYear && y <= endYear;
-  });
-
-  STATE.displayedCount = 0;
-  document.getElementById('paperResultsInfo').textContent =
-    `${period} 期间: 共 ${STATE.filteredPapers.length} 篇论文`;
-  document.getElementById('paperList').innerHTML = '';
-  renderPaperList();
+  showHeatmapDetail(period, subtopic);
 }
 
 function filterByGroup(groupId) {
@@ -1999,7 +2127,7 @@ function renderTrendPeriods(intervals) {
     const topVenues = (iv.top_venues || []).slice(0, 2).map(v => v.name).join(', ');
 
     return `
-      <div class="trend-card" onclick="filterByHeatmap('${iv.period}','')">
+      <div class="trend-card" onclick="showHeatmapDetail('${iv.period}')">
         <div class="trend-card-period">${iv.period}</div>
         <div class="trend-card-stat">📄 论文数: <strong>${iv.paper_count}</strong></div>
         <div class="trend-card-stat">👥 代表作者: ${topAuthors || '-'}</div>
@@ -2007,6 +2135,121 @@ function renderTrendPeriods(intervals) {
       </div>
     `;
   }).join('');
+}
+
+function showHeatmapDetail(period, subtopic) {
+  const trends = STATE.trends;
+  if (!trends) return;
+
+  const interval = (trends.intervals || []).find(iv => iv.period === period);
+  if (!interval) return;
+
+  const [startYear, endYear] = period.split('-').map(Number);
+  const stSummaries = interval.subtopic_summaries || {};
+
+  // Update AI summary panel (right side of heatmap)
+  const summaryPanel = document.getElementById('aiSummaryPanel');
+
+  if (subtopic && stSummaries[subtopic]) {
+    // 点击了具体主题单元格 → 显示该主题摘要
+    summaryPanel.innerHTML = `
+      <div class="ai-summary-panel-title">🤖 AI Summary</div>
+      <div class="ai-summary-panel-period">${period}</div>
+      <div style="font-size:14px;font-weight:600;color:var(--accent-cyan);margin-bottom:10px">${subtopic}</div>
+      <div class="ai-summary-text">${escapeHtml(stSummaries[subtopic])}</div>
+    `;
+  } else {
+    // 点击了时期卡片 → 显示所有主题摘要
+    const stKeys = Object.keys(stSummaries);
+    if (stKeys.length) {
+      summaryPanel.innerHTML = `
+        <div class="ai-summary-panel-title">🤖 AI Summary</div>
+        <div class="ai-summary-panel-period">${period}</div>
+        ${stKeys.map(st => `
+          <div style="margin-bottom:14px">
+            <div style="font-size:13px;font-weight:600;color:var(--accent-cyan);margin-bottom:6px">${st}</div>
+            <div class="ai-summary-text">${escapeHtml(stSummaries[st])}</div>
+          </div>
+        `).join('')}
+      `;
+    } else {
+      summaryPanel.innerHTML = `
+        <div class="ai-summary-panel-title">🤖 AI Summary</div>
+        <div class="ai-summary-panel-period">${period}</div>
+        <div class="ai-summary-text" style="color:var(--text-muted)">该时期暂无 AI 综述</div>
+      `;
+    }
+  }
+
+  // Update paper list below - filter by subtopic if specified
+  const detail = document.getElementById('heatmapDetail');
+  const periodPapers = STATE.papers
+    .filter(p => {
+      const y = p.year;
+      if (!y || y < startYear || y > endYear) return false;
+      if (subtopic) {
+        // 按主题筛选
+        const text = [p.title, p.abstract, ...(p.topics || []),
+          ...((p.analysis?.keywords || []))].join(' ').toLowerCase();
+        const kws = (trends.all_subtopics || []).includes(subtopic)
+          ? subtopic : [];
+        // 用 classify 逻辑匹配
+        const matched = classifyPaperSubtopic(p);
+        return matched.includes(subtopic);
+      }
+      return true;
+    })
+    .sort((a, b) => (b.citation_count || 0) - (a.citation_count || 0));
+
+  const filterLabel = subtopic ? `${period} / ${subtopic}` : period;
+
+  let html = `
+    <div class="heatmap-detail-header">
+      <div class="heatmap-detail-title">📄 ${filterLabel} 论文列表 (${periodPapers.length})</div>
+      <button class="heatmap-detail-close" onclick="document.getElementById('heatmapDetail').classList.remove('active')">✕ 关闭</button>
+    </div>
+  `;
+
+  if (periodPapers.length === 0) {
+    html += `<div style="color:var(--text-muted);padding:12px 0">暂无论文数据</div>`;
+  } else {
+    html += periodPapers.map(p => {
+      const doi = p.doi || '';
+      const doiUrl = doi ? `https://doi.org/${doi}` : '';
+      const authors = (p.authors || []).slice(0, 3).map(a => a.name).join(', ');
+      const citations = p.citation_count || 0;
+
+      const titleHtml = doiUrl
+        ? `<a class="period-paper-link" href="${doiUrl}" target="_blank" onclick="event.stopPropagation()">${escapeHtml(p.title)}</a>`
+        : `<span class="period-paper-link" onclick="showPaperDetail('${p.id}')">${escapeHtml(p.title)}</span>`;
+
+      return `
+        <div class="period-paper-item">
+          <span class="period-paper-year">${p.year || ''}</span>
+          <div class="period-paper-info">
+            ${titleHtml}
+            <div class="period-paper-meta">${escapeHtml(authors)}${authors ? ' · ' : ''}${p.source?.name || ''} · 引用 ${citations}</div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  detail.innerHTML = html;
+  detail.classList.add('active');
+}
+
+function classifyPaperSubtopic(paper) {
+  const stKws = STATE.trends?.subtopic_keywords || {};
+  const text = [paper.title, paper.abstract, ...(paper.topics || []),
+    ...((paper.analysis?.keywords || []))].join(' ').toLowerCase();
+  const matched = [];
+  for (const [st, kws] of Object.entries(stKws)) {
+    for (const kw of kws) {
+      if (text.includes(kw.toLowerCase())) { matched.push(st); break; }
+    }
+  }
+  return matched;
 }
 
 // Section 6: Research Groups Module

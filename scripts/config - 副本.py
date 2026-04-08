@@ -31,19 +31,34 @@ ANALYSIS_DELAY = 1.0  # DeepSeek 请求间隔（秒）
 
 # 风扇噪声研究搜索词
 SEARCH_QUERIES = [
+
+    # ── 斜切口短舱进气道 ──
+    "drooped intake",
+    "scarfed intake",
+    "short intake",
+
+    # ── 风扇噪声 ──
     "fan noise",
-    "axial fan noise aeroacoustics",
-    "broadband fan noise",
-    "fan tonal noise",
-    "fan noise measurement",
-    "acoustic liner fan",
-    "rotating stall fan noise",
-    "centrifugal fan noise",
-    "turbofan noise",
-    "cooling fan noise",
-    "fan blade noise prediction",
-    "ducted fan noise",
-    "fan noise reduction",
+    "tonal noise",
+    "broadband noise",
+
+    # ── 压气机气动声学 ──
+    "compressor aeroacoustics",
+    "fan aeroacoustics",
+
+    # ── 稳定性建模 ──
+    "actuator disk",
+    "body force model",
+    "Moore Greitzer",
+    "streamline curvature",
+
+    # ── 进气畸变 ──
+    "distortion",
+    "inlet distortion",
+    "circumferential distortion",
+    "radial distortion",
+    "steady flow distortion",
+    "static pressure distortion",
 ]
 
 # 子主题关键词分类（用于趋势分析）

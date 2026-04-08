@@ -47,6 +47,15 @@ def run_fetch():
     logger.info(f"论文抓取完成，耗时 {time.time()-start:.1f}s")
 
 
+def run_filter():
+    """运行论文筛选（在抓取后、分析前执行）"""
+    logger.info("=== 开始论文筛选 ===")
+    start = time.time()
+    from scripts.filtering import run_filter_pipeline
+    removed = run_filter_pipeline()
+    logger.info(f"论文筛选完成，筛除 {removed} 篇，耗时 {time.time()-start:.1f}s")
+
+
 def run_analyze():
     """运行 AI 分析"""
     logger.info("=== 开始 AI 分析 ===")
@@ -57,12 +66,12 @@ def run_analyze():
 
 
 def run_groups():
-    """运行课题组追踪"""
-    logger.info("=== 开始课题组追踪 ===")
+    """运行课题组自动发现"""
+    logger.info("=== 开始课题组自动发现 ===")
     start = time.time()
-    from scripts.track_groups import track_research_groups
-    track_research_groups()
-    logger.info(f"课题组追踪完成，耗时 {time.time()-start:.1f}s")
+    from scripts.discover_groups import discover_groups
+    discover_groups()
+    logger.info(f"课题组自动发现完成，耗时 {time.time()-start:.1f}s")
 
 
 def run_trends():
@@ -109,6 +118,7 @@ def main():
     parser.add_argument("--trends-only", action="store_true", help="仅生成趋势数据")
     parser.add_argument("--groups-only", action="store_true", help="仅追踪课题组")
     parser.add_argument("--summary-only", action="store_true", help="仅生成汇总")
+    parser.add_argument("--no-filter", action="store_true", help="跳过论文筛选步骤")
     parser.add_argument("--clear", action="store_true", help="清空 data/ 目录下的所有 JSON 文件")
     parser.add_argument("--yes", "-y", action="store_true", help="确认执行破坏性操作（配合 --clear 使用）")
 
@@ -133,6 +143,8 @@ def main():
     try:
         if run_all or args.fetch_only:
             run_fetch()
+        if (run_all or args.analyze_only) and not args.no_filter:
+            run_filter()
         if run_all or args.analyze_only:
             run_analyze()
         if run_all or args.groups_only:

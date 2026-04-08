@@ -45,14 +45,44 @@ def classify_subtopic(paper: dict) -> list[str]:
     return matched
 
 
+def _paper_info(p: dict) -> dict:
+    """提取论文简要信息供 AI 摘要使用"""
+    return {
+        "title": p.get("title", ""),
+        "year": p.get("year"),
+        "authors": ", ".join(
+            a.get("name", "") for a in (p.get("authors") or [])[:3]
+        ),
+        "abstract": (p.get("abstract", "") or "")[:200],
+        "citations": p.get("citation_count", 0),
+    }
+
+
 def generate_trend_data():
-    """生成趋势热力图数据"""
+    """生成趋势热力图数据（按主题分别生成 AI 周期摘要）"""
     papers = load_papers()
     if not papers:
         logger.warning("没有论文数据，跳过趋势生成")
         return
 
     year_ranges = get_year_ranges()
+
+    # 加载缓存：period -> subtopic -> summary
+    cached: dict[str, dict[str, str]] = {}
+    if TRENDS_FILE.exists():
+        try:
+            with open(TRENDS_FILE, "r", encoding="utf-8") as f:
+                old_data = json.load(f)
+            for interval in old_data.get("intervals", []):
+                st_summaries = interval.get("subtopic_summaries", {})
+                if st_summaries:
+                    cached[interval["period"]] = st_summaries
+                # 兼容旧的 period_summary 字段
+                old_summary = interval.get("period_summary", "")
+                if old_summary and not st_summaries:
+                    cached[interval["period"]] = {"_overall": old_summary}
+        except Exception:
+            pass
 
     # 按年份区间分桶
     buckets: dict[str, list] = defaultdict(list)
@@ -65,9 +95,18 @@ def generate_trend_data():
                 buckets[yr["period"]].append(paper)
                 break
 
+    # 初始化 DeepSeek 客户端
+    client = None
+    try:
+        from scripts.deepseek_client import DeepSeekClient
+        client = DeepSeekClient()
+    except ValueError:
+        logger.warning("DeepSeek API Key 未配置，跳过周期摘要生成")
+
     intervals = []
     for yr in year_ranges:
         bucket_papers = buckets.get(yr["period"], [])
+        period = yr["period"]
 
         # 高引论文 Top 5
         top_papers = sorted(
@@ -109,14 +148,16 @@ def generate_trend_data():
             for name, count in venue_counter.most_common(5)
         ]
 
-        # 子主题分布
+        # 子主题分布 + 按主题分组论文
         subtopic_counts = defaultdict(int)
+        subtopic_papers: dict[str, list] = defaultdict(list)
         for p in bucket_papers:
             for st in classify_subtopic(p):
                 subtopic_counts[st] += 1
+                subtopic_papers[st].append(p)
 
-        intervals.append({
-            "period": yr["period"],
+        interval_data = {
+            "period": period,
             "start_year": yr["start_year"],
             "end_year": yr["end_year"],
             "paper_count": len(bucket_papers),
@@ -124,15 +165,50 @@ def generate_trend_data():
             "top_authors": top_authors,
             "top_venues": top_venues,
             "subtopics": dict(subtopic_counts),
-        })
+        }
 
-    # 汇总子主题列表（前端需要）
+        # 按主题生成 AI 摘要
+        if bucket_papers and client:
+            subtopic_summaries = {}
+            old_cached = cached.get(period, {})
+
+            for st, st_papers in subtopic_papers.items():
+                if not st_papers:
+                    continue
+
+                # 使用缓存（仅当论文数没变时）
+                cache_key = f"{st}:{len(st_papers)}"
+                if cache_key in old_cached:
+                    subtopic_summaries[st] = old_cached[cache_key]
+                    continue
+
+                # 按引用排序取 top 20
+                top_st = sorted(
+                    st_papers,
+                    key=lambda p: p.get("citation_count", 0),
+                    reverse=True,
+                )[:20]
+                papers_info = [_paper_info(p) for p in top_st]
+
+                logger.info(f"  生成摘要: {period} / {st} ({len(st_papers)} 篇)")
+                summary = client.summarize_period(period, papers_info, subtopic=st)
+                if summary:
+                    subtopic_summaries[st] = summary
+
+            if subtopic_summaries:
+                interval_data["subtopic_summaries"] = subtopic_summaries
+                logger.info(f"周期 {period}: 已生成 {len(subtopic_summaries)} 个主题摘要")
+
+        intervals.append(interval_data)
+
+    # 汇总子主题列表
     all_subtopics = list(SUBTOPIC_KEYWORDS.keys())
 
     trend_data = {
         "last_updated": datetime.now(timezone.utc).isoformat(),
         "year_range": [1960, datetime.now().year],
         "all_subtopics": all_subtopics,
+        "subtopic_keywords": {k: v for k, v in SUBTOPIC_KEYWORDS.items()},
         "intervals": intervals,
     }
 

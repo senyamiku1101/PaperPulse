@@ -184,3 +184,62 @@ class DeepSeekClient:
             max_tokens=2000,
             temperature=0.5,
         )
+
+    # 周期摘要系统提示（按主题）
+    PERIOD_SUMMARY_PROMPT = """你是一位风扇噪声领域的学术专家。请根据提供的论文列表，撰写一段中文综述。
+
+这些论文都属于"{subtopic}"这一研究方向。
+
+要求：
+1. 概括该时期该方向的研究热点和主要进展
+2. 提及关键研究方法和代表性成果
+3. 引用具体论文时必须注明作者和年份，格式如"Smith等(2018)"或"Zhang(2020)"
+4. 字数150-300字
+5. 不要列举编号，写一段连贯的综述文字
+6. 只引用列表中提供的论文，不要编造"""
+
+    def summarize_period(self, period: str, papers_info: list[dict], subtopic: str = "") -> str:
+        """对某个时间区间+主题的论文生成综述摘要
+
+        Args:
+            period: 时间区间，如 "2000-2004"
+            papers_info: 论文简要信息列表
+            subtopic: 主题名称，如 "单音噪声"
+
+        Returns:
+            中文综述文本
+        """
+        # 构建论文列表文本，包含作者信息以便引用
+        lines = []
+        for i, p in enumerate(papers_info[:30], 1):
+            authors = (p.get("authors") or "").split(", ")
+            first_author = authors[0] if authors else ""
+            year = p.get("year", "")
+            line = f"{i}. {p.get('title', '')} ({year}) [{first_author}等]"
+            abstract = (p.get("abstract", "") or "")[:150]
+            if abstract:
+                line += f" - {abstract}..."
+            lines.append(line)
+
+        papers_text = "\n".join(lines)
+        user_message = (
+            f"时间段：{period}\n"
+            f"研究方向：{subtopic}\n"
+            f"论文总数：{len(papers_info)}\n\n"
+            f"论文列表：\n{papers_text}"
+        )
+
+        system_prompt = self.PERIOD_SUMMARY_PROMPT.format(subtopic=subtopic)
+
+        try:
+            return self._call(
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_message},
+                ],
+                max_tokens=600,
+                temperature=0.3,
+            ).strip()
+        except Exception as e:
+            logger.error(f"生成周期摘要失败 ({period}/{subtopic}): {e}")
+            return ""

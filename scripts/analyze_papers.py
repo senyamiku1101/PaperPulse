@@ -15,6 +15,8 @@ logger = logging.getLogger(__name__)
 PAPERS_FILE = DATA_DIR / "papers.json"
 ANALYSIS_WORKERS = 5  # 分析并发数
 SAVE_INTERVAL = 10
+ANALYSIS_YEAR_CUTOFF = 2020  # 只分析此年份及之后的论文
+RELEVANCE_THRESHOLD = 2     # 相关性低于此值的论文不保留
 
 
 def load_papers() -> list:
@@ -102,11 +104,34 @@ def analyze_unanalyzed_papers():
         logger.warning("没有找到论文数据，请先运行 fetch_papers")
         return
 
-    # 筛选未分析的论文
-    unanalyzed = [
-        p for p in papers
-        if p.get("analysis") is None and p.get("abstract", "").strip()
-    ]
+    # 筛选未分析的论文（仅2020年及以后）
+    unanalyzed = []
+    skipped_old = 0
+    for p in papers:
+        if p.get("analysis") is not None:
+            continue  # 已分析
+        year = p.get("year")
+        if year and year < ANALYSIS_YEAR_CUTOFF:
+            # 2019及更早：标记为跳过，不做逐篇AI分析
+            if p.get("analysis") is None:
+                p["analysis"] = {
+                    "summary": "",
+                    "methods": "",
+                    "innovations": "",
+                    "conclusions": "",
+                    "relevance_score": 0,
+                    "keywords": [],
+                    "skipped": True,
+                    "reason": f"{year}年论文，仅统计不逐篇分析",
+                }
+                skipped_old += 1
+            continue
+        if not p.get("abstract", "").strip():
+            continue
+        unanalyzed.append(p)
+
+    if skipped_old:
+        logger.info(f"已跳过 {skipped_old} 篇 {ANALYSIS_YEAR_CUTOFF-1} 年及更早的论文（将在热力图中以5年为单位总结）")
 
     logger.info(f"总计 {len(papers)} 篇论文，{len(unanalyzed)} 篇待分析（5并发）")
 
@@ -143,9 +168,21 @@ def analyze_unanalyzed_papers():
                 logger.error(f"分析任务异常: {e}")
                 error_count += 1
 
+    # 移除相关性低于阈值的论文（仅针对已分析的非跳过论文）
+    before_count = len(papers)
+    papers[:] = [
+        p for p in papers
+        if (p.get("analysis") or {}).get("skipped")  # 跳过的老论文保留
+        or (p.get("analysis") is not None
+            and (p.get("analysis") or {}).get("relevance_score", 0) >= RELEVANCE_THRESHOLD)
+    ]
+    removed = before_count - len(papers)
+    if removed:
+        logger.info(f"已移除 {removed} 篇相关性低于 {RELEVANCE_THRESHOLD} 的论文")
+
     # 最终保存
     save_papers(papers)
-    logger.info(f"分析完成: {analyzed_count} 篇成功, {error_count} 篇失败")
+    logger.info(f"分析完成: {analyzed_count} 篇成功, {error_count} 篇失败, {removed} 篇因低相关性移除")
 
 
 if __name__ == "__main__":

@@ -28,7 +28,7 @@ DEEPSEEK_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")
 OPENALEX_TOPIC_FILTER = "primary_topic.subfield.id:2202,type:article"
 
 # 搜索配置
-MAX_PAPERS_PER_QUERY = int(os.getenv("MAX_PAPERS_PER_QUERY", "2000"))
+MAX_PAPERS_PER_QUERY = int(os.getenv("MAX_PAPERS_PER_QUERY", "500"))
 REQUEST_DELAY = 0.5  # OpenAlex polite pool 最小请求间隔（秒）
 ANALYSIS_DELAY = 1.0  # DeepSeek 请求间隔（秒）
 

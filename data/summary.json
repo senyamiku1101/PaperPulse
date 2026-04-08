@@ -1,0 +1,125 @@
+{
+  "last_updated": "2026-04-08T08:58:25.675609+00:00",
+  "total_papers": 22,
+  "analyzed_papers": 22,
+  "date_range": {
+    "earliest": 1997,
+    "latest": 2024
+  },
+  "avg_citations": 12.6,
+  "most_cited": {
+    "id": "W2094751629",
+    "title": "Screech tones from rectangular jets with spanwise oblique shock-cell structures",
+    "citations": 83,
+    "year": 1997
+  },
+  "top_keywords": [
+    {
+      "keyword": "Aerodynamics and Acoustics in Jet Flows",
+      "count": 18
+    },
+    {
+      "keyword": "Acoustic Wave Phenomena Research",
+      "count": 13
+    },
+    {
+      "keyword": "Computational Fluid Dynamics and Aerodynamics",
+      "count": 10
+    },
+    {
+      "keyword": "Fluid Dynamics and Turbulent Flows",
+      "count": 5
+    },
+    {
+      "keyword": "Aerodynamics and Fluid Dynamics Research",
+      "count": 4
+    },
+    {
+      "keyword": "Fluid Dynamics and Vibration Analysis",
+      "count": 3
+    },
+    {
+      "keyword": "气动声学",
+      "count": 2
+    },
+    {
+      "keyword": "Combustion and flame dynamics",
+      "count": 2
+    },
+    {
+      "keyword": "Turbomachinery Performance and Optimization",
+      "count": 2
+    },
+    {
+      "keyword": "Vehicle Noise and Vibration Control",
+      "count": 2
+    },
+    {
+      "keyword": "羽流偏转",
+      "count": 1
+    },
+    {
+      "keyword": "矩形喷嘴",
+      "count": 1
+    },
+    {
+      "keyword": "后甲板",
+      "count": 1
+    },
+    {
+      "keyword": "Rocket and propulsion systems research",
+      "count": 1
+    },
+    {
+      "keyword": "Radiative Heat Transfer Studies",
+      "count": 1
+    },
+    {
+      "keyword": "超材料",
+      "count": 1
+    },
+    {
+      "keyword": "航空噪声",
+      "count": 1
+    },
+    {
+      "keyword": "Aerosol Filtration and Electrostatic Precipitation",
+      "count": 1
+    },
+    {
+      "keyword": "涡轮风扇进气道",
+      "count": 1
+    },
+    {
+      "keyword": "稳态流动畸变",
+      "count": 1
+    }
+  ],
+  "peak_year": {
+    "year": 2024,
+    "count": 3
+  },
+  "total_groups": 4,
+  "papers_by_year": {
+    "1997": 1,
+    "2000": 2,
+    "2001": 1,
+    "2005": 1,
+    "2006": 2,
+    "2007": 2,
+    "2008": 1,
+    "2009": 2,
+    "2014": 1,
+    "2016": 1,
+    "2017": 1,
+    "2021": 1,
+    "2022": 1,
+    "2023": 2,
+    "2024": 3
+  },
+  "relevance_distribution": {
+    "medium": 1,
+    "high": 6,
+    "low": 15
+  }
+}

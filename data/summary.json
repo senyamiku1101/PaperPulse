@@ -1,0 +1,197 @@
+{
+  "last_updated": "2026-04-08T10:19:12.512701+00:00",
+  "total_papers": 4811,
+  "analyzed_papers": 4811,
+  "date_range": {
+    "earliest": 1928,
+    "latest": 2026
+  },
+  "avg_citations": 47.8,
+  "most_cited": {
+    "id": "W2151103935",
+    "title": "Distinctive Image Features from Scale-Invariant Keypoints",
+    "citations": 54862,
+    "year": 2004
+  },
+  "top_keywords": [
+    {
+      "keyword": "Aerodynamics and Acoustics in Jet Flows",
+      "count": 1874
+    },
+    {
+      "keyword": "Turbomachinery Performance and Optimization",
+      "count": 1566
+    },
+    {
+      "keyword": "Fluid Dynamics and Turbulent Flows",
+      "count": 1416
+    },
+    {
+      "keyword": "Aerodynamics and Fluid Dynamics Research",
+      "count": 903
+    },
+    {
+      "keyword": "Wind and Air Flow Studies",
+      "count": 737
+    },
+    {
+      "keyword": "Acoustic Wave Phenomena Research",
+      "count": 684
+    },
+    {
+      "keyword": "Computational Fluid Dynamics and Aerodynamics",
+      "count": 550
+    },
+    {
+      "keyword": "Heat Transfer Mechanisms",
+      "count": 503
+    },
+    {
+      "keyword": "Combustion and flame dynamics",
+      "count": 442
+    },
+    {
+      "keyword": "Refrigeration and Air Conditioning Technologies",
+      "count": 390
+    },
+    {
+      "keyword": "Wind Energy Research and Development",
+      "count": 361
+    },
+    {
+      "keyword": "Fluid Dynamics and Vibration Analysis",
+      "count": 338
+    },
+    {
+      "keyword": "Vehicle Noise and Vibration Control",
+      "count": 309
+    },
+    {
+      "keyword": "Biomimetic flight and propulsion mechanisms",
+      "count": 237
+    },
+    {
+      "keyword": "Plasma and Flow Control in Aerodynamics",
+      "count": 206
+    },
+    {
+      "keyword": "Advanced Aircraft Design and Technologies",
+      "count": 128
+    },
+    {
+      "keyword": "Tribology and Lubrication Engineering",
+      "count": 109
+    },
+    {
+      "keyword": "Robotics and Sensor-Based Localization",
+      "count": 107
+    },
+    {
+      "keyword": "气动声学",
+      "count": 106
+    },
+    {
+      "keyword": "Aerospace and Aviation Technology",
+      "count": 105
+    }
+  ],
+  "peak_year": {
+    "year": 2019,
+    "count": 241
+  },
+  "total_groups": 675,
+  "papers_by_year": {
+    "1928": 1,
+    "1933": 2,
+    "1935": 2,
+    "1940": 1,
+    "1943": 1,
+    "1945": 1,
+    "1946": 1,
+    "1947": 2,
+    "1948": 2,
+    "1949": 2,
+    "1950": 2,
+    "1951": 1,
+    "1952": 3,
+    "1953": 1,
+    "1954": 5,
+    "1955": 4,
+    "1956": 6,
+    "1957": 3,
+    "1958": 4,
+    "1959": 2,
+    "1960": 1,
+    "1961": 1,
+    "1962": 3,
+    "1963": 4,
+    "1964": 8,
+    "1965": 7,
+    "1966": 15,
+    "1967": 13,
+    "1968": 10,
+    "1969": 15,
+    "1970": 19,
+    "1971": 18,
+    "1972": 17,
+    "1973": 17,
+    "1974": 26,
+    "1975": 24,
+    "1976": 24,
+    "1977": 31,
+    "1978": 22,
+    "1979": 22,
+    "1980": 30,
+    "1981": 20,
+    "1982": 17,
+    "1983": 21,
+    "1984": 25,
+    "1985": 24,
+    "1986": 19,
+    "1987": 29,
+    "1988": 22,
+    "1989": 18,
+    "1990": 17,
+    "1991": 18,
+    "1992": 22,
+    "1993": 19,
+    "1994": 19,
+    "1995": 31,
+    "1996": 50,
+    "1997": 61,
+    "1998": 56,
+    "1999": 47,
+    "2000": 57,
+    "2001": 49,
+    "2002": 65,
+    "2003": 85,
+    "2004": 72,
+    "2005": 77,
+    "2006": 122,
+    "2007": 100,
+    "2008": 130,
+    "2009": 149,
+    "2010": 156,
+    "2011": 151,
+    "2012": 151,
+    "2013": 188,
+    "2014": 207,
+    "2015": 200,
+    "2016": 215,
+    "2017": 228,
+    "2018": 208,
+    "2019": 241,
+    "2020": 162,
+    "2021": 184,
+    "2022": 200,
+    "2023": 176,
+    "2024": 200,
+    "2025": 80,
+    "2026": 26
+  },
+  "relevance_distribution": {
+    "high": 772,
+    "low": 3914,
+    "medium": 125
+  }
+}

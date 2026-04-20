@@ -1,46 +1,46 @@
 {
-  "last_updated": "2026-04-13T05:17:59.744570+00:00",
-  "total_papers": 4836,
-  "analyzed_papers": 4836,
+  "last_updated": "2026-04-20T05:19:37.054594+00:00",
+  "total_papers": 4860,
+  "analyzed_papers": 4860,
   "date_range": {
     "earliest": 1928,
     "latest": 2026
   },
-  "avg_citations": 47.7,
+  "avg_citations": 47.6,
   "most_cited": {
     "id": "W2151103935",
     "title": "Distinctive Image Features from Scale-Invariant Keypoints",
-    "citations": 54883,
+    "citations": 54906,
     "year": 2004
   },
   "top_keywords": [
     {
       "keyword": "Aerodynamics and Acoustics in Jet Flows",
-      "count": 1881
+      "count": 1889
     },
     {
       "keyword": "Turbomachinery Performance and Optimization",
-      "count": 1571
+      "count": 1573
     },
     {
       "keyword": "Fluid Dynamics and Turbulent Flows",
-      "count": 1417
+      "count": 1420
     },
     {
       "keyword": "Aerodynamics and Fluid Dynamics Research",
-      "count": 903
+      "count": 908
     },
     {
       "keyword": "Wind and Air Flow Studies",
-      "count": 738
+      "count": 742
     },
     {
       "keyword": "Acoustic Wave Phenomena Research",
-      "count": 685
+      "count": 689
     },
     {
       "keyword": "Computational Fluid Dynamics and Aerodynamics",
-      "count": 551
+      "count": 554
     },
     {
       "keyword": "Heat Transfer Mechanisms",
@@ -48,35 +48,35 @@
     },
     {
       "keyword": "Combustion and flame dynamics",
-      "count": 446
+      "count": 447
     },
     {
       "keyword": "Refrigeration and Air Conditioning Technologies",
-      "count": 390
+      "count": 392
     },
     {
       "keyword": "Wind Energy Research and Development",
-      "count": 363
+      "count": 367
     },
     {
       "keyword": "Fluid Dynamics and Vibration Analysis",
-      "count": 339
+      "count": 341
     },
     {
       "keyword": "Vehicle Noise and Vibration Control",
-      "count": 312
+      "count": 313
     },
     {
       "keyword": "Biomimetic flight and propulsion mechanisms",
-      "count": 238
+      "count": 240
     },
     {
       "keyword": "Plasma and Flow Control in Aerodynamics",
-      "count": 206
+      "count": 209
     },
     {
       "keyword": "Advanced Aircraft Design and Technologies",
-      "count": 130
+      "count": 131
     },
     {
       "keyword": "Robotics and Sensor-Based Localization",
@@ -88,16 +88,16 @@
     },
     {
       "keyword": "气动声学",
-      "count": 107
+      "count": 108
     },
     {
       "keyword": "Aerospace and Aviation Technology",
-      "count": 105
+      "count": 108
     }
   ],
   "peak_year": {
     "year": 2019,
-    "count": 241
+    "count": 244
   },
   "total_groups": 681,
   "papers_by_year": {
@@ -159,39 +159,39 @@
     "1995": 31,
     "1996": 50,
     "1997": 61,
-    "1998": 56,
+    "1998": 57,
     "1999": 47,
     "2000": 57,
     "2001": 49,
     "2002": 65,
-    "2003": 86,
-    "2004": 72,
+    "2003": 87,
+    "2004": 73,
     "2005": 77,
     "2006": 122,
     "2007": 100,
     "2008": 130,
-    "2009": 149,
-    "2010": 156,
+    "2009": 150,
+    "2010": 157,
     "2011": 151,
     "2012": 151,
     "2013": 188,
-    "2014": 207,
-    "2015": 200,
+    "2014": 208,
+    "2015": 201,
     "2016": 215,
     "2017": 228,
     "2018": 209,
-    "2019": 241,
+    "2019": 244,
     "2020": 166,
-    "2021": 187,
-    "2022": 204,
-    "2023": 178,
-    "2024": 201,
+    "2021": 189,
+    "2022": 206,
+    "2023": 180,
+    "2024": 205,
     "2025": 80,
-    "2026": 32
+    "2026": 36
   },
   "relevance_distribution": {
-    "high": 779,
-    "low": 3931,
-    "medium": 126
+    "high": 787,
+    "low": 3945,
+    "medium": 128
   }
 }

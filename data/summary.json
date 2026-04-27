@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-04-20T05:19:37.054594+00:00",
-  "total_papers": 4860,
-  "analyzed_papers": 4860,
+  "last_updated": "2026-04-27T05:34:08.091570+00:00",
+  "total_papers": 4877,
+  "analyzed_papers": 4877,
   "date_range": {
     "earliest": 1928,
     "latest": 2026
@@ -10,25 +10,25 @@
   "most_cited": {
     "id": "W2151103935",
     "title": "Distinctive Image Features from Scale-Invariant Keypoints",
-    "citations": 54906,
+    "citations": 54945,
     "year": 2004
   },
   "top_keywords": [
     {
       "keyword": "Aerodynamics and Acoustics in Jet Flows",
-      "count": 1889
+      "count": 1892
     },
     {
       "keyword": "Turbomachinery Performance and Optimization",
-      "count": 1573
+      "count": 1575
     },
     {
       "keyword": "Fluid Dynamics and Turbulent Flows",
-      "count": 1420
+      "count": 1422
     },
     {
       "keyword": "Aerodynamics and Fluid Dynamics Research",
-      "count": 908
+      "count": 910
     },
     {
       "keyword": "Wind and Air Flow Studies",
@@ -36,11 +36,11 @@
     },
     {
       "keyword": "Acoustic Wave Phenomena Research",
-      "count": 689
+      "count": 691
     },
     {
       "keyword": "Computational Fluid Dynamics and Aerodynamics",
-      "count": 554
+      "count": 556
     },
     {
       "keyword": "Heat Transfer Mechanisms",
@@ -60,11 +60,11 @@
     },
     {
       "keyword": "Fluid Dynamics and Vibration Analysis",
-      "count": 341
+      "count": 342
     },
     {
       "keyword": "Vehicle Noise and Vibration Control",
-      "count": 313
+      "count": 314
     },
     {
       "keyword": "Biomimetic flight and propulsion mechanisms",
@@ -72,15 +72,15 @@
     },
     {
       "keyword": "Plasma and Flow Control in Aerodynamics",
-      "count": 209
+      "count": 211
     },
     {
       "keyword": "Advanced Aircraft Design and Technologies",
-      "count": 131
+      "count": 132
     },
     {
       "keyword": "Robotics and Sensor-Based Localization",
-      "count": 109
+      "count": 111
     },
     {
       "keyword": "Tribology and Lubrication Engineering",
@@ -99,7 +99,7 @@
     "year": 2019,
     "count": 244
   },
-  "total_groups": 681,
+  "total_groups": 684,
   "papers_by_year": {
     "1928": 1,
     "1933": 2,
@@ -173,7 +173,7 @@
     "2009": 150,
     "2010": 157,
     "2011": 151,
-    "2012": 151,
+    "2012": 152,
     "2013": 188,
     "2014": 208,
     "2015": 201,
@@ -181,17 +181,17 @@
     "2017": 228,
     "2018": 209,
     "2019": 244,
-    "2020": 166,
-    "2021": 189,
-    "2022": 206,
-    "2023": 180,
-    "2024": 205,
-    "2025": 80,
+    "2020": 167,
+    "2021": 193,
+    "2022": 208,
+    "2023": 182,
+    "2024": 207,
+    "2025": 85,
     "2026": 36
   },
   "relevance_distribution": {
-    "high": 787,
-    "low": 3945,
-    "medium": 128
+    "high": 791,
+    "low": 3956,
+    "medium": 130
   }
 }

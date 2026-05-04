@@ -1,34 +1,34 @@
 {
-  "last_updated": "2026-04-27T05:34:08.091570+00:00",
-  "total_papers": 4877,
-  "analyzed_papers": 4877,
+  "last_updated": "2026-05-04T05:44:18.010336+00:00",
+  "total_papers": 4888,
+  "analyzed_papers": 4888,
   "date_range": {
     "earliest": 1928,
     "latest": 2026
   },
-  "avg_citations": 47.6,
+  "avg_citations": 47.8,
   "most_cited": {
     "id": "W2151103935",
     "title": "Distinctive Image Features from Scale-Invariant Keypoints",
-    "citations": 54945,
+    "citations": 54960,
     "year": 2004
   },
   "top_keywords": [
     {
       "keyword": "Aerodynamics and Acoustics in Jet Flows",
-      "count": 1892
+      "count": 1894
     },
     {
       "keyword": "Turbomachinery Performance and Optimization",
-      "count": 1575
+      "count": 1578
     },
     {
       "keyword": "Fluid Dynamics and Turbulent Flows",
-      "count": 1422
+      "count": 1424
     },
     {
       "keyword": "Aerodynamics and Fluid Dynamics Research",
-      "count": 910
+      "count": 914
     },
     {
       "keyword": "Wind and Air Flow Studies",
@@ -36,23 +36,23 @@
     },
     {
       "keyword": "Acoustic Wave Phenomena Research",
-      "count": 691
+      "count": 692
     },
     {
       "keyword": "Computational Fluid Dynamics and Aerodynamics",
-      "count": 556
+      "count": 557
     },
     {
       "keyword": "Heat Transfer Mechanisms",
-      "count": 503
+      "count": 504
     },
     {
       "keyword": "Combustion and flame dynamics",
-      "count": 447
+      "count": 448
     },
     {
       "keyword": "Refrigeration and Air Conditioning Technologies",
-      "count": 392
+      "count": 394
     },
     {
       "keyword": "Wind Energy Research and Development",
@@ -60,7 +60,7 @@
     },
     {
       "keyword": "Fluid Dynamics and Vibration Analysis",
-      "count": 342
+      "count": 344
     },
     {
       "keyword": "Vehicle Noise and Vibration Control",
@@ -68,7 +68,7 @@
     },
     {
       "keyword": "Biomimetic flight and propulsion mechanisms",
-      "count": 240
+      "count": 242
     },
     {
       "keyword": "Plasma and Flow Control in Aerodynamics",
@@ -97,9 +97,9 @@
   ],
   "peak_year": {
     "year": 2019,
-    "count": 244
+    "count": 245
   },
-  "total_groups": 684,
+  "total_groups": 686,
   "papers_by_year": {
     "1928": 1,
     "1933": 2,
@@ -178,20 +178,20 @@
     "2014": 208,
     "2015": 201,
     "2016": 215,
-    "2017": 228,
+    "2017": 229,
     "2018": 209,
-    "2019": 244,
-    "2020": 167,
+    "2019": 245,
+    "2020": 169,
     "2021": 193,
-    "2022": 208,
-    "2023": 182,
-    "2024": 207,
-    "2025": 85,
-    "2026": 36
+    "2022": 209,
+    "2023": 184,
+    "2024": 208,
+    "2025": 86,
+    "2026": 38
   },
   "relevance_distribution": {
-    "high": 791,
-    "low": 3956,
-    "medium": 130
+    "high": 795,
+    "low": 3961,
+    "medium": 132
   }
 }

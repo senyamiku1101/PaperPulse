@@ -1,126 +1,193 @@
 {
-  "last_updated": "2026-05-06T02:18:51.797744+00:00",
-  "total_papers": 28,
-  "analyzed_papers": 21,
+  "last_updated": "2026-05-06T05:08:41.965822+00:00",
+  "total_papers": 5349,
+  "analyzed_papers": 4658,
   "date_range": {
-    "earliest": 1980,
-    "latest": 2025
+    "earliest": 1841,
+    "latest": 2026
   },
-  "avg_citations": 70.2,
+  "avg_citations": 108.7,
   "most_cited": {
-    "id": "W1987902628",
-    "title": "A column pre-ordering strategy for the unsymmetric-pattern multifrontal method",
-    "citations": 420,
-    "year": 2004
+    "id": "W2126105956",
+    "title": "A fast and elitist multiobjective genetic algorithm: NSGA-II",
+    "citations": 47028,
+    "year": 2002
   },
   "top_keywords": [
     {
+      "keyword": "Aerodynamics and Acoustics in Jet Flows",
+      "count": 1909
+    },
+    {
       "keyword": "Turbomachinery Performance and Optimization",
-      "count": 19
+      "count": 1903
     },
     {
       "keyword": "Fluid Dynamics and Turbulent Flows",
-      "count": 14
+      "count": 1767
+    },
+    {
+      "keyword": "Acoustic Wave Phenomena Research",
+      "count": 1040
     },
     {
       "keyword": "Computational Fluid Dynamics and Aerodynamics",
-      "count": 9
-    },
-    {
-      "keyword": "Heat Transfer Mechanisms",
-      "count": 7
-    },
-    {
-      "keyword": "Combustion and flame dynamics",
-      "count": 6
-    },
-    {
-      "keyword": "Refrigeration and Air Conditioning Technologies",
-      "count": 6
+      "count": 918
     },
     {
       "keyword": "Fluid Dynamics and Vibration Analysis",
-      "count": 4
+      "count": 670
     },
     {
-      "keyword": "body force model",
-      "count": 3
+      "keyword": "Combustion and flame dynamics",
+      "count": 662
     },
     {
-      "keyword": "rotating stall",
-      "count": 3
+      "keyword": "Heat Transfer Mechanisms",
+      "count": 660
     },
     {
       "keyword": "Aerodynamics and Fluid Dynamics Research",
-      "count": 3
+      "count": 653
     },
     {
-      "keyword": "Plasma and Flow Control in Aerodynamics",
-      "count": 2
+      "keyword": "Model Reduction and Neural Networks",
+      "count": 507
     },
     {
-      "keyword": "tip leakage flow",
-      "count": 2
+      "keyword": "Refrigeration and Air Conditioning Technologies",
+      "count": 502
     },
     {
-      "keyword": "large eddy simulation",
-      "count": 2
+      "keyword": "Wind and Air Flow Studies",
+      "count": 421
     },
     {
-      "keyword": "Aerodynamics and Acoustics in Jet Flows",
-      "count": 2
+      "keyword": "Vehicle Noise and Vibration Control",
+      "count": 360
     },
     {
-      "keyword": "axial compressor",
-      "count": 2
+      "keyword": "Advanced Aircraft Design and Technologies",
+      "count": 226
     },
     {
-      "keyword": "inlet distortion",
-      "count": 2
+      "keyword": "Advanced Combustion Engine Technologies",
+      "count": 168
     },
     {
-      "keyword": "Matrix Theory and Algorithms",
-      "count": 2
+      "keyword": "Probabilistic and Robust Engineering Design",
+      "count": 157
     },
     {
       "keyword": "Tribology and Lubrication Engineering",
-      "count": 2
+      "count": 131
     },
     {
-      "keyword": "High-Temperature Coating Behaviors",
-      "count": 1
+      "keyword": "Plasma and Flow Control in Aerodynamics",
+      "count": 115
     },
     {
-      "keyword": "self-excited unsteadiness",
-      "count": 1
+      "keyword": "Cavitation Phenomena in Pumps",
+      "count": 113
+    },
+    {
+      "keyword": "Lattice Boltzmann Simulation Studies",
+      "count": 106
     }
   ],
   "peak_year": {
-    "year": 2023,
-    "count": 5
+    "year": 2022,
+    "count": 410
   },
-  "total_groups": 2,
+  "total_groups": 713,
   "papers_by_year": {
-    "1980": 1,
-    "1981": 1,
-    "1991": 1,
-    "1999": 1,
-    "2001": 1,
-    "2004": 1,
-    "2006": 1,
-    "2010": 1,
-    "2011": 1,
-    "2013": 2,
-    "2018": 1,
-    "2020": 3,
-    "2021": 3,
-    "2023": 5,
-    "2024": 3,
-    "2025": 2
+    "1841": 1,
+    "1878": 1,
+    "1893": 1,
+    "1895": 1,
+    "1927": 1,
+    "1931": 1,
+    "1936": 1,
+    "1939": 1,
+    "1947": 1,
+    "1948": 1,
+    "1952": 3,
+    "1953": 5,
+    "1955": 3,
+    "1956": 2,
+    "1957": 3,
+    "1959": 5,
+    "1960": 2,
+    "1961": 2,
+    "1962": 2,
+    "1963": 1,
+    "1964": 5,
+    "1965": 4,
+    "1966": 6,
+    "1967": 4,
+    "1968": 3,
+    "1969": 8,
+    "1970": 10,
+    "1971": 15,
+    "1972": 11,
+    "1973": 11,
+    "1974": 16,
+    "1975": 22,
+    "1976": 23,
+    "1977": 24,
+    "1978": 17,
+    "1979": 29,
+    "1980": 29,
+    "1981": 21,
+    "1982": 14,
+    "1983": 16,
+    "1984": 16,
+    "1985": 25,
+    "1986": 15,
+    "1987": 13,
+    "1988": 12,
+    "1989": 12,
+    "1990": 19,
+    "1991": 17,
+    "1992": 23,
+    "1993": 37,
+    "1994": 31,
+    "1995": 32,
+    "1996": 36,
+    "1997": 50,
+    "1998": 54,
+    "1999": 57,
+    "2000": 36,
+    "2001": 56,
+    "2002": 80,
+    "2003": 70,
+    "2004": 72,
+    "2005": 85,
+    "2006": 111,
+    "2007": 103,
+    "2008": 91,
+    "2009": 94,
+    "2010": 114,
+    "2011": 117,
+    "2012": 132,
+    "2013": 135,
+    "2014": 171,
+    "2015": 134,
+    "2016": 164,
+    "2017": 192,
+    "2018": 184,
+    "2019": 254,
+    "2020": 263,
+    "2021": 352,
+    "2022": 410,
+    "2023": 382,
+    "2024": 394,
+    "2025": 307,
+    "2026": 64
   },
   "relevance_distribution": {
-    "high": 5,
-    "medium": 4,
-    "low": 12
+    "medium": 622,
+    "low": 3582,
+    "high": 506
   }
 }

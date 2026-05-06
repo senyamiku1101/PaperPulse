@@ -237,7 +237,7 @@ class DeepSeekClient:
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_message},
                 ],
-                max_tokens=600,
+                max_tokens=1200,
                 temperature=0.3,
             ).strip()
         except Exception as e:

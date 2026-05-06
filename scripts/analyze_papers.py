@@ -13,7 +13,7 @@ from scripts.deepseek_client import DeepSeekClient
 logger = logging.getLogger(__name__)
 
 PAPERS_FILE = DATA_DIR / "papers.json"
-ANALYSIS_WORKERS = 10  # 分析并发数
+ANALYSIS_WORKERS = 5  # 分析并发数
 SAVE_INTERVAL = 20
 ANALYSIS_YEAR_CUTOFF = 2020  # 只分析此年份及之后的论文
 

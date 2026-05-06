@@ -16,7 +16,6 @@ PAPERS_FILE = DATA_DIR / "papers.json"
 ANALYSIS_WORKERS = 5  # 分析并发数
 SAVE_INTERVAL = 10
 ANALYSIS_YEAR_CUTOFF = 2020  # 只分析此年份及之后的论文
-RELEVANCE_THRESHOLD = 2     # 相关性低于此值的论文不保留
 
 
 def load_papers() -> list:
@@ -168,21 +167,9 @@ def analyze_unanalyzed_papers():
                 logger.error(f"分析任务异常: {e}")
                 error_count += 1
 
-    # 移除相关性低于阈值的论文（仅针对已分析的非跳过论文）
-    before_count = len(papers)
-    papers[:] = [
-        p for p in papers
-        if (p.get("analysis") or {}).get("skipped")  # 跳过的老论文保留
-        or (p.get("analysis") is not None
-            and (p.get("analysis") or {}).get("relevance_score", 0) >= RELEVANCE_THRESHOLD)
-    ]
-    removed = before_count - len(papers)
-    if removed:
-        logger.info(f"已移除 {removed} 篇相关性低于 {RELEVANCE_THRESHOLD} 的论文")
-
     # 最终保存
     save_papers(papers)
-    logger.info(f"分析完成: {analyzed_count} 篇成功, {error_count} 篇失败, {removed} 篇因低相关性移除")
+    logger.info(f"分析完成: {analyzed_count} 篇成功, {error_count} 篇失败")
 
 
 if __name__ == "__main__":

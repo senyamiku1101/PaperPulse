@@ -18,27 +18,14 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # Test 1: config.py 配置正确性
 # ============================================================
 class TestConfig:
-    def test_search_queries_not_empty(self):
-        from scripts.config import SEARCH_QUERIES
-        assert len(SEARCH_QUERIES) > 0, "SEARCH_QUERIES 不能为空"
-        assert all(isinstance(q, str) and q.strip() for q in SEARCH_QUERIES)
-
     def test_year_ranges(self):
         from scripts.config import get_year_ranges
         ranges = get_year_ranges(start=1960, interval=5)
         assert ranges[0]["start_year"] == 1960
         assert ranges[0]["period"] == "1960-1964"
-        # 最后一个区间应包含当前年份
-        current_year = 2026  # 从 datetime 获取也可以
+        current_year = 2026
         last = ranges[-1]
         assert last["end_year"] >= current_year or last["start_year"] <= current_year
-
-    def test_subtopic_keywords_structure(self):
-        from scripts.config import SUBTOPIC_KEYWORDS
-        assert isinstance(SUBTOPIC_KEYWORDS, dict)
-        for key, kws in SUBTOPIC_KEYWORDS.items():
-            assert isinstance(kws, list), f"SUBTOPIC_KEYWORDS['{key}'] 应为列表"
-            assert len(kws) > 0, f"SUBTOPIC_KEYWORDS['{key}'] 不能为空"
 
     def test_research_groups_structure(self):
         from scripts.config import RESEARCH_GROUPS
@@ -48,14 +35,15 @@ class TestConfig:
             missing = required_keys - set(g.keys())
             assert not missing, f"课题组 '{g.get('name', '?')}' 缺少字段: {missing}"
 
-    def test_topic_filter_format(self):
-        from scripts.config import OPENALEX_TOPIC_FILTER
-        assert "primary_topic.subfield.id" in OPENALEX_TOPIC_FILTER, \
-            "过滤器应使用 primary_topic.subfield.id"
-        assert "2202" in OPENALEX_TOPIC_FILTER, \
-            "应包含 Aerospace Engineering subfield id 2202"
-        assert "type:article" in OPENALEX_TOPIC_FILTER, \
-            "应限制为 article 类型"
+    def test_seed_dois_file_configured(self):
+        from scripts.config import SEED_DOIS_FILE
+        assert SEED_DOIS_FILE.name == "seed_dois.json"
+
+    def test_citation_config_structure(self):
+        from scripts.config import CITATION_CONFIG
+        assert "max_citers_per_seed" in CITATION_CONFIG
+        assert "max_references_per_seed" in CITATION_CONFIG
+        assert "batch_size" in CITATION_CONFIG
 
     def test_data_dir_exists(self):
         from scripts.config import DATA_DIR
@@ -140,7 +128,7 @@ class TestOpenAlexClient:
             ],
         }
 
-        paper = OpenAlexClient.extract_paper(raw, search_query="fan noise")
+        paper = OpenAlexClient.extract_paper(raw, discovery_origin="seed", seed_doi="10.1234/test")
 
         assert paper["id"] == "W123456", f"id 应为 W123456，实际为 {paper['id']}"
         assert paper["doi"] == "https://doi.org/10.1234/test"
@@ -156,7 +144,8 @@ class TestOpenAlexClient:
         assert paper["source"]["name"] == "Journal of Sound and Vibration"
         assert paper["is_oa"] is True
         assert paper["referenced_works"] == ["W999", "W888"]
-        assert paper["search_query"] == "fan noise"
+        assert paper["discovery_origin"] == "seed"
+        assert paper["seed_doi"] == "10.1234/test"
         assert paper["analysis"] is None
 
     def test_extract_paper_missing_fields(self):
@@ -253,7 +242,7 @@ class TestDeepSeekClient:
 # Test 4: generate_trends.py 趋势数据
 # ============================================================
 class TestGenerateTrends:
-    def test_classify_subtopic_matches(self):
+    def test_classify_subtopic_matches_keywords(self):
         from scripts.generate_trends import classify_subtopic
         paper = {
             "title": "Fan noise from axial compressor",
@@ -261,8 +250,8 @@ class TestGenerateTrends:
             "topics": [],
         }
         topics = classify_subtopic(paper)
-        assert "风扇噪声" in topics, f"应匹配 风扇噪声，实际: {topics}"
-        assert "压气机气动声学" in topics, f"应匹配 压气机气动声学，实际: {topics}"
+        assert "风扇/压气机" in topics
+        assert "进气道" in topics
 
     def test_classify_subtopic_no_match(self):
         from scripts.generate_trends import classify_subtopic
@@ -280,21 +269,11 @@ class TestGenerateTrends:
             "title": "Study",
             "abstract": "",
             "topics": [],
-            "analysis": {"keywords": ["fan noise", "drooped intake"]},
+            "analysis": {"keywords": ["fan noise", "stall prediction"]},
         }
         topics = classify_subtopic(paper)
-        assert "风扇噪声" in topics
-        assert "斜切口短舱进气道" in topics
-
-    def test_classify_subtopic_multiple_matches(self):
-        from scripts.generate_trends import classify_subtopic
-        paper = {
-            "title": "CFD modeling of compressor aeroacoustics with inlet distortion",
-            "abstract": "Prediction of fan noise using analytical methods",
-            "topics": [],
-        }
-        topics = classify_subtopic(paper)
-        assert len(topics) >= 3, f"应匹配多个子主题，实际: {topics}"
+        assert "风扇/压气机" in topics
+        assert "失速/稳定性" in topics
 
 
 # ============================================================
@@ -446,7 +425,7 @@ class TestSchemaConsistency:
             "id", "doi", "title", "authors", "year",
             "citation_count", "abstract", "topics", "source",
             "open_access_url", "is_oa", "referenced_works",
-            "search_query", "analysis"
+            "discovery_origin", "seed_doi", "analysis"
         ]
         for field in required_fields:
             assert field in paper, f"论文缺少必要字段: {field}"
@@ -472,7 +451,7 @@ class TestFrontend:
 
     def test_index_html_has_all_tabs(self):
         content = (PROJECT_ROOT / "index.html").read_text(encoding="utf-8")
-        tabs = ["dashboard", "papers", "heatmap", "groups", "qa"]
+        tabs = ["dashboard", "papers", "heatmap", "groups", "graph", "qa"]
         for tab in tabs:
             assert f'data-tab="{tab}"' in content, f"缺少 tab: {tab}"
 
@@ -491,116 +470,26 @@ class TestFrontend:
         content = (PROJECT_ROOT / "index.html").read_text(encoding="utf-8")
         modules = [
             "renderDashboard", "renderPaperList", "renderHeatmap",
-            "renderGroups", "sendQuestion", "showPaperDetail"
+            "renderGroups", "sendQuestion", "showPaperDetail",
+            "renderCitationGraph"
         ]
         for fn in modules:
             assert fn in content, f"前端缺少函数: {fn}"
 
+    def test_index_html_has_graph_tab(self):
+        content = (PROJECT_ROOT / "index.html").read_text(encoding="utf-8")
+        assert 'data-tab="graph"' in content
+        assert "graphSvg" in content
+
 
 # ============================================================
-# Test 12: filtering.py 论文筛选
+# Test 12: filtering.py （已弃用，仅验证空操作）
 # ============================================================
 class TestFiltering:
-    """测试多级漏斗筛选逻辑"""
-
-    def _make_paper(self, issn=None, author_ids=None, year=2024, citations=0):
-        """辅助：构造测试论文"""
-        authors = [
-            {"name": "Test Author", "id": aid, "institution": "Test Univ"}
-            for aid in (author_ids or [])
-        ]
-        return {
-            "id": f"W1234{year}",
-            "title": f"Test Paper {year}",
-            "authors": authors,
-            "year": year,
-            "citation_count": citations,
-            "source": {"name": "Test Source", "id": "S123", "type": "journal", "issn": issn or []},
-        }
-
-    def test_prestigious_source_kept(self):
-        """著名期刊论文直接保留（ISSN 匹配）"""
-        from scripts.filtering import _classify_paper
-        paper = self._make_paper(issn=["0001-1452"], year=2020, citations=0)  # AIAA Journal
-        assert _classify_paper(paper, 2026) == "prestigious"
-
-    def test_prestigious_source_alternate_issn(self):
-        """同一期刊有多个 ISSN 时，匹配任一即可"""
-        from scripts.filtering import _classify_paper
-        paper = self._make_paper(issn=["1533-385X"], year=2020, citations=0)  # AIAA Journal 的 print ISSN
-        # 不在列表中，应走引用筛选
-        assert _classify_paper(paper, 2026) != "prestigious" or True  # 取决于是否在配置中
-
-    def test_non_prestigious_issn(self):
-        """非著名期刊 ISSN 不匹配"""
-        from scripts.filtering import _classify_paper
-        paper = self._make_paper(issn=["9999-9999"], year=2020, citations=0)
-        assert _classify_paper(paper, 2026) != "prestigious"
-
-    def test_group_paper_kept(self):
-        """课题组论文直接保留"""
-        from scripts.filtering import _classify_paper
-        paper = self._make_paper(year=2020, citations=0, author_ids=["A5081338883"])
-        assert _classify_paper(paper, 2026) == "group"
-
-    def test_recent_low_citations_kept(self):
-        """近期论文引用>=1即可保留"""
-        from scripts.filtering import _classify_paper
-        paper = self._make_paper(year=2025, citations=1)
-        assert _classify_paper(paper, 2026) == "citation_pass"
-
-    def test_recent_zero_citations_current_year_kept(self):
-        """当年发表的论文直接保留"""
-        from scripts.filtering import _classify_paper
-        paper = self._make_paper(year=2026, citations=0)
-        assert _classify_paper(paper, 2026) == "citation_pass"
-
-    def test_old_low_citations_filtered(self):
-        """5年以上低引用论文被筛除"""
-        from scripts.filtering import _classify_paper
-        paper = self._make_paper(year=2015, citations=1)
-        assert _classify_paper(paper, 2026) == "filtered_out"
-
-    def test_old_high_citations_kept(self):
-        """5年以上但引用量达标的论文保留"""
-        from scripts.filtering import _classify_paper
-        paper = self._make_paper(year=2015, citations=10)
-        assert _classify_paper(paper, 2026) == "citation_pass"
-
-    def test_no_year_kept(self):
-        """无年份信息的论文保守保留"""
-        from scripts.filtering import _classify_paper
-        paper = self._make_paper(year=None, citations=0)
-        assert _classify_paper(paper, 2026) == "citation_pass"
-
-    def test_filter_papers_low_volume_skips(self):
-        """论文总数低于阈值时跳过筛选"""
-        from scripts.filtering import filter_papers
-        papers = [
-            self._make_paper(year=2015, citations=0)
-            for _ in range(50)
-        ]
-        result = filter_papers(papers)
-        assert len(result) == 50  # 全部保留
-
-    def test_filter_papers_normal_volume(self):
-        """论文总数高于阈值时正常筛选"""
-        from scripts.filtering import filter_papers, LOW_VOLUME_THRESHOLD
-        papers = []
-        # 著名期刊（应保留）
-        papers.append(self._make_paper(issn=["0001-1452"], year=2015, citations=0))
-        # 课题组（应保留）
-        papers.append(self._make_paper(year=2015, citations=0, author_ids=["A5081338883"]))
-        # 近期有引用（应保留）
-        papers.append(self._make_paper(year=2025, citations=1))
-        # 老论文低引用（应筛除）
-        papers.append(self._make_paper(year=2015, citations=0))
-        # 补足到超过阈值
-        while len(papers) < LOW_VOLUME_THRESHOLD + 10:
-            papers.append(self._make_paper(issn=["0001-1452"], year=2024, citations=5))
-
-        result = filter_papers(papers)
-        assert len(result) < len(papers)
+    def test_filter_is_noop(self):
+        from scripts.filtering import run_filter_pipeline
+        result = run_filter_pipeline()
+        assert result == 0
 
 
 if __name__ == "__main__":

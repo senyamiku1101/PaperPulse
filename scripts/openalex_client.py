@@ -128,8 +128,77 @@ class OpenAlexClient:
         data = self._get("/institutions", params)
         return data.get("results", [])
 
+    def get_work_by_doi(self, doi: str) -> Optional[dict]:
+        """通过 DOI 获取单篇论文，返回原始 JSON 或 None"""
+        # 去掉 URL 前缀
+        clean_doi = doi.replace("https://doi.org/", "").replace("http://doi.org/", "")
+        try:
+            return self._get(f"/works/doi:{clean_doi}")
+        except Exception as e:
+            logger.warning(f"DOI {clean_doi} 解析失败: {e}")
+            return None
+
+    def get_citing_works(
+        self,
+        openalex_id: str,
+        per_page: int = 200,
+        max_results: int = 500,
+    ) -> list[dict]:
+        """获取引用指定论文的所有文献（cursor 分页）"""
+        all_results = []
+        cursor = "*"
+
+        while len(all_results) < max_results:
+            params = {
+                "filter": f"cites:{openalex_id}",
+                "per_page": min(per_page, 200),
+                "cursor": cursor,
+            }
+            data = self._get("/works", params)
+            results = data.get("results", [])
+            all_results.extend(results)
+
+            cursor = data.get("meta", {}).get("next_cursor")
+            if not cursor or not results:
+                break
+
+        return all_results[:max_results]
+
+    def get_works_by_ids(
+        self,
+        openalex_ids: list[str],
+        batch_size: int = 50,
+    ) -> list[dict]:
+        """批量获取论文（按 OpenAlex ID 分批请求）"""
+        all_results = []
+
+        for i in range(0, len(openalex_ids), batch_size):
+            batch = openalex_ids[i:i + batch_size]
+            # 构造 filter: openalex:W1|W2|W3
+            filter_val = "|".join(f"{pid}" for pid in batch if pid)
+            if not filter_val:
+                continue
+
+            params = {
+                "filter": f"openalex:{filter_val}",
+                "per_page": min(len(batch), 200),
+            }
+            cursor = "*"
+
+            while True:
+                params["cursor"] = cursor
+                data = self._get("/works", params)
+                results = data.get("results", [])
+                all_results.extend(results)
+
+                cursor = data.get("meta", {}).get("next_cursor")
+                if not cursor or not results:
+                    break
+
+        return all_results
+
     @staticmethod
-    def extract_paper(raw: dict, search_query: str = "") -> dict:
+    def extract_paper(raw: dict, discovery_origin: str = "", seed_doi: str = "") -> dict:
         """将原始 OpenAlex work JSON 转为标准化论文 schema"""
         # 重建摘要（从倒排索引）
         abstract = reconstruct_abstract(raw.get("abstract_inverted_index"))
@@ -186,9 +255,10 @@ class OpenAlexClient:
             "source": source,
             "open_access_url": best_oa,
             "is_oa": open_access.get("is_oa", False),
-            "referenced_works": referenced_ids[:50],  # 限制数量
-            "search_query": search_query,
-            "analysis": None,  # 待 DeepSeek 分析填充
+            "referenced_works": referenced_ids[:50],
+            "discovery_origin": discovery_origin,
+            "seed_doi": seed_doi,
+            "analysis": None,
         }
 
 

@@ -29,7 +29,6 @@ def classify_subtopic(paper: dict) -> list[str]:
          " ".join(paper.get("topics", [])))
     ).lower()
 
-    # 也检查 AI 分析的关键词
     analysis = paper.get("analysis") or {}
     if isinstance(analysis, dict):
         keywords = analysis.get("keywords", [])

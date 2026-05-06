@@ -22,111 +22,43 @@ OPENALEX_EMAIL = os.getenv("OPENALEX_EMAIL", "")  # polite pool
 # DeepSeek API
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
 DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
-DEEPSEEK_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")
+DEEPSEEK_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash")
 
-# OpenAlex 过滤器：限制在 Aerospace Engineering (subfield id: 2202)
-OPENALEX_TOPIC_FILTER = "primary_topic.subfield.id:2202,type:article"
-
-# 搜索配置
-MAX_PAPERS_PER_QUERY = int(os.getenv("MAX_PAPERS_PER_QUERY", "500"))
+# 请求间隔
 REQUEST_DELAY = 0.5  # OpenAlex polite pool 最小请求间隔（秒）
 ANALYSIS_DELAY = 1.0  # DeepSeek 请求间隔（秒）
 
-# 风扇噪声研究搜索词
-SEARCH_QUERIES = [
-    # ── 斜切口短舱进气道 ──
-    "drooped intake",
-    "scarfed intake",
-    "short intake",
-    "turbofan intake",
+# 种子 DOI 文件路径
+SEED_DOIS_FILE = DATA_DIR / "seed_dois.json"
 
-    # ── 风扇噪声 ──
-    "fan noise",
-    "compressor noise",
-    "tonal noise",
-    "broadband noise",
+# 引用图谱遍历配置
+CITATION_CONFIG = {
+    "max_citers_per_seed": 500,      # 每篇种子论文最多获取多少引用文献
+    "max_references_per_seed": 200,  # 每篇种子论文最多获取多少参考文献
+    "batch_size": 50,                # 批量获取论文的每批大小
+}
 
-    # ── 压气机气动声学 ──
-    "compressor aeroacoustics",
-    "fan aeroacoustics",
-
-    # ── 稳定性建模 ──
-    "actuator disk",
-    "body force model",
-    "Moore Greitzer",
-    "streamline curvature",
-
-    # ── 进气畸变 ──
-    "distortion",
-    "inlet distortion",
-    "circumferential distortion",
-    "radial distortion",
-    "steady flow distortion",
-    "static pressure distortion",
-]
-
-# 子主题关键词分类（用于趋势分析）
+# 子主题关键词分类（用于趋势热力图）
 SUBTOPIC_KEYWORDS = {
-    "斜切口短舱进气道": ["drooped intake", "scarfed intake", "short intake", "turbofan intake"],
-    "风扇噪声": ["fan noise", "tonal noise", "compressor noise", "broadband noise"],
-    "压气机气动声学": ["compressor aeroacoustics", "fan aeroacoustics"],
-    "稳定性建模": ["analytical", "theoretical", "modeling", "prediction", "mathematical", "actuator disk", "body force model", "streamline curvature"],
-    "进气畸变": ["distortion", "inlet distortion", "circumferential distortion", "radial distortion", "steady flow distortion", "static pressure distortion", "total pressure distortion"],
-	"实验研究": ["wind tunnel", "experiment", "PIV", "hot-wire", "flow visualization", "measurement", "experimental", "test", "array", "microphone", "acoustic test"],
-	"数值方法": ["CFD", "computational", "simulation", "LES", "DNS", "RANS", "numerical", ],
+    "气动声学": ["aeroacoustics", "acoustic", "noise"],
+    "风扇/压气机": ["fan", "compressor", "turbomachinery", "rotor", "stator"],
+    "进气道": ["intake", "inlet", "nacelle", "drooped", "scarfed"],
+    "数值模拟": ["CFD", "CAA", "numerical", "simulation", "computational"],
+    "实验测量": ["experiment", "measurement", "wind tunnel", "test"],
+    "失速/稳定性": ["stall", "surge", "stability", "distortion"],
 }
-
-# ==================== 论文筛选配置 ====================
-
-# 著名期刊（以 ISSN 匹配，论文全部保留）
-PRESTIGIOUS_JOURNAL_ISSNS = {
-    # 航空航天顶级期刊
-    "0001-1452",   # AIAA Journal
-    "0021-8669",   # Journal of Aircraft
-    "0748-4658",   # Journal of Propulsion and Power
-    "1270-9638",   # Aerospace Science and Technology
-    "0376-0421",   # Progress in Aerospace Sciences
-    "0001-9240",   # Aeronautical Journal
-    "1000-9361",   # Chinese Journal of Aeronautics
-    "0742-4795",   # J. Eng. Gas Turbines and Power
-    "0889-504X",   # Journal of Turbomachinery
-    "0022-0825",   # J. Eng. for Power (→JEGTP前身)
-    "0021-9223",   # J. Basic Engineering
-    # 声学顶级期刊
-    "0022-460X",   # Journal of Sound and Vibration
-    "0001-4966",   # Journal of the Acoustical Society of America
-    "0003-682X",   # Applied Acoustics
-    "1610-1928",   # Acta Acustica
-    "0736-2501",   # Noise Control Engineering Journal
-    # 流体力学
-    "0022-1120",   # Journal of Fluid Mechanics
-    "1070-6631",   # Physics of Fluids
-    "0899-8213",   # Theoretical and Computational Fluid Dynamics
-    "0723-4864",   # Experiments in Fluids
-    # 综合性期刊
-    "0028-0836",   # Nature
-    "0036-8075",   # Science
-    "1364-5021",   # Proceedings of the Royal Society A
-    "2045-2322",   # Scientific Reports
-    "1932-6203",   # PLOS ONE
-}
-
-# 引用量筛选阈值（按论文年龄分层）
-CITATION_THRESHOLDS = {
-    "recent_days": 730,       # 2年内视为"近期"
-    "recent_min_citations": 1,     # 近期论文最低引用
-    "mid_days": 1825,         # 5年内视为"中期"
-    "mid_min_citations": 3,        # 中期论文最低引用
-    "old_min_citations": 5,        # 5年以上论文最低引用
-    "old_min_cites_per_year": 1,   # 5年以上年均最低引用
-}
-
-# 当领域论文总数低于此值时，跳过引用量筛选（保留全部）
-LOW_VOLUME_THRESHOLD = 300
 
 
 # 追踪的课题组
 RESEARCH_GROUPS = [
+    {
+        "id": "group_cambridge",
+        "name": "Cambridge Whittle Lab",
+        "institution": "University of Cambridge",
+        "institution_query": "University of Cambridge",
+        "description": "航空发动机风扇噪声与气动声学",
+        "author_ids": [],
+    },
     {
         "id": "group_buaa",
         "name": "Beihang University",

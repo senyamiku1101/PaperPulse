@@ -6,6 +6,7 @@
 <title>PaperPulse - 风扇噪声研究追踪</title>
 <meta name="description" content="风扇噪声学术文献自动追踪与分析系统">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <style>
 /* ========================================
    CSS Variables & Reset
@@ -1449,6 +1450,122 @@ a:hover { color: var(--accent-blue-dark); text-decoration: underline; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .nav-tab .tab-badge { display: none; }
 }
+
+/* ========================================
+   Citation Graph
+   ======================================== */
+.graph-container {
+  position: relative;
+  width: 100%;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.graph-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.graph-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.graph-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.graph-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.graph-filter-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.graph-select {
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.graph-btn {
+  padding: 4px 12px;
+  font-size: 13px;
+}
+
+.graph-info {
+  padding: 8px 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg-primary);
+}
+
+.graph-svg {
+  width: 100%;
+  height: calc(100vh - 280px);
+  min-height: 500px;
+  display: block;
+  cursor: grab;
+}
+
+.graph-svg:active { cursor: grabbing; }
+
+.graph-tooltip {
+  position: fixed;
+  z-index: 200;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  max-width: 320px;
+  box-shadow: var(--shadow-lg);
+  pointer-events: none;
+  font-size: 13px;
+  line-height: 1.5;
+  display: none;
+}
+
+.graph-tooltip-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.graph-tooltip-meta {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .graph-controls { flex-direction: column; align-items: flex-start; }
+  .graph-svg { min-height: 400px; }
+}
 </style>
 </head>
 <body>
@@ -1493,6 +1610,9 @@ a:hover { color: var(--accent-blue-dark); text-decoration: underline; }
     </div>
     <div class="nav-tab" data-tab="groups">
       <span class="tab-icon">🏛️</span> 课题组
+    </div>
+    <div class="nav-tab" data-tab="graph">
+      <span class="tab-icon">🔗</span> 关系图谱
     </div>
     <div class="nav-tab" data-tab="qa">
       <span class="tab-icon">🤖</span> 智能问答
@@ -1611,6 +1731,33 @@ a:hover { color: var(--accent-blue-dark); text-decoration: underline; }
     </div>
   </div>
 
+  <!-- Tab: Citation Graph -->
+  <div class="tab-pane" id="tab-graph">
+    <div class="graph-container">
+      <div class="graph-controls">
+        <div class="graph-legend">
+          <span class="graph-legend-item"><span class="legend-dot" style="background:#f59e0b"></span> 种子论文</span>
+          <span class="graph-legend-item"><span class="legend-dot" style="background:#3b82f6"></span> 参考文献</span>
+          <span class="graph-legend-item"><span class="legend-dot" style="background:#10b981"></span> 引用文献</span>
+        </div>
+        <div class="graph-filters">
+          <label class="graph-filter-label">显示范围:</label>
+          <select id="graphYearFilter" class="graph-select">
+            <option value="all">全部年份</option>
+            <option value="recent">近5年</option>
+            <option value="cited">高引用(&gt;5)</option>
+          </select>
+          <button class="btn btn-outline graph-btn" id="graphResetBtn">重置视图</button>
+        </div>
+      </div>
+      <div class="graph-info" id="graphInfo">点击节点查看论文详情，拖拽节点调整布局</div>
+      <svg id="graphSvg" class="graph-svg"></svg>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <!-- Paper Detail Modal -->
@@ -1643,6 +1790,9 @@ a:hover { color: var(--accent-blue-dark); text-decoration: underline; }
     </div>
   </div>
 </div>
+
+<!-- Graph Tooltip -->
+<div class="graph-tooltip" id="graphTooltip"></div>
 
 <script>
 // ============================================================
@@ -2509,6 +2659,235 @@ function switchTab(tabName) {
   document.querySelectorAll('.tab-pane').forEach(p =>
     p.classList.toggle('active', p.id === `tab-${tabName}`)
   );
+  if (tabName === 'graph') requestAnimationFrame(renderCitationGraph);
+}
+
+// Section 8.5: Citation Graph
+function buildCitationGraphData() {
+  const papers = STATE.papers;
+  const paperMap = {};
+  papers.forEach(p => { paperMap[p.id] = p; });
+
+  const nodes = [];
+  const edges = [];
+  const nodeSet = new Set();
+
+  // Build nodes from all papers
+  papers.forEach(p => {
+    nodeSet.add(p.id);
+    nodes.push({
+      id: p.id,
+      title: p.title || '',
+      year: p.year,
+      citations: p.citation_count || 0,
+      origin: p.discovery_origin || '',
+      seed_doi: p.seed_doi || '',
+      doi: p.doi || '',
+    });
+  });
+
+  // Build edges from referenced_works
+  papers.forEach(p => {
+    const refs = p.referenced_works || [];
+    refs.forEach(refId => {
+      if (nodeSet.has(refId) && refId !== p.id) {
+        edges.push({ source: p.id, target: refId });
+      }
+    });
+  });
+
+  return { nodes, edges };
+}
+
+function filterGraphData(data, filterType) {
+  const currentYear = new Date().getFullYear();
+  let filteredNodes = data.nodes;
+  let filteredNodeIds = new Set();
+
+  if (filterType === 'recent') {
+    filteredNodes = filteredNodes.filter(n => n.year && n.year >= currentYear - 5);
+  } else if (filterType === 'cited') {
+    filteredNodes = filteredNodes.filter(n => n.citations > 5);
+  }
+
+  filteredNodes.forEach(n => filteredNodeIds.add(n.id));
+
+  // Also include connected neighbors so the graph isn't disconnected
+  const connectedIds = new Set(filteredNodeIds);
+  data.edges.forEach(e => {
+    if (filteredNodeIds.has(e.source.id || e.source) || filteredNodeIds.has(e.target.id || e.target)) {
+      connectedIds.add(e.source.id || e.source);
+      connectedIds.add(e.target.id || e.target);
+    }
+  });
+
+  const allNodeIds = new Set(data.nodes.map(n => n.id));
+  const finalIds = new Set([...connectedIds].filter(id => allNodeIds.has(id)));
+
+  return {
+    nodes: data.nodes.filter(n => finalIds.has(n.id)),
+    edges: data.edges.filter(e =>
+      finalIds.has(e.source.id || e.source) && finalIds.has(e.target.id || e.target)
+    ),
+  };
+}
+
+function renderCitationGraph() {
+  if (typeof d3 === 'undefined') {
+    document.getElementById('tab-graph').innerHTML =
+      '<div style="padding:40px;text-align:center;color:var(--text-muted)">D3.js 加载失败，请检查网络连接</div>';
+    return;
+  }
+
+  const svg = d3.select('#graphSvg');
+  svg.selectAll('*').remove();
+
+  const fullData = buildCitationGraphData();
+  if (fullData.nodes.length === 0) {
+    svg.append('text')
+      .attr('x', '50%').attr('y', '50%')
+      .attr('text-anchor', 'middle').attr('fill', '#64748b')
+      .text('暂无论文数据');
+    return;
+  }
+
+  const filterType = document.getElementById('graphYearFilter').value;
+  let data = filterType === 'all' ? fullData : filterGraphData(fullData, filterType);
+
+  const container = document.getElementById('graphSvg');
+  const width = container.clientWidth || container.parentElement.clientWidth || 900;
+  const height = container.clientHeight || 600;
+
+  svg.attr('viewBox', [0, 0, width, height]);
+
+  const originColor = { seed: '#f59e0b', reference: '#3b82f6', citing: '#10b981' };
+  const defaultColor = '#64748b';
+
+  function nodeColor(d) { return originColor[d.origin] || defaultColor; }
+  function nodeRadius(d) {
+    if (d.origin === 'seed') return 10;
+    return Math.max(4, Math.min(8, 4 + Math.log2(d.citations + 1)));
+  }
+
+  // Zoom
+  const g = svg.append('g');
+  const zoom = d3.zoom()
+    .scaleExtent([0.1, 4])
+    .on('zoom', (event) => g.attr('transform', event.transform));
+  svg.call(zoom);
+
+  // Force simulation
+  const simulation = d3.forceSimulation(data.nodes)
+    .force('link', d3.forceLink(data.edges).id(d => d.id).distance(60).strength(0.5))
+    .force('charge', d3.forceManyBody().strength(-120))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(d => nodeRadius(d) + 2));
+
+  // Edges
+  const link = g.append('g')
+    .selectAll('line')
+    .data(data.edges)
+    .join('line')
+    .attr('stroke', '#334155')
+    .attr('stroke-opacity', 0.4)
+    .attr('stroke-width', 0.8);
+
+  // Nodes
+  const node = g.append('g')
+    .selectAll('circle')
+    .data(data.nodes)
+    .join('circle')
+    .attr('r', nodeRadius)
+    .attr('fill', nodeColor)
+    .attr('stroke', '#0f172a')
+    .attr('stroke-width', 1.5)
+    .style('cursor', 'pointer')
+    .call(d3.drag()
+      .on('start', dragStarted)
+      .on('drag', dragged)
+      .on('end', dragEnded));
+
+  // Labels for seed papers only (avoid clutter)
+  const label = g.append('g')
+    .selectAll('text')
+    .data(data.nodes.filter(n => n.origin === 'seed'))
+    .join('text')
+    .text(d => d.title.length > 30 ? d.title.slice(0, 30) + '...' : d.title)
+    .attr('font-size', 11)
+    .attr('fill', '#f59e0b')
+    .attr('dx', 14)
+    .attr('dy', 4)
+    .style('pointer-events', 'none')
+    .style('user-select', 'none');
+
+  // Tooltip
+  const tooltip = document.getElementById('graphTooltip');
+
+  node.on('mouseover', (event, d) => {
+    const yearStr = d.year ? ` (${d.year})` : '';
+    tooltip.innerHTML = `
+      <div class="graph-tooltip-title">${d.title}${yearStr}</div>
+      <div class="graph-tooltip-meta">
+        引用: ${d.citations} | 类型: ${d.origin || '未知'}<br>
+        ${d.doi ? `<a href="${d.doi}" target="_blank" style="color:var(--accent-blue)">DOI</a>` : ''}
+      </div>`;
+    tooltip.style.display = 'block';
+  })
+  .on('mousemove', (event) => {
+    tooltip.style.left = (event.clientX + 16) + 'px';
+    tooltip.style.top = (event.clientY - 10) + 'px';
+  })
+  .on('mouseout', () => { tooltip.style.display = 'none'; })
+  .on('click', (event, d) => {
+    const paper = STATE.papers.find(p => p.id === d.id);
+    if (paper) showPaperDetail(paper);
+  });
+
+  // Tick
+  simulation.on('tick', () => {
+    link
+      .attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y);
+
+    node
+      .attr('cx', d => d.x)
+      .attr('cy', d => d.y);
+
+    label
+      .attr('x', d => d.x)
+      .attr('y', d => d.y);
+  });
+
+  function dragStarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+
+  function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+
+  function dragEnded(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+
+  // Reset button
+  document.getElementById('graphResetBtn').onclick = () => {
+    svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+  };
+
+  // Year filter
+  document.getElementById('graphYearFilter').onchange = () => renderCitationGraph();
+
+  // Info bar
+  const infoEl = document.getElementById('graphInfo');
+  infoEl.textContent = `${data.nodes.length} 篇论文，${data.edges.length} 条引用关系 | 点击节点查看详情，拖拽调整布局，滚轮缩放`;
 }
 
 // Section 9: Initialization

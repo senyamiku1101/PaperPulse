@@ -31,14 +31,15 @@ ANALYSIS_DELAY = 1.0  # DeepSeek 请求间隔（秒）
 
 # 风扇噪声研究搜索词
 SEARCH_QUERIES = [
-
     # ── 斜切口短舱进气道 ──
     "drooped intake",
     "scarfed intake",
     "short intake",
+    "turbofan intake",
 
     # ── 风扇噪声 ──
     "fan noise",
+    "compressor noise",
     "tonal noise",
     "broadband noise",
 

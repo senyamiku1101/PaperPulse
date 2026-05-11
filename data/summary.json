@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-05-06T05:08:41.965822+00:00",
-  "total_papers": 5349,
-  "analyzed_papers": 4658,
+  "last_updated": "2026-05-11T06:25:55.780755+00:00",
+  "total_papers": 5358,
+  "analyzed_papers": 4661,
   "date_range": {
     "earliest": 1841,
     "latest": 2026
@@ -10,45 +10,45 @@
   "most_cited": {
     "id": "W2126105956",
     "title": "A fast and elitist multiobjective genetic algorithm: NSGA-II",
-    "citations": 47028,
+    "citations": 47101,
     "year": 2002
   },
   "top_keywords": [
     {
       "keyword": "Aerodynamics and Acoustics in Jet Flows",
-      "count": 1909
+      "count": 1913
     },
     {
       "keyword": "Turbomachinery Performance and Optimization",
-      "count": 1903
+      "count": 1906
     },
     {
       "keyword": "Fluid Dynamics and Turbulent Flows",
-      "count": 1767
+      "count": 1770
     },
     {
       "keyword": "Acoustic Wave Phenomena Research",
-      "count": 1040
+      "count": 1042
     },
     {
       "keyword": "Computational Fluid Dynamics and Aerodynamics",
-      "count": 918
+      "count": 919
     },
     {
       "keyword": "Fluid Dynamics and Vibration Analysis",
-      "count": 670
+      "count": 671
     },
     {
       "keyword": "Combustion and flame dynamics",
-      "count": 662
+      "count": 663
     },
     {
       "keyword": "Heat Transfer Mechanisms",
-      "count": 660
+      "count": 661
     },
     {
       "keyword": "Aerodynamics and Fluid Dynamics Research",
-      "count": 653
+      "count": 655
     },
     {
       "keyword": "Model Reduction and Neural Networks",
@@ -56,15 +56,15 @@
     },
     {
       "keyword": "Refrigeration and Air Conditioning Technologies",
-      "count": 502
+      "count": 504
     },
     {
       "keyword": "Wind and Air Flow Studies",
-      "count": 421
+      "count": 422
     },
     {
       "keyword": "Vehicle Noise and Vibration Control",
-      "count": 360
+      "count": 361
     },
     {
       "keyword": "Advanced Aircraft Design and Technologies",
@@ -84,7 +84,7 @@
     },
     {
       "keyword": "Plasma and Flow Control in Aerodynamics",
-      "count": 115
+      "count": 116
     },
     {
       "keyword": "Cavitation Phenomena in Pumps",
@@ -97,9 +97,9 @@
   ],
   "peak_year": {
     "year": 2022,
-    "count": 410
+    "count": 411
   },
-  "total_groups": 713,
+  "total_groups": 714,
   "papers_by_year": {
     "1841": 1,
     "1878": 1,
@@ -176,18 +176,18 @@
     "2016": 164,
     "2017": 192,
     "2018": 184,
-    "2019": 254,
+    "2019": 255,
     "2020": 263,
     "2021": 352,
-    "2022": 410,
+    "2022": 411,
     "2023": 382,
-    "2024": 394,
+    "2024": 396,
     "2025": 307,
-    "2026": 64
+    "2026": 69
   },
   "relevance_distribution": {
-    "medium": 622,
-    "low": 3582,
+    "medium": 625,
+    "low": 3583,
     "high": 506
   }
 }

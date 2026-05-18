@@ -1,42 +1,42 @@
 {
-  "last_updated": "2026-05-11T06:25:55.780755+00:00",
-  "total_papers": 5358,
-  "analyzed_papers": 4661,
+  "last_updated": "2026-05-18T06:51:05.228717+00:00",
+  "total_papers": 5370,
+  "analyzed_papers": 4670,
   "date_range": {
     "earliest": 1841,
     "latest": 2026
   },
-  "avg_citations": 108.7,
+  "avg_citations": 108.6,
   "most_cited": {
     "id": "W2126105956",
     "title": "A fast and elitist multiobjective genetic algorithm: NSGA-II",
-    "citations": 47101,
+    "citations": 47188,
     "year": 2002
   },
   "top_keywords": [
     {
       "keyword": "Aerodynamics and Acoustics in Jet Flows",
-      "count": 1913
+      "count": 1920
     },
     {
       "keyword": "Turbomachinery Performance and Optimization",
-      "count": 1906
+      "count": 1908
     },
     {
       "keyword": "Fluid Dynamics and Turbulent Flows",
-      "count": 1770
+      "count": 1774
     },
     {
       "keyword": "Acoustic Wave Phenomena Research",
-      "count": 1042
+      "count": 1047
     },
     {
       "keyword": "Computational Fluid Dynamics and Aerodynamics",
-      "count": 919
+      "count": 920
     },
     {
       "keyword": "Fluid Dynamics and Vibration Analysis",
-      "count": 671
+      "count": 673
     },
     {
       "keyword": "Combustion and flame dynamics",
@@ -44,11 +44,11 @@
     },
     {
       "keyword": "Heat Transfer Mechanisms",
-      "count": 661
+      "count": 662
     },
     {
       "keyword": "Aerodynamics and Fluid Dynamics Research",
-      "count": 655
+      "count": 656
     },
     {
       "keyword": "Model Reduction and Neural Networks",
@@ -60,15 +60,15 @@
     },
     {
       "keyword": "Wind and Air Flow Studies",
-      "count": 422
+      "count": 424
     },
     {
       "keyword": "Vehicle Noise and Vibration Control",
-      "count": 361
+      "count": 363
     },
     {
       "keyword": "Advanced Aircraft Design and Technologies",
-      "count": 226
+      "count": 227
     },
     {
       "keyword": "Advanced Combustion Engine Technologies",
@@ -76,7 +76,7 @@
     },
     {
       "keyword": "Probabilistic and Robust Engineering Design",
-      "count": 157
+      "count": 158
     },
     {
       "keyword": "Tribology and Lubrication Engineering",
@@ -84,7 +84,7 @@
     },
     {
       "keyword": "Plasma and Flow Control in Aerodynamics",
-      "count": 116
+      "count": 118
     },
     {
       "keyword": "Cavitation Phenomena in Pumps",
@@ -99,7 +99,7 @@
     "year": 2022,
     "count": 411
   },
-  "total_groups": 714,
+  "total_groups": 716,
   "papers_by_year": {
     "1841": 1,
     "1878": 1,
@@ -141,7 +141,7 @@
     "1981": 21,
     "1982": 14,
     "1983": 16,
-    "1984": 16,
+    "1984": 17,
     "1985": 25,
     "1986": 15,
     "1987": 13,
@@ -163,10 +163,10 @@
     "2003": 70,
     "2004": 72,
     "2005": 85,
-    "2006": 111,
+    "2006": 112,
     "2007": 103,
     "2008": 91,
-    "2009": 94,
+    "2009": 95,
     "2010": 114,
     "2011": 117,
     "2012": 132,
@@ -177,17 +177,17 @@
     "2017": 192,
     "2018": 184,
     "2019": 255,
-    "2020": 263,
-    "2021": 352,
+    "2020": 264,
+    "2021": 353,
     "2022": 411,
-    "2023": 382,
+    "2023": 384,
     "2024": 396,
-    "2025": 307,
-    "2026": 69
+    "2025": 308,
+    "2026": 73
   },
   "relevance_distribution": {
-    "medium": 625,
-    "low": 3583,
-    "high": 506
+    "medium": 627,
+    "low": 3588,
+    "high": 508
   }
 }
